@@ -1,0 +1,2927 @@
+[
+  {
+    "vendor_id": "vendor_1e38438e0c",
+    "vendor_name": "FlixBus",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_1e0d2dee",
+      "offer_description": "3\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 3,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_a97e5aaf9a",
+    "vendor_name": "Carrer de Sor Eul\u00e0lia d'Anzizu",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_9f9db5ba",
+      "offer_description": "Get a free dessert when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_4ecf4f7594",
+    "vendor_name": "Mercadona",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_cebda967",
+      "offer_description": "Use 2000 points for a 20\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 20,
+      "points_cost": 2000,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_6a33501ff1",
+    "vendor_name": "Del Molino Roa",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_79085a81",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_c013bd34b1",
+    "vendor_name": "Pasteleria Ayub",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_2f78a5c7",
+      "offer_description": "Get a free coffee when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_2fb52595b0",
+    "vendor_name": "Jotas Bread",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_7d34f05b",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_2ca735edd5",
+    "vendor_name": "AltaglioBcn",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_3c27f92f",
+      "offer_description": "15% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 15,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_9eab0af602",
+    "vendor_name": "Del Molino Roa Sl",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_cdcec4e4",
+      "offer_description": "20% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_99b08243db",
+    "vendor_name": "Uber Eats",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_30f74b03",
+      "offer_description": "Get a free coffee when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_9d40af8a31",
+    "vendor_name": "Bar Vidal",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_f11ea4bd",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_08c2dc23e2",
+    "vendor_name": "Bar El Tom\u00e0s de Sarri\u00e0",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_227f7adc",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000
+    }
+  },
+  {
+    "vendor_id": "vendor_b543768354",
+    "vendor_name": "FREE NOW",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_e7d36f46",
+      "offer_description": "Use 1000 points for 10\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_76bdcfa486",
+    "vendor_name": "smou",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_ea8b1b45",
+      "offer_description": "5\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 5,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_82c2dace7e",
+    "vendor_name": "Bicing",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_3af0124e",
+      "offer_description": "3\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 3,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_f0bb0cb9b6",
+    "vendor_name": "TMB",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_aac5bb48",
+      "offer_description": "5\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_c4e99a2dbe",
+    "vendor_name": "Bar Triton",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_47c882a4",
+      "offer_description": "Get a free dessert when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_072bf451da",
+    "vendor_name": "Dogra Food 1",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_49a237bd",
+      "offer_description": "Get a free dessert when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_ce54d297b2",
+    "vendor_name": "MacxiPA",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_26f2562b",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_13e5b11235",
+    "vendor_name": "Uber",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_e40ca377",
+      "offer_description": "Use 1000 points for 10\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_6c44a4faff",
+    "vendor_name": "Virsa Supermercado",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_db48bb1e",
+      "offer_description": "Use 500 points for a 5\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_85b5f3a5cc",
+    "vendor_name": "Belushis Bars",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_1381323e",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_eae6374cfd",
+    "vendor_name": "OCEAN'S",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_e90370c5",
+      "offer_description": "Get free drink at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_21e437a11e",
+    "vendor_name": "Barcelona Supermercat",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_2862a69c",
+      "offer_description": "5% discount on your total purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 5,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_bdc110b092",
+    "vendor_name": "Bar Mossegada",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_78ec1bcc",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_249836113b",
+    "vendor_name": "Too Good To Go",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_b2522856",
+      "offer_description": "10% discount on your total purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_371f3d3a47",
+    "vendor_name": "Levaduramadre",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_3670bf9e",
+      "offer_description": "10% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_082e22e648",
+    "vendor_name": "Decathlon",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_3851a902",
+      "offer_description": "Use 1000 points for a 10\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000
+    }
+  },
+  {
+    "vendor_id": "vendor_c1569bbb89",
+    "vendor_name": "Streamz",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_0cdbfece",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_3fec4ebedb",
+    "vendor_name": "Cabify",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_77d1f1f2",
+      "offer_description": "3\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 3,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_d738a135d1",
+    "vendor_name": "Tu Dulce Pasion 2",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_a156a7f1",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_a6d7631327",
+    "vendor_name": "La Plata",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_f65c0462",
+      "offer_description": "10% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_af23c0dc7b",
+    "vendor_name": "McDonald's",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_3b3e2edd",
+      "offer_description": "Use 500 points for a 5\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_c8121fefc3",
+    "vendor_name": "Badiani Mandri",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_02213821",
+      "offer_description": "10% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_06ece41c68",
+    "vendor_name": "Bar Manchester",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_dd59bd60",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_3370156ab6",
+    "vendor_name": "Omio",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_a02be048",
+      "offer_description": "Use 500 points for 5\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_b4a34b7809",
+    "vendor_name": "honest greens",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_c52f0a81",
+      "offer_description": "Get a free dessert when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_7b8e195243",
+    "vendor_name": "Amazon",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_02b94424",
+      "offer_description": "20\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_1e33b24042",
+    "vendor_name": "Casa Sagnier",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_902728c0",
+      "offer_description": "Get free popcorn at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_55f469f0f9",
+    "vendor_name": "Pimp My Trip",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_4c48c9fb",
+      "offer_description": "3\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 3,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_d58484ae63",
+    "vendor_name": "Spar",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_c9a8fff2",
+      "offer_description": "Use 1000 points for a 10\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000
+    }
+  },
+  {
+    "vendor_id": "vendor_19479f1174",
+    "vendor_name": "Gelateria Della Palma",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_87edf27b",
+      "offer_description": "15% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 15,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_47a33eff72",
+    "vendor_name": "KFC",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_a44d40e4",
+      "offer_description": "Get a free coffee when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_b27a21ec8c",
+    "vendor_name": "Abaceria Lio",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_569ef038",
+      "offer_description": "Use 500 points for a 5\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_c1a7d421e9",
+    "vendor_name": "Humana",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_2f740352",
+      "offer_description": "15% discount on your purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 15,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_071bcfae51",
+    "vendor_name": "Primark",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_ac11f0ec",
+      "offer_description": "Use 3000 points for a 30\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 30,
+      "points_cost": 3000,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_7ca10e15ad",
+    "vendor_name": "Metro de Madrid",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_2206d52f",
+      "offer_description": "Use 500 points for 5\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_bb71038100",
+    "vendor_name": "Paseo del Prado",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_4426667e",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_047ecaf5df",
+    "vendor_name": "Rangoli",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_5159eef6",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_627e9d82c5",
+    "vendor_name": "Vueling",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_d54b1e8e",
+      "offer_description": "Use 500 points for 5\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_0bc57fabb3",
+    "vendor_name": "El Nacional Barcelona",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_554278c1",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_cfd1241203",
+    "vendor_name": "Park G\u00fcell",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_66110f30",
+      "offer_description": "25% discount on tickets when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 25,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_46acbb8264",
+    "vendor_name": "Plenti (location in 2018)",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_74470665",
+      "offer_description": "20% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_fe80b8ebdb",
+    "vendor_name": "Ideasorigen Balmes",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_c901bba5",
+      "offer_description": "Use 500 points for a 5\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_87b9ee3864",
+    "vendor_name": "Antonia Pizza",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_04b3f186",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_1ef7bd0acc",
+    "vendor_name": "Antonias Burger",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_7b53371c",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_0ca0944658",
+    "vendor_name": "Chatelet",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_a4b787ff",
+      "offer_description": "20% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_c443216f7a",
+    "vendor_name": "Caf\u00e8 Salamb\u00f3",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_a1fbf8b4",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_748d140ac8",
+    "vendor_name": "Bar El OtrO",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_46bfa8e7",
+      "offer_description": "20% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_59900b4bca",
+    "vendor_name": "el Fornet",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_13764664",
+      "offer_description": "Get a free coffee when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_8247a74994",
+    "vendor_name": "Kachafruit Barna S.L.",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_261474e2",
+      "offer_description": "5% discount on your total purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_1dc5964d66",
+    "vendor_name": "Cervecer\u00eda Catalana",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_57ca36cb",
+      "offer_description": "20% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_71833ad8a2",
+    "vendor_name": "Baby Jalebi",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_1b95ac1f",
+      "offer_description": "Use 500 points for a 5\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_6d0fb7a3df",
+    "vendor_name": "La Central del Raval",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_528265aa",
+      "offer_description": "Use 3000 points for a 30\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 30,
+      "points_cost": 3000
+    }
+  },
+  {
+    "vendor_id": "vendor_2ec936c6b5",
+    "vendor_name": "heladeria Dino",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_65a38ad4",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_33b68c90ee",
+    "vendor_name": "Estanco",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_82bcd98b",
+      "offer_description": "Use 3000 points for a 30\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 30,
+      "points_cost": 3000,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_9c9c99689d",
+    "vendor_name": "AliExpress",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_23c103c6",
+      "offer_description": "Use 2000 points for a 20\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 20,
+      "points_cost": 2000,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_cc84ba0975",
+    "vendor_name": "Frutas Diaz",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_5b27a21c",
+      "offer_description": "10% discount on your total purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_9b291be4ca",
+    "vendor_name": "La Forneria",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_753b1530",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_20c6274805",
+    "vendor_name": "Shawarmax",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_9e769c5d",
+      "offer_description": "Get a free drink when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_97306b4ab1",
+    "vendor_name": "Dhaba",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_c9f82047",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_79d8ebd418",
+    "vendor_name": "UNIQLO",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_8782032f",
+      "offer_description": "20\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_ade07c0689",
+    "vendor_name": "Anita Gelato",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_8cf85715",
+      "offer_description": "15% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 15,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_4a3d697e3b",
+    "vendor_name": "La Brillantina",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_8684b2a3",
+      "offer_description": "Get a free drink when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_2a84722434",
+    "vendor_name": "DIAGONAL",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_c163a192",
+      "offer_description": "10% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_8eecbc100f",
+    "vendor_name": "Amovens",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_ffc64e17",
+      "offer_description": "5\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_fa6333c45f",
+    "vendor_name": "Samosa Indian Tandoori",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_dae7bd71",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_7360c1d8bd",
+    "vendor_name": "Resident Advisor",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_290e96dd",
+      "offer_description": "25% discount on tickets when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 25,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_88e908bdbe",
+    "vendor_name": "Bar Estacion Central",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_e536ae5b",
+      "offer_description": "Get a free drink when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_3cc5603a45",
+    "vendor_name": "Ferrocarrils de la Generalitat Catalunya",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_911cbc87",
+      "offer_description": "5\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_44afc7a0a7",
+    "vendor_name": "Restaurante Noru",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_c987e74d",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_47df3d2cb2",
+    "vendor_name": "Montserrat Visita",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_41d3673d",
+      "offer_description": "Get free popcorn at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_dbe7cad950",
+    "vendor_name": "The Garage Club",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_2beeb1e4",
+      "offer_description": "Get free drink at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_ba78f3a1b5",
+    "vendor_name": "Las Ramblas",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_1b2a38ee",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_dc92cb3315",
+    "vendor_name": "Premmia Mercat",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_0f054516",
+      "offer_description": "Use 2000 points for a 20\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 20,
+      "points_cost": 2000,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_5dc56519af",
+    "vendor_name": "YEGO",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_6da2272f",
+      "offer_description": "5\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_63be3d268f",
+    "vendor_name": "Lestupenda",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_bdc41953",
+      "offer_description": "Get a free drink when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_f8b2363af5",
+    "vendor_name": "Restaurant Can Jane",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_8940c7e9",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_db0f29dc89",
+    "vendor_name": "Suma Supermercados",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_80f7bb77",
+      "offer_description": "Use 1000 points for a 10\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_cc6d477c5e",
+    "vendor_name": "Tabacos",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_9e60439e",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_c9e8c683a6",
+    "vendor_name": "Bar Josep",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_d138b830",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_150628023e",
+    "vendor_name": "Productes Artesans Cal",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_a310546c",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_d952431914",
+    "vendor_name": "Vidreres C 35 Dir. Granol",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_26252ff3",
+      "offer_description": "3\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 3,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_1590d00600",
+    "vendor_name": "Madonna Gelateria",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_5979c83e",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_461276a104",
+    "vendor_name": "SumUp",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_f127685d",
+      "offer_description": "Use 1000 points for a 10\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000
+    }
+  },
+  {
+    "vendor_id": "vendor_ae5e26f7ca",
+    "vendor_name": "Cred Area De Montcada Sur",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_17a522b8",
+      "offer_description": "Use 500 points for 5\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500
+    }
+  },
+  {
+    "vendor_id": "vendor_8f61612528",
+    "vendor_name": "Musta Shawarma",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_e0e170e7",
+      "offer_description": "Use 500 points for a 5\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_a15f2276f2",
+    "vendor_name": "Taperia El Born",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_b0408ea2",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_726aece171",
+    "vendor_name": "Restaurante ISABELLA'S",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_acb5a5a0",
+      "offer_description": "15% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 15,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_d33dfb129f",
+    "vendor_name": "Unibet",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_743e3ed7",
+      "offer_description": "Get free soda at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_64b50208a9",
+    "vendor_name": "Tabacs",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_e4db8ccc",
+      "offer_description": "20\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_e5f29de156",
+    "vendor_name": "BCM Mallorca",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_245f599a",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_400f441c6f",
+    "vendor_name": "SUPERMARKET",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_451f239c",
+      "offer_description": "5% discount on your total purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_80448a72bc",
+    "vendor_name": "Bikinis Ltd",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_6f4d8cd7",
+      "offer_description": "20% discount on tickets when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_3a16694380",
+    "vendor_name": "Supermercat",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_6fb49e3a",
+      "offer_description": "Use 1000 points for a 10\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000
+    }
+  },
+  {
+    "vendor_id": "vendor_d801d73a29",
+    "vendor_name": "Hungry Eyes",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_6f44539d",
+      "offer_description": "Use 500 points for a 5\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_24c59c81bd",
+    "vendor_name": "The George",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_61fc8792",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_32f30c7211",
+    "vendor_name": "Fleca Del Metro Slu",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_a57c69ef",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_6824be3229",
+    "vendor_name": "La Balmesina",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_4d517952",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_ba11775d06",
+    "vendor_name": "Good News Glories",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_ebfd920b",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_4280d5ed3b",
+    "vendor_name": "Crispy Chicken",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_0095ae6d",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000
+    }
+  },
+  {
+    "vendor_id": "vendor_70c8f2e68d",
+    "vendor_name": "Tabacs Estanc Exp n\u00b0 446",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_c4c37fcd",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_27dd4d6229",
+    "vendor_name": "Lidl",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_31308ebb",
+      "offer_description": "Use 1000 points for a 10\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000
+    }
+  },
+  {
+    "vendor_id": "vendor_1177baea1a",
+    "vendor_name": "Santamasa Sarri\u00e0",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_8887b421",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_271fb2fb05",
+    "vendor_name": "Aerob\u00fas Barcelona",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_a09332f6",
+      "offer_description": "Use 500 points for 5\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_40049a973f",
+    "vendor_name": "Barcelona Airport",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_a5a42090",
+      "offer_description": "Use 500 points for 5\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_cb6db4bb94",
+    "vendor_name": "Lagkagehuset",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_280c8946",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_6df428e8ca",
+    "vendor_name": "DSB",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_9782ecf9",
+      "offer_description": "5\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_2ff2926a07",
+    "vendor_name": "Palmehuset",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_1eb2b8d0",
+      "offer_description": "Get free drink at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_f7c2152f05",
+    "vendor_name": "Steel House Copenhagen",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_929435a0",
+      "offer_description": "Use 500 points for 5\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_8d70bb5dda",
+    "vendor_name": "Ps Bar & Grill A/s",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_c2df3832",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_98d6594f86",
+    "vendor_name": "Tivoli",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_7169c776",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_194f97c4cc",
+    "vendor_name": "Lsland Aps",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_da0044a7",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_070d157f8f",
+    "vendor_name": "Cff Investment Est 2016 A",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_057fd74a",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_d234e8873c",
+    "vendor_name": "Christiania Is Ap",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_77fe725c",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_8867f282f1",
+    "vendor_name": "TIER",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_12355f3a",
+      "offer_description": "5\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 5,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_b2de53898e",
+    "vendor_name": "Havfruekiosken",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_db955f0b",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_7d7ede3738",
+    "vendor_name": "Tecnotron",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_cf554b6c",
+      "offer_description": "20% discount on your purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_482a8fcdf2",
+    "vendor_name": "7-Eleven",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_48d7f700",
+      "offer_description": "10% discount on your total purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_d3347045e2",
+    "vendor_name": "Street Kitchen",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_6bbd13ee",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_0fa6bc5829",
+    "vendor_name": "Ben&jerrys Isbod",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_f39d42b6",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_d6d13e2f3c",
+    "vendor_name": "DOT - Din Offentlige Transport",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_570d5bdd",
+      "offer_description": "3\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 3,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_9f8f751413",
+    "vendor_name": "Landbageriet",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_bd0c54a9",
+      "offer_description": "20% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_b2fe7721d7",
+    "vendor_name": "Coop 365discount",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_82a76729",
+      "offer_description": "Use 2000 points for a 20\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 20,
+      "points_cost": 2000,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_412b3ce8cc",
+    "vendor_name": "Crep Nova Sarria",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_8ce0d2b8",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_a9609bd5d0",
+    "vendor_name": "superCOR",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_d6111650",
+      "offer_description": "10% discount on your total purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_12d1c52b73",
+    "vendor_name": "Headquarters",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_a747a8c6",
+      "offer_description": "20% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_40e699ec19",
+    "vendor_name": "DICE",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_11e44dde",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_59909e8aa2",
+    "vendor_name": "Jorge Alberto Campos",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_106892da",
+      "offer_description": "Use 2000 points for a 20\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 20,
+      "points_cost": 2000,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_e2cef6b439",
+    "vendor_name": "Restaurant",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_5840a84d",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_fc36193bd9",
+    "vendor_name": "45/33 Bar",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_ce4475ed",
+      "offer_description": "Get free soda at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_e9e072b24f",
+    "vendor_name": "Bar Prieto",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_22c04620",
+      "offer_description": "Use 500 points for a 5\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_ba06b71672",
+    "vendor_name": "Bar Pietro",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_163d7153",
+      "offer_description": "10% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_bdb3e65252",
+    "vendor_name": "Tio Bigotes",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_fe0e4143",
+      "offer_description": "Get a free dessert when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_1707550cba",
+    "vendor_name": "Mint Bar",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_d2226c7d",
+      "offer_description": "25% discount on tickets when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 25,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_a1d893ba75",
+    "vendor_name": "Massimo Dutti",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_b37a06c5",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_204e55c581",
+    "vendor_name": "Heymei",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_915b7a59",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_8c4ef63509",
+    "vendor_name": "T Mobilitat App",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_cd67d6d7",
+      "offer_description": "Use 1000 points for 10\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_898b397873",
+    "vendor_name": "L'Empanaderia de Gr\u00e0cia",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_2dec8765",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000
+    }
+  },
+  {
+    "vendor_id": "vendor_cce3a610da",
+    "vendor_name": "Five Guys",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_88d908ec",
+      "offer_description": "Use 500 points for a 5\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_3a2a6bf982",
+    "vendor_name": "Pans & Company",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_b6ca8428",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_d18456b0ed",
+    "vendor_name": "Festafib Comit",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_451d97f8",
+      "offer_description": "Get free drink at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_bb156dc1ef",
+    "vendor_name": "Carrefour",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_34ca4476",
+      "offer_description": "10% discount on your total purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_7c112080c6",
+    "vendor_name": "Pnvt Prs Brothers",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_d34a12ac",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_7583b77894",
+    "vendor_name": "Bvba Posse",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_c1fd4586",
+      "offer_description": "Get a free drink when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_4a83045a18",
+    "vendor_name": "In Den Boule",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_2c41bc90",
+      "offer_description": "Use 500 points for a 5\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_4a44c472a8",
+    "vendor_name": "'t Smullerke",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_d1179d7a",
+      "offer_description": "10% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_e96c278c06",
+    "vendor_name": "Pizza Virona",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_a0165e04",
+      "offer_description": "Use 500 points for a 5\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_b03a83d72a",
+    "vendor_name": "Airbnb",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_51aa36fe",
+      "offer_description": "5\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 15\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_63d92baf11",
+    "vendor_name": "Sm Barca",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_d2af52fd",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_56bfca6902",
+    "vendor_name": "Ali Restaurant",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_de61b634",
+      "offer_description": "Use 500 points for a 5\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500
+    }
+  },
+  {
+    "vendor_id": "vendor_2d1db89ee4",
+    "vendor_name": "Panino Silvestre",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_6a018607",
+      "offer_description": "Get a free dessert when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_2bd455bbce",
+    "vendor_name": "Evento Enso Coliving",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_9bc54da1",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_4b86a1118b",
+    "vendor_name": "Gelateria Firenze Palamos",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_9055bec4",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_2582a37625",
+    "vendor_name": "Bar Yeti",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_33f831e9",
+      "offer_description": "25% discount on tickets when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 25,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_d01f6eda7c",
+    "vendor_name": "Condis",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_2062bc32",
+      "offer_description": "Use 2000 points for a 20\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 20,
+      "points_cost": 2000,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_4a1ba9f912",
+    "vendor_name": "Mi Alcampo",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_b7ca14bf",
+      "offer_description": "Use 500 points for a 5\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_943bcd1d63",
+    "vendor_name": "Bar Robardors 49",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_d9904fde",
+      "offer_description": "15% discount on tickets when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 15,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_e7d7e5000f",
+    "vendor_name": "The Old Irish Pub",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_d2eeb222",
+      "offer_description": "Get free popcorn at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_bc4d9e438a",
+    "vendor_name": "Mr Robinson",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_d9f765e7",
+      "offer_description": "Get free popcorn at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_7e23dacd6f",
+    "vendor_name": "Un Bocado",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_9e970d0f",
+      "offer_description": "20% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_5a04d4d719",
+    "vendor_name": "Chandigarh Cafe",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_f9aa1e1d",
+      "offer_description": "Get a free drink when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_064b46cd31",
+    "vendor_name": "Sabor Tropical",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_d549dd4f",
+      "offer_description": "Get a free drink when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_1be9db099b",
+    "vendor_name": "Barcelona Suc 23",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_081bbac7",
+      "offer_description": "10\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_a114533c11",
+    "vendor_name": "Domino's pizza",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_8275be6b",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_791b4663ac",
+    "vendor_name": "Joan Mir\u00f3 Foundation",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_49b395e5",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_573c01f91e",
+    "vendor_name": "Cines Verdi Barcelona",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_3af509f5",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_eb04732ac4",
+    "vendor_name": "Flashh Barcelona",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_01908ab0",
+      "offer_description": "20% discount on tickets when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_b893a65b14",
+    "vendor_name": "Don Fresc",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_9eda8e38",
+      "offer_description": "10% discount on your total purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_e0b0858659",
+    "vendor_name": "Raco De La Mora",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_35a9a243",
+      "offer_description": "15% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 15,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_6257a867c7",
+    "vendor_name": "AUCAT",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_e4383cbb",
+      "offer_description": "Use 1000 points for 10\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000
+    }
+  },
+  {
+    "vendor_id": "vendor_102a377238",
+    "vendor_name": "Zona Blava",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_903fe969",
+      "offer_description": "Use 1000 points for 10\u20ac transport credit.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_44a78a9847",
+    "vendor_name": "La Punta La Guineu",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_635b72af",
+      "offer_description": "20% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_8c05fb71cd",
+    "vendor_name": "Cerveseria Universitat",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_4c4fd201",
+      "offer_description": "20% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_11acbefd09",
+    "vendor_name": "M\u00edramelindo",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_7584da16",
+      "offer_description": "Buy one get one free on tickets when paying with points.",
+      "offer_type": "buy_one_get_one",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_54c80d6c6a",
+    "vendor_name": "Raza Gulraiz",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_aef21286",
+      "offer_description": "Use 2000 points for a 20\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 20,
+      "points_cost": 2000,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_fce9fbf3a5",
+    "vendor_name": "Farm\u00e0cia Bonanova",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_7926dcee",
+      "offer_description": "Use 1000 points for a 10\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000
+    }
+  },
+  {
+    "vendor_id": "vendor_3928e16ab1",
+    "vendor_name": "Be One Gran Teatro",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_9a0fd93d",
+      "offer_description": "20% discount on tickets when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_812c481391",
+    "vendor_name": "Bar Nino",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_ffa1598b",
+      "offer_description": "Use 500 points for a 5\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_0855f9c62b",
+    "vendor_name": "Primavera Sound",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_716f8ce5",
+      "offer_description": "20% discount on tickets when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_08460a82ff",
+    "vendor_name": "Bar Urquinaona",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_12a6e5c2",
+      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 10,
+      "points_cost": 1000,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_6b231aabd9",
+    "vendor_name": "Putxet Sport",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_981a9fb6",
+      "offer_description": "Get free drink at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_64b4a418b3",
+    "vendor_name": "Granier",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_9391c265",
+      "offer_description": "Get a free coffee when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_e3b6602930",
+    "vendor_name": "Bar Centro",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_b95d8d9f",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_78a8ab3132",
+    "vendor_name": "Restaurant Asiatic Han",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_6c63cdb5",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_973539baa7",
+    "vendor_name": "Alcampo",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_eda58253",
+      "offer_description": "Use 500 points for a 5\u20ac voucher.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500,
+      "conditions_summary": "Minimum spend 10\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_b3bae513ea",
+    "vendor_name": "Farmacia Bassegoda",
+    "category": "Shopping",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_f8602bb6",
+      "offer_description": "20% discount on your purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 20,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_c366c00896",
+    "vendor_name": "Elements 4 Dance",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_4e153d8c",
+      "offer_description": "Get free popcorn at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_8a707e67e8",
+    "vendor_name": "Mustafa's Gem\u00fcse Kebap",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_1cfa9dfd",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_46f1f053f6",
+    "vendor_name": "Bar Can Tornemi",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_aad5d649",
+      "offer_description": "Use 500 points for a 5\u20ac discount.",
+      "offer_type": "points_for_cash",
+      "offer_value": 5,
+      "points_cost": 500
+    }
+  },
+  {
+    "vendor_id": "vendor_7c07677b19",
+    "vendor_name": "La Salumeria",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_c04717d4",
+      "offer_description": "10% discount on your total purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_e8c85be4a8",
+    "vendor_name": "La Sagrada Familia",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_919d49ce",
+      "offer_description": "15% discount on tickets when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 15,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_18e99f7837",
+    "vendor_name": "My Baggage",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_953191f6",
+      "offer_description": "5\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_ba57f8f9bd",
+    "vendor_name": "Mendrugo",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_c611a73f",
+      "offer_description": "10% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_63adceb696",
+    "vendor_name": "hostelworld.com",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_96c944a1",
+      "offer_description": "3\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 3,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_b8a5a70c34",
+    "vendor_name": "Fundacio Gala - Salvador Dali",
+    "category": "Entertainment",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_2e8232a7",
+      "offer_description": "Get free soda at the cinema/event when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_c7800d29db",
+    "vendor_name": "Ryanair",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_e9762a88",
+      "offer_description": "3\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 3,
+      "points_cost": null
+    }
+  },
+  {
+    "vendor_id": "vendor_3719ec94e2",
+    "vendor_name": "Fazal Chak 3",
+    "category": "Groceries",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_2dac2aea",
+      "offer_description": "10% discount on your total purchase when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Valid on weekdays only."
+    }
+  },
+  {
+    "vendor_id": "vendor_477cdb97a5",
+    "vendor_name": "Catafal Forners",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_5a65c11e",
+      "offer_description": "10% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  },
+  {
+    "vendor_id": "vendor_71f13dd6db",
+    "vendor_name": "Taquer\u00eda Los G\u00fceros",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_0a78814a",
+      "offer_description": "10% discount on your bill when paying with points.",
+      "offer_type": "percentage_discount",
+      "offer_value": 10,
+      "points_cost": null,
+      "conditions_summary": "Minimum spend 20\u20ac."
+    }
+  },
+  {
+    "vendor_id": "vendor_f20427cb7d",
+    "vendor_name": "YellowSquare",
+    "category": "Travel & Transportation",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_bd7611ff",
+      "offer_description": "5\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_type": "fixed_discount",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_114bcc68a3",
+    "vendor_name": "365",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_80588c40",
+      "offer_description": "5\u20ac discount voucher when paying with points.",
+      "offer_type": "fixed_voucher",
+      "offer_value": 5,
+      "points_cost": null,
+      "conditions_summary": "Show Revolut app."
+    }
+  },
+  {
+    "vendor_id": "vendor_da565ec9d7",
+    "vendor_name": "Kiosko Ayala",
+    "category": "Restaurants",
+    "location_hint": "Barcelona",
+    "offer_details": {
+      "offer_id": "offer_0378efdf",
+      "offer_description": "Get a free coffee when paying with points.",
+      "offer_type": "free_item",
+      "offer_value": null,
+      "points_cost": null,
+      "conditions_summary": "Cannot be combined with other offers."
+    }
+  }
+]
