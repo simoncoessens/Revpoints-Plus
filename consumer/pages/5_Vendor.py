@@ -9,7 +9,7 @@ from urllib.parse import quote_plus
 ASSETS_PATH   = Path(__file__).parent.parent / "assets"
 LOGO_FILE     = ASSETS_PATH / "revolut_logo.png"
 PROFILE_FILE  = ASSETS_PATH / "user.png"
-VENDORS_FILE  = "partner_vendors.json"
+VENDORS_FILE  = "final.json"
 
 # ---------- Bottom navigation definition ---------- #
 NAV = [
@@ -18,6 +18,10 @@ NAV = [
     ("Cards",    "💳", "pages/3_Cards.py"),
     ("Settings", "⚙️", "pages/4_Settings.py"),
 ]
+
+# ---------- Fixed width & UI shell constants ---------- #
+FIXED = 600   # px fixed app width
+BAR_HEIGHT = 20  # px for the faux status bar at top and bottom
 
 # ---------- Helper to inline images as <img> tags ---------- #
 def img_tag(path: Path, height: int) -> str:
@@ -30,6 +34,7 @@ def img_tag(path: Path, height: int) -> str:
 # ---------- Load vendor data ---------- #
 with open(VENDORS_FILE, 'r', encoding='utf-8') as f:
     vendors = json.load(f)
+
 # ---------- Get vendor_name from URL query params ---------- #
 names = st.query_params.get_all("vendor_name")  # returns a list
 vendor_name = names[0] if names else None
@@ -46,6 +51,8 @@ if not vendor:
 vendor_description  = vendor.get('vendor_description', '')
 vendor_logo_file    = ASSETS_PATH / f"{vendor['vendor_id']}_logo.png"
 vendor_website      = vendor.get('website', '')
+vendor_page_url     = vendor.get('url', '')
+vendor_image_url    = vendor.get('image_url', '')
 
 # Read transaction data and compute metrics dynamically
 CSV_FILE = Path(__file__).parent.parent.parent / "data/final_data.csv"
@@ -54,9 +61,7 @@ if CSV_FILE.exists():
     vendor_txns = df[df["merchant_name"] == vendor_name]
     total_spent = -vendor_txns["amount"].sum()
     visits = len(vendor_txns)
-    # For recent transactions, show the last 10
     transactions = vendor_txns.sort_values("timestamp", ascending=False).head(10).to_dict("records")
-    # For last purchase
     if not vendor_txns.empty:
         last_row = vendor_txns.sort_values("timestamp", ascending=False).iloc[0]
         last_purchase = {"date": last_row["timestamp"], "amount": last_row["amount"]}
@@ -76,80 +81,81 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# ---------- TOP BLACK BAR ---------- #
-BAR_HEIGHT = 20  # px
-st.markdown(
-    f"<div class='mobile-top' style='height:{BAR_HEIGHT}px'></div>",
-    unsafe_allow_html=True
-)
-
-# ---------- CSS ---------- #
+# ---------- Inject CSS for fixed-width layout and UI shell ---------- #
 st.markdown(
     f"""
-<style>
-#MainMenu, footer, header {{ visibility: hidden; }}
+    <style>
+    #MainMenu, footer, header {{ visibility: hidden; }}
+    html, body, [data-testid=\"stAppViewContainer\"] {{
+        max-width:{FIXED}px;
+        width:{FIXED}px !important;
+        margin:0 auto;
+        overflow-x:hidden;
+    }}
+    .main .block-container {{
+        padding-left:1rem;
+        padding-right:1rem;
+        max-width:{FIXED}px;
+    }}
+    [data-testid=\"stAppViewContainer\"]>.main {{
+        padding-top:{BAR_HEIGHT}px;
+        padding-bottom:4rem;
+    }}
+    .mobile-top {{
+        position:fixed;
+        top:0; left:0; right:0;
+        height:{BAR_HEIGHT}px;
+        background:#1a1d23;
+        border-bottom:1px solid #2e323b;
+        z-index:100;
+    }}
+    .mobile-nav {{
+        position:fixed;
+        bottom:0; left:0; right:0;
+        width:{FIXED}px;
+        margin:0 auto;
+        background:#1a1d23;
+        border-top:1px solid #2e323b;
+        display:flex;
+        justify-content:space-around;
+        padding:.5rem 0;
+        z-index:999;
+    }}
+    .mobile-nav a {{
+        color:#888;
+        text-decoration:none;
+        font-size:.9rem;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }}
+    .mobile-nav a[selected] {{ color:#fff; }}
+    .card {{
+        background: linear-gradient(145deg,#2a2d34,#343741);
+        color: #fff;
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,.3);
+        margin-bottom:1rem;
+    }}
+    .recent-activity {{
+        max-height: 300px;
+        overflow-y: auto;
+        padding-right: .5rem;
+    }}
+    .recent-activity::-webkit-scrollbar {{ width:6px; }}
+    .recent-activity::-webkit-scrollbar-thumb {{
+        background:#343741;
+        border-radius:3px;
+    }}
+    </style>
+    """, unsafe_allow_html=True
+)
 
-[data-testid="stAppViewContainer"] > .main {{
-    max-width: 420px;
-    margin: auto;
-    padding: {BAR_HEIGHT + 16}px 0 4rem;
-    /* leave room at bottom for fixed nav */
-    padding-bottom: 4rem;
-}}
-
-.mobile-top {{
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    background: #1a1d23;
-    border-bottom: 1px solid #2e323b;
-    z-index: 100;
-}}
-
-.card {{
-    background: linear-gradient(145deg,#2a2d34,#343741);
-    color: #fff;
-    border-radius: 1.5rem;
-    padding: 1.5rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,.3);
-    margin-bottom:1rem;
-}}
-
-.recent-activity {{
-    max-height: 300px;
-    overflow-y: auto;
-    padding-right: .5rem;
-}}
-.recent-activity::-webkit-scrollbar {{ width:6px; }}
-.recent-activity::-webkit-scrollbar-thumb {{
-    background:#343741;
-    border-radius:3px;
-}}
-
-/* Fixed Bottom Navigation */
-.mobile-nav {{
-    position: fixed;
-    bottom: 0; left: 0;
-    width: 100%;
-    background: #1a1d23;
-    border-top: 1px solid #2e323b;
-    display: flex;
-    justify-content: space-around;
-    padding: .5rem 0;
-    z-index: 999;
-}}
-.mobile-nav a {{
-    color: #888;
-    text-decoration: none;
-    font-size: .9rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}}
-.mobile-nav a[selected] {{ color: #fff; }}
-</style>
-""",
-    unsafe_allow_html=True,
+# ---------- TOP BLACK BAR ---------- #
+st.markdown(
+    f"<div class='mobile-top' style='height:{BAR_HEIGHT}px;'></div>",
+    unsafe_allow_html=True
 )
 
 # ---------- HEADER (logo + avatar) ---------- #
@@ -167,12 +173,20 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# ---------- Vendor Image ---------- #
+if vendor_image_url:
+    st.markdown(
+        f"<div style='text-align:center; margin-bottom:1.5rem;'>"
+        f"  <img src='{vendor_image_url}' "
+        f"style='max-width:300px; width:100%; height:auto; border-radius:1rem; box-shadow:0 4px 12px rgba(0,0,0,0.15);'/></div>",
+        unsafe_allow_html=True
+    )
+
 # ---------- Main Card (Last Purchase & About) ---------- #
 st.markdown("<div style='margin-bottom:1.5rem'>", unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 with col1:
     st.markdown(
-        f"<h4 style='font-size:1.08rem;font-weight:600;margin-bottom:0.3em'>Last Purchase</h4>"
         f"<p style='font-size:0.98rem;line-height:1.5;color:#222;font-family:sans-serif'><strong>Date:</strong> {pd.to_datetime(last_purchase['date']).strftime('%d %b %Y')}<br>"
         f"<strong>Amount:</strong> € {last_purchase['amount']:,.2f}</p>",
         unsafe_allow_html=True
@@ -183,7 +197,8 @@ with col2:
         f"<h4 style='font-size:1.08rem;font-weight:600;margin-bottom:0.3em'>About</h4>"
         f"<p style='font-size:0.98rem;line-height:1.5;color:#222;font-family:sans-serif;margin-bottom:0.5em'>{vendor_description}</p>"
         + (f"<div style='font-size:0.97rem;line-height:1.7;color:#444;background:#f7f7fa;padding:0.7em 1em;border-radius:0.7em;margin-bottom:0.5em;font-family:sans-serif;font-weight:500'>{about_text}</div>" if about_text else "")
-        + (f"<p><a href='{vendor_website}' target='_blank'>Visit Website</a></p>" if vendor_website else ""),
+        + (f"<p><a href='{vendor_website}' target='_blank'>Visit Website</a></p>" if vendor_website else "")
+        + (f"<p><a href='{vendor_page_url}' target='_blank'>Order Now</a></p>" if vendor_page_url else ""),
         unsafe_allow_html=True
     )
 st.markdown("</div>", unsafe_allow_html=True)
@@ -197,7 +212,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# ---------- Recent Transactions (styled like home.py, but without vendor name) ---------- #
+# ---------- Recent Transactions ---------- #
 st.markdown("#### Recent activity")
 rows_html = ""
 for t in transactions:
@@ -220,6 +235,7 @@ for (label, icon, target), col in zip(NAV, cols):
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------- BOTTOM BLACK BAR ---------- #
+# Matches top bar, spans full viewport width
 st.markdown(
     f"<div class='mobile-top' style='height:{BAR_HEIGHT}px; bottom:-{BAR_HEIGHT}px;'></div>",
     unsafe_allow_html=True
