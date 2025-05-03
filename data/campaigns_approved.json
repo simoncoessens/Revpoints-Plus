@@ -1,0 +1,31 @@
+[
+  {
+    "campaign_id": "b620fdba-1f4f-41fe-b28b-5aa7984d723c",
+    "vendor_name": "H2O Bar",
+    "category": "Restaurants",
+    "campaign_slogan": "H2O Bar: Sip Fresh, Eat Healthy, Feel Great! \u2728",
+    "notification": "\u23f3 Fresh deals at H2O Bar! Use points for \u20ac\u20ac off bowls & juices or grab a free protein boost. Healthy & tasty awaits! Tap now!",
+    "campaign_message": "Fuel your day the healthy way at H2O Bar! \ud83e\udd57 Discover our vibrant Toasts, energizing Bowls, fresh Cold-Pressed Juices & more. Use your points for amazing discounts like \u20ac5 off bowls/toasts or a FREE juice! Taste the freshness! \ud83e\udd51\ud83c\udf53",
+    "promotions": [
+      "Use 30 points for a free Cold-Pressed Juice (like Power or Detox)!",
+      "Use 500 points for \u20ac5 off any delicious Toast or Bowl!",
+      "Use 250 points for a free Protein Ball add-on!"
+    ],
+    "timestamp": "2025-05-04T00:40:18.990368"
+  },
+  {
+    "campaign_id": "441de318-cf3e-4468-b170-a401e055222b",
+    "vendor_name": "Savored Journeys",
+    "category": "Travel and Transportation",
+    "campaign_slogan": "Savored Journeys: Your points unlock Paris adventures! \u2708\ufe0f",
+    "notification": "\ud83d\uddfcDreaming of Paris? Use points for HUGE savings on your trip with Savored Journeys! \u23f3 Spend 2000 points for \u20ac20 off tours. Tap for deals!",
+    "campaign_message": "Bonjour! \u2728 Plan your dream Paris getaway with Savored Journeys! \ud83e\udd50 Explore iconic sights like the Eiffel Tower & Louvre, indulge in delicious food, and cruise the Seine. Use your points for amazing discounts on tours and experiences recommended by Savored Journeys. Start planning your adventure today! \ud83c\uddeb\ud83c\uddf7",
+    "promotions": [
+      "Use 2000 points for a \u20ac20 discount on booking a Paris walking tour through Savored Journeys.",
+      "Use 1500 points for 10% off a recommended Paris hotel booking via Savored Journeys.",
+      "Use 1000 points for a free Paris Metro guide download from Savored Journeys.",
+      "Use 3000 points for a \u20ac30 voucher towards a Champagne side trip booked via Savored Journeys."
+    ],
+    "timestamp": "2025-05-04T00:44:17.011260"
+  }
+]
