@@ -6,16 +6,17 @@
     "location_hint": "Barcelona",
     "offer_details": {
       "offer_id": "offer_1e0d2dee",
-      "offer_description": "3\u20ac discount on your next ride/ticket when paying with points.",
+      "offer_description": "3€ discount on your next ride/ticket when paying with points.",
       "offer_type": "fixed_discount",
       "offer_value": 3,
       "points_cost": null,
-      "conditions_summary": "Minimum spend 20\u20ac."
-    }
+      "conditions_summary": "Minimum spend 20€."
+    },
+    "About": "FlixBus is a leading European intercity bus company offering affordable and comfortable travel across Europe."
   },
   {
     "vendor_id": "vendor_a97e5aaf9a",
-    "vendor_name": "Carrer de Sor Eul\u00e0lia d'Anzizu",
+    "vendor_name": "Carrer de Sor Eulàlia d'Anzizu",
     "category": "Restaurants",
     "location_hint": "Barcelona",
     "offer_details": {
@@ -24,7 +25,8 @@
       "offer_type": "free_item",
       "offer_value": null,
       "points_cost": null
-    }
+    },
+    "About": ""
   },
   {
     "vendor_id": "vendor_4ecf4f7594",
@@ -33,12 +35,13 @@
     "location_hint": "Barcelona",
     "offer_details": {
       "offer_id": "offer_cebda967",
-      "offer_description": "Use 2000 points for a 20\u20ac voucher.",
+      "offer_description": "Use 2000 points for a 20€ voucher.",
       "offer_type": "points_for_cash",
       "offer_value": 20,
       "points_cost": 2000,
-      "conditions_summary": "Minimum spend 10\u20ac."
-    }
+      "conditions_summary": "Minimum spend 10€."
+    },
+    "About": "Mercadona is one of Spain's largest supermarket chains, known for its wide range of groceries and household products."
   },
   {
     "vendor_id": "vendor_6a33501ff1",
@@ -47,7 +50,7 @@
     "location_hint": "Barcelona",
     "offer_details": {
       "offer_id": "offer_79085a81",
-      "offer_description": "Use 1000 points for a 10\u20ac discount.",
+      "offer_description": "Use 1000 points for a 10€ discount.",
       "offer_type": "points_for_cash",
       "offer_value": 10,
       "points_cost": 1000,
@@ -121,7 +124,8 @@
       "offer_value": null,
       "points_cost": null,
       "conditions_summary": "Show Revolut app."
-    }
+    },
+    "About": "Uber Eats is a global food delivery service that partners with restaurants to bring meals to your door."
   },
   {
     "vendor_id": "vendor_9d40af8a31",
@@ -258,7 +262,8 @@
       "offer_value": 10,
       "points_cost": 1000,
       "conditions_summary": "Show Revolut app."
-    }
+    },
+    "About": "Uber is a global ride-hailing service connecting riders with drivers via a mobile app."
   },
   {
     "vendor_id": "vendor_6c44a4faff",
@@ -367,7 +372,8 @@
       "offer_type": "points_for_cash",
       "offer_value": 10,
       "points_cost": 1000
-    }
+    },
+    "About": "Decathlon is a leading international sporting goods retailer, known for affordable sports equipment and apparel."
   },
   {
     "vendor_id": "vendor_c1569bbb89",
@@ -437,7 +443,8 @@
       "offer_value": 5,
       "points_cost": 500,
       "conditions_summary": "Minimum spend 20\u20ac."
-    }
+    },
+    "About": "McDonald's is the world's largest fast food restaurant chain, famous for its burgers and fries."
   },
   {
     "vendor_id": "vendor_c8121fefc3",
@@ -505,7 +512,8 @@
       "offer_value": 20,
       "points_cost": null,
       "conditions_summary": "Show Revolut app."
-    }
+    },
+    "About": "Amazon is a global e-commerce and technology company, offering a wide range of products and services online."
   },
   {
     "vendor_id": "vendor_1e33b24042",
@@ -574,7 +582,8 @@
       "offer_value": null,
       "points_cost": null,
       "conditions_summary": "Minimum spend 15\u20ac."
-    }
+    },
+    "About": "KFC (Kentucky Fried Chicken) is a world-famous fast food restaurant chain specializing in fried chicken."
   },
   {
     "vendor_id": "vendor_b27a21ec8c",
@@ -616,7 +625,8 @@
       "offer_value": 30,
       "points_cost": 3000,
       "conditions_summary": "Show Revolut app."
-    }
+    },
+    "About": "Primark is a major fashion retailer offering clothing, accessories, and home goods at low prices."
   },
   {
     "vendor_id": "vendor_7ca10e15ad",
@@ -2054,7 +2064,8 @@
       "offer_value": 5,
       "points_cost": 500,
       "conditions_summary": "Cannot be combined with other offers."
-    }
+    },
+    "About": "Five Guys is an American fast casual restaurant chain focused on hamburgers, hot dogs, and fries."
   },
   {
     "vendor_id": "vendor_3a2a6bf982",
@@ -2178,7 +2189,8 @@
       "offer_value": 5,
       "points_cost": null,
       "conditions_summary": "Minimum spend 15\u20ac."
-    }
+    },
+    "About": "Airbnb is an online marketplace for lodging, primarily homestays for vacation rentals and tourism activities."
   },
   {
     "vendor_id": "vendor_63d92baf11",
@@ -2399,7 +2411,8 @@
       "offer_value": 10,
       "points_cost": 1000,
       "conditions_summary": "Minimum spend 20\u20ac."
-    }
+    },
+    "About": "Domino's Pizza is a global pizza delivery and carryout chain, known for its wide variety of pizzas."
   },
   {
     "vendor_id": "vendor_791b4663ac",
@@ -2838,7 +2851,8 @@
       "offer_type": "fixed_discount",
       "offer_value": 3,
       "points_cost": null
-    }
+    },
+    "About": "Ryanair is a leading low-cost airline in Europe, offering affordable flights to many destinations."
   },
   {
     "vendor_id": "vendor_3719ec94e2",

@@ -6,17 +6,17 @@ import base64
 from urllib.parse import quote_plus
 
 # -------- Paths to local assets -------- #
-ASSETS_PATH   = Path(__file__).parent / "assets"
+ASSETS_PATH   = Path(__file__).parent.parent / "assets"
 LOGO_FILE     = ASSETS_PATH / "revolut_logo.png"
 PROFILE_FILE  = ASSETS_PATH / "user.png"
-VENDORS_FILE  = "vendors.json"
+VENDORS_FILE  = "partner_vendors.json"
 
 # ---------- Bottom navigation definition ---------- #
 NAV = [
-    ("Home",     "🏠", Path(__file__).parent.parent / "home.py"),
-    ("Explore",  "🔍", Path(__file__)),
-    ("Cards",    "💳", Path(__file__).parent.parent / "pages/3_Cards.py"),
-    ("Settings", "⚙️", Path(__file__).parent.parent / "pages/4_Settings.py"),
+    ("Home",     "🏠", "home.py"),
+    ("Explore",  "🔍", "pages/2_Explore.py"),
+    ("Cards",    "💳", "pages/3_Cards.py"),
+    ("Settings", "⚙️", "pages/4_Settings.py"),
 ]
 
 # ---------- Helper to inline images as <img> tags ---------- #
@@ -30,7 +30,6 @@ def img_tag(path: Path, height: int) -> str:
 # ---------- Load vendor data ---------- #
 with open(VENDORS_FILE, 'r', encoding='utf-8') as f:
     vendors = json.load(f)
-
 # ---------- Get vendor_name from URL query params ---------- #
 names = st.query_params.get_all("vendor_name")  # returns a list
 vendor_name = names[0] if names else None
@@ -47,9 +46,27 @@ if not vendor:
 vendor_description  = vendor.get('vendor_description', '')
 vendor_logo_file    = ASSETS_PATH / f"{vendor['vendor_id']}_logo.png"
 vendor_website      = vendor.get('website', '')
-last_purchase       = vendor.get('last_purchase', {'date': pd.Timestamp.now(), 'amount': 0})
-metrics             = vendor.get('metrics', {'total_spent': 0, 'visits': 0})
-transactions        = vendor.get('recent_transactions', [])
+
+# Read transaction data and compute metrics dynamically
+CSV_FILE = Path(__file__).parent.parent.parent / "data/final_data.csv"
+if CSV_FILE.exists():
+    df = pd.read_csv(CSV_FILE, parse_dates=["timestamp"])
+    vendor_txns = df[df["merchant_name"] == vendor_name]
+    total_spent = -vendor_txns["amount"].sum()
+    visits = len(vendor_txns)
+    # For recent transactions, show the last 10
+    transactions = vendor_txns.sort_values("timestamp", ascending=False).head(10).to_dict("records")
+    # For last purchase
+    if not vendor_txns.empty:
+        last_row = vendor_txns.sort_values("timestamp", ascending=False).iloc[0]
+        last_purchase = {"date": last_row["timestamp"], "amount": last_row["amount"]}
+    else:
+        last_purchase = {"date": pd.Timestamp.now(), "amount": 0}
+else:
+    total_spent = 0
+    visits = 0
+    transactions = []
+    last_purchase = {"date": pd.Timestamp.now(), "amount": 0}
 
 # ---------- Page config ---------- #
 st.set_page_config(
@@ -142,27 +159,30 @@ with header_l:
 with header_r:
     st.markdown(img_tag(PROFILE_FILE, 30), unsafe_allow_html=True)
 
-# ---------- Vendor Header ---------- #
+# ---------- Vendor Header (logo + name) ---------- #
 st.markdown(
-    f"<div style='display:flex; align-items:center; gap:1rem;'>"
+    f"<div style='display:flex; align-items:center; gap:1rem; justify-content:center; margin-bottom:1.2rem;'>"
     + img_tag(vendor_logo_file, 60)
-    + f"<h1>{vendor_name}</h1></div>",
+    + f"<span style='margin:0;font-size:2.1rem;font-weight:800;letter-spacing:-1px;font-family:sans-serif'>{vendor_name}</span></div>",
     unsafe_allow_html=True
 )
 
 # ---------- Main Card (Last Purchase & About) ---------- #
-st.markdown("<div class='card page-card'>", unsafe_allow_html=True)
+st.markdown("<div style='margin-bottom:1.5rem'>", unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 with col1:
     st.markdown(
-        f"<h3>Last Purchase</h3>"
-        f"<p><strong>Date:</strong> {pd.to_datetime(last_purchase['date']).strftime('%d %b %Y')}<br>"
+        f"<h4 style='font-size:1.08rem;font-weight:600;margin-bottom:0.3em'>Last Purchase</h4>"
+        f"<p style='font-size:0.98rem;line-height:1.5;color:#222;font-family:sans-serif'><strong>Date:</strong> {pd.to_datetime(last_purchase['date']).strftime('%d %b %Y')}<br>"
         f"<strong>Amount:</strong> € {last_purchase['amount']:,.2f}</p>",
         unsafe_allow_html=True
     )
 with col2:
+    about_text = vendor.get('About', '')
     st.markdown(
-        f"<h3>About</h3><p>{vendor_description}</p>"
+        f"<h4 style='font-size:1.08rem;font-weight:600;margin-bottom:0.3em'>About</h4>"
+        f"<p style='font-size:0.98rem;line-height:1.5;color:#222;font-family:sans-serif;margin-bottom:0.5em'>{vendor_description}</p>"
+        + (f"<div style='font-size:0.97rem;line-height:1.7;color:#444;background:#f7f7fa;padding:0.7em 1em;border-radius:0.7em;margin-bottom:0.5em;font-family:sans-serif;font-weight:500'>{about_text}</div>" if about_text else "")
         + (f"<p><a href='{vendor_website}' target='_blank'>Visit Website</a></p>" if vendor_website else ""),
         unsafe_allow_html=True
     )
@@ -171,22 +191,23 @@ st.markdown("</div>", unsafe_allow_html=True)
 # ---------- Metrics ---------- #
 st.markdown(
     f"<div class='metrics-container' style='display:flex; gap:1rem;'>"
-    f"<div class='metric'><h2>€ {metrics['total_spent']:,.2f}</h2><p>Total Spent</p></div>"
-    f"<div class='metric'><h2>{metrics['visits']}</h2><p>Visits</p></div>"
+    f"<div class='metric'><h5 style='font-size:1.05rem;font-weight:600;margin-bottom:0.2em'>€ {total_spent:,.2f}</h5><p style='font-size:0.92rem'>Total Spent</p></div>"
+    f"<div class='metric'><h5 style='font-size:1.05rem;font-weight:600;margin-bottom:0.2em'>{visits}</h5><p style='font-size:0.92rem'>Visits</p></div>"
     f"</div>",
     unsafe_allow_html=True
 )
 
-# ---------- Recent Transactions ---------- #
-st.markdown("#### Recent Transactions")
+# ---------- Recent Transactions (styled like home.py, but without vendor name) ---------- #
+st.markdown("#### Recent activity")
 rows_html = ""
 for t in transactions:
-    date = pd.to_datetime(t['date']).strftime('%d %b %Y')
-    amt = t['amount']
-    color = "#0f0" if amt > 0 else "#ff5b5b"
+    date_fmt = pd.to_datetime(t['timestamp']).strftime("%d %b %Y")
+    color = "#0f0" if t["amount"] > 0 else "#ff5b5b"
     rows_html += (
-        f"<div style='display:flex;justify-content:space-between;padding:4px 0;'>"
-        f"<strong>{date}</strong><span style='color:{color}'>€ {amt:,.2f}</span></div>"
+        f"  <div style='display:flex;justify-content:space-between;align-items:center;padding:8px 0;'>"
+        f"    <span style='font-size:0.95rem;color:#888'>{date_fmt}</span>"
+        f"    <span style='font-size:1.15rem;font-weight:600;color:{color};'>€ {t['amount']:,.2f}</span>"
+        f"  </div>"
     )
 st.markdown(f"<div class='recent-activity'>{rows_html}</div>", unsafe_allow_html=True)
 

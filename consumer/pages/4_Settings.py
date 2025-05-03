@@ -55,12 +55,6 @@ st.markdown(
     background: #1a1d23; border-bottom: 1px solid #2e323b; z-index: 100;
 }}
 
-.card {{
-    background: linear-gradient(145deg,#2a2d34,#343741); color: #fff;
-    border-radius: 1.5rem; padding: 1.5rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,.3); margin-bottom:1rem;
-}}
-
 .recent-activity {{max-height: 300px; overflow-y: auto; padding-right: .5rem;}}
 .recent-activity::-webkit-scrollbar {{width:6px;}}
 .recent-activity::-webkit-scrollbar-thumb {{background:#343741; border-radius:3px;}}
@@ -79,7 +73,7 @@ st.markdown(
 
 # ---------- BOTTOM NAVIGATION ---------- #
 NAV = [
-    ("Home",    "🏠", Path(__file__).parent.parent / "streamlit_test.py"),
+    ("Home",    "🏠", Path(__file__).parent.parent / "home.py"),
     ("Explore", "🔍",  Path(__file__)),
     ("Cards",   "💳", Path(__file__).parent.parent / "pages/3_Cards.py"),
     ("Settings","⚙️", Path(__file__).parent.parent / "pages/4_Settings.py"),

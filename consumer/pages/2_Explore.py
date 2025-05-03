@@ -74,12 +74,14 @@ st.markdown(
     .offer {{
         flex: 0 0 auto;
         position: relative;
-        background: #2a2d34;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 2px 8px rgba(0,0,0,.10);
         border-radius: 1rem;
         width: 250px;
-        color: #fff;
+        color: #222;
         text-decoration: none;
-        box-shadow: 0 4px 10px rgba(0,0,0,.35);
+        margin-bottom: 0.2rem;
     }}
     .offer img {{
         width: 100%;
@@ -88,7 +90,9 @@ st.markdown(
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
     }}
-    .offer .body {{ padding: .6rem .8rem; }}
+    .offer .body {{ padding: .7rem 1rem; }}
+    .offer .body div[style*='font-weight:700'] {{ color: #222; }}
+    .offer .body div[style*='font-size:.8rem'] {{ color: #666; }}
     .badge {{
         position: absolute;
         top: 8px; left: 8px;
@@ -97,6 +101,8 @@ st.markdown(
         border-radius: 6px;
         font-size: .7rem;
         font-weight: 600;
+        color: #fff;
+        box-shadow: 0 1px 4px rgba(0,0,0,.10);
     }}
 
     /* Bottom navigation */
@@ -155,40 +161,40 @@ recommendations = [
 
 # ---------- Redeem offers ----------
 st.markdown("### Redeem your points")
-st.markdown("<div class='h-scroll'>", unsafe_allow_html=True)
+offers_html = ""
 for o in offers:
-    st.markdown(
-        f"""
-        <a class='offer' href='#'>
-            <span class='badge'>{o['badge']}</span>
-            <img src='{o['img']}' alt='offer'>
-            <div class='body'>
-                <div style='font-weight:700;margin:.1rem 0'>{o['vendor']}</div>
-                <div style='font-size:.8rem;color:#ccc'>{o['subtitle']}</div>
-            </div>
-        </a>
-        """,
-        unsafe_allow_html=True,
-    )
-st.markdown("</div>", unsafe_allow_html=True)
+    offers_html += f'''<a class='offer' href='#' style='display:inline-block;vertical-align:top;'>
+        <span class='badge'>{o['badge']}</span>
+        <img src='{o['img']}' alt='offer'>
+        <div class='body'>
+            <div style='font-weight:700;margin:.1rem 0'>{o['vendor']}</div>
+            <div style='font-size:.8rem;color:#ccc'>{o['subtitle']}</div>
+        </div>
+    </a>'''
+st.markdown((
+    f"<div class='h-scroll' style='overflow-x:auto;white-space:nowrap;padding-bottom:0.4rem;'>"
+    f"<div style='display:flex;gap:0.9rem;'>"
+    f"{offers_html}"
+    f"</div></div>"
+).strip(), unsafe_allow_html=True)
 
 # ---------- Tailored picks ----------
 st.markdown("### Tailored to your taste")
-st.markdown("<div class='h-scroll'>", unsafe_allow_html=True)
+recs_html = ""
 for r in recommendations:
-    st.markdown(
-        f"""
-        <a class='offer' href='#'>
-            <span class='badge'>{r['subtitle']}</span>
-            <img src='{r['img']}' alt='rec'>
-            <div class='body'>
-                <div style='font-weight:700;margin:.1rem 0'>{r['vendor']}</div>
-            </div>
-        </a>
-        """,
-        unsafe_allow_html=True,
-    )
-st.markdown("</div>", unsafe_allow_html=True)
+    recs_html += f'''<a class='offer' href='#' style='display:inline-block;vertical-align:top;'>
+        <span class='badge'>{r['subtitle']}</span>
+        <img src='{r['img']}' alt='rec'>
+        <div class='body'>
+            <div style='font-weight:700;margin:.1rem 0'>{r['vendor']}</div>
+        </div>
+    </a>'''
+st.markdown((
+    f"<div class='h-scroll' style='overflow-x:auto;white-space:nowrap;padding-bottom:0.4rem;'>"
+    f"<div style='display:flex;gap:0.9rem;'>"
+    f"{recs_html}"
+    f"</div></div>"
+).strip(), unsafe_allow_html=True)
 
 # ---------- Bottom navigation ----------
 NAV = [

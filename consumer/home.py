@@ -29,6 +29,28 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
+# ---------- CSS: FIXED‑WIDTH APP (600 px) & UI SHELL ---------- #
+FIXED = 600  # px
+BAR_HEIGHT = 20  # px for the faux status bar
+st.markdown(
+    f"""
+    <style>
+    #MainMenu, footer {{visibility:hidden;}}
+    html, body, [data-testid=\"stAppViewContainer\"] {{
+        max-width:{FIXED}px;width:{FIXED}px !important;margin:0 auto;overflow-x:hidden;
+    }}
+    .main .block-container {{padding-left:1rem;padding-right:1rem;max-width:{FIXED}px;}}
+    [data-testid=\"stAppViewContainer\"]>.main {{padding-top:{BAR_HEIGHT}px;padding-bottom:4rem;}}
+    .mobile-top {{position:fixed;top:0;left:0;right:0;height:{BAR_HEIGHT}px;background:#1a1d23;border-bottom:1px solid #2e323b;z-index:100;}}
+    .mobile-nav {{position:fixed;bottom:0;left:0;right:0;width:{FIXED}px;margin:0 auto;background:#1a1d23;border-top:1px solid #2e323b;display:flex;justify-content:space-around;padding:.5rem 0;z-index:999;}}
+    .mobile-nav a {{color:#888;text-decoration:none;font-size:.9rem;display:flex;flex-direction:column;align-items:center;}}
+    .mobile-nav a[selected]{{color:#fff;}}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
 # ---------- TOP BLACK BAR ---------- #
 BAR_HEIGHT = 20  # px
 st.markdown(f"<div class='mobile-top' style='height:{BAR_HEIGHT}px'></div>", unsafe_allow_html=True)
@@ -111,14 +133,12 @@ st.markdown(
 )
 
 # ---------- MAIN CARD ---------- #
-st.markdown("<div class='card'>", unsafe_allow_html=True)
-if CARD_FILE.exists():
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        st.image(str(CARD_FILE), width=260)
-st.markdown("</div>", unsafe_allow_html=True)
-
-st.markdown(f"<h1 style='text-align:center'>€ {st.session_state.balance:,.2f}</h1>", unsafe_allow_html=True)
+st.markdown(f"""
+<div style='display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem;'>
+    <img src='data:image/png;base64,{base64.b64encode(CARD_FILE.read_bytes()).decode()}' width='90' style='display:block;'>
+    <span style='font-size:2.2rem;font-weight:700;'>12,345 Points</span>
+</div>
+""", unsafe_allow_html=True)
 
 # ---------- RECENT ACTIVITY ---------- #
 st.markdown("#### Recent activity")
