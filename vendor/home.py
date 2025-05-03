@@ -1,169 +1,194 @@
 import streamlit as st
 import pandas as pd
-from urllib.parse import quote_plus
+import numpy as np
 from pathlib import Path
 import base64
+import plotly.express as px
+import altair as alt
+from datetime import datetime
 
-# -------- Paths to local assets -------- #
-ASSETS_PATH = Path(__file__).parent / "assets"
-CARD_FILE = ASSETS_PATH / "card.png"
-LOGO_FILE = ASSETS_PATH / "revolut_logo.png"
-PROFILE_FILE = ASSETS_PATH / "user.png"
-CSV_FILE = Path(__file__).parent / "transactions.csv"
+# ---------- Paths to local assets ---------- #
+BASE_DIR      = Path(__file__).parent
+SALES_FILE    = BASE_DIR / "sales.csv"
+ASSETS_PATH   = BASE_DIR / "assets"
+VENDOR_LOGO   = ASSETS_PATH / "vendor_logo.png"
+REVOLUT_LOGO  = ASSETS_PATH / "revolut_logo.png"
+PROFILE_PIC   = ASSETS_PATH / "user.png"
+
+# ---------- Bottom navigation definition ---------- #
+NAV = [
+    ("Home",     "🏠", BASE_DIR / "home.py"),
+    ("Agent",  "🔍", BASE_DIR / "pages" / "2_agent.py"),
+    ("Cards",    "💳", BASE_DIR / "pages" / "3_Cards.py"),
+    ("Settings", "⚙️", BASE_DIR / "pages" / "4_Settings.py"),
+]
 
 # ---------- Helper to inline images as <img> tags ---------- #
 
 def img_tag(path: Path, height: int) -> str:
+    """Return an inline <img> tag for the given image file (base64‑encoded)."""
     if not path.exists():
         return ""
     mime = "image/png" if path.suffix.lower() == ".png" else "image/jpeg"
     data = base64.b64encode(path.read_bytes()).decode()
-    return f'<img src="data:{mime};base64,{data}" height="{height}">'  # noqa: E501
+    return f'<img src="data:{mime};base64,{data}" height="{height}">'  
 
 # ---------- Page config ---------- #
-
 st.set_page_config(
-    page_title="Revolut Lite",
-    page_icon="💳",
+    page_title="Starbucks Dashboard",
+    page_icon="☕",
     layout="wide",
-    initial_sidebar_state="collapsed",
 )
 
-# ---------- TOP BLACK BAR ---------- #
-BAR_HEIGHT = 20  # px
-st.markdown(f"<div class='mobile-top' style='height:{BAR_HEIGHT}px'></div>", unsafe_allow_html=True)
-
-# ---------- HEADER (logo + avatar) ---------- #
-header_l, _, header_r = st.columns([1, 6, 1])
-with header_l:
-    st.markdown(img_tag(LOGO_FILE, 28), unsafe_allow_html=True)
-with header_r:
-    st.markdown(img_tag(PROFILE_FILE, 30), unsafe_allow_html=True)
-
-# ---------- Session state ---------- #
-if "balance" not in st.session_state:
-    st.session_state.balance = 1824.57
-
-if "transactions" not in st.session_state:
-    if CSV_FILE.exists():
-        # Read transactions from CSV
-        df = pd.read_csv(
-            CSV_FILE,
-            parse_dates=["timestamp"]
-        )
-        # Rename and format date
-        df = df.rename(
-            columns={
-                "timestamp": "date",
-                "merchant_name": "name",
-            }
-        )
-        df["date_str"] = df["date"].dt.strftime("%Y-%m-%d")
-        # Select relevant columns
-        st.session_state.transactions = df[["date_str", "name", "amount"]].rename(
-            columns={"date_str": "date"}
-        )
-    else:
-        # Fallback seed data
-        seed = [
-            {"date": "2025-05-02", "name": "Amazon", "amount": -42.35},
-            {"date": "2025-05-01", "name": "Apple Pay", "amount": -7.99},
-            {"date": "2025-04-29", "name": "Salary", "amount": 2400.00},
-        ]
-        st.session_state.transactions = pd.DataFrame(seed * 6)
-
-# ---------- CSS ---------- #
-
+# Inject a mobile viewport meta tag so that mobile devices keep 100% zoom
 st.markdown(
-    f"""
-<style>
-#MainMenu, footer, header {{visibility: hidden;}}
-
-[data-testid="stAppViewContainer"] > .main {{
-    max-width: 420px; margin: auto; padding: {BAR_HEIGHT + 16}px 0 4rem;
-}}
-
-.mobile-top {{
-    position: fixed; top: 0; left: 0; width: 100%;
-    background: #1a1d23; border-bottom: 1px solid #2e323b; z-index: 100;
-}}
-
-.card {{
-    background: linear-gradient(145deg,#2a2d34,#343741); color: #fff;
-    border-radius: 1.5rem; padding: 1.5rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,.3); margin-bottom:1rem;
-}}
-
-.recent-activity {{max-height: 300px; overflow-y: auto; padding-right: .5rem;}}
-.recent-activity::-webkit-scrollbar {{width:6px;}}
-.recent-activity::-webkit-scrollbar-thumb {{background:#343741; border-radius:3px;}}
-
-.mobile-nav {{
-    position: fixed; bottom: 0; left: 0; width: 100%; background: #1a1d23;
-    border-top: 1px solid #2e323b; display: flex; justify-content: space-around;
-    padding: .5rem 0; z-index: 100;
-}}
-.mobile-nav a {{color: #888; text-decoration: none; font-size: .9rem; display: flex; flex-direction: column; align-items: center;}}
-.mobile-nav a[selected] {{color: #fff;}}
-</style>
-""",
+    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
     unsafe_allow_html=True,
 )
 
-# ---------- MAIN CARD ---------- #
-st.markdown("<div class='card'>", unsafe_allow_html=True)
-if CARD_FILE.exists():
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        st.image(str(CARD_FILE), width=260)
-st.markdown("</div>", unsafe_allow_html=True)
+# ---------- CSS: FIXED‑WIDTH APP (600 px) & UI SHELL ---------- #
+FIXED = 600  # px
+BAR_HEIGHT = 20  # px for the faux status bar
+st.markdown(
+    f"""
+    <style>
+    #MainMenu, footer {{visibility:hidden;}}
+    html, body, [data-testid=\"stAppViewContainer\"] {{
+        max-width:{FIXED}px;width:{FIXED}px !important;margin:0 auto;overflow-x:hidden;
+    }}
+    .main .block-container {{padding-left:1rem;padding-right:1rem;max-width:{FIXED}px;}}
+    [data-testid=\"stAppViewContainer\"]>.main {{padding-top:{BAR_HEIGHT}px;padding-bottom:4rem;}}
+    .mobile-top {{position:fixed;top:0;left:0;right:0;height:{BAR_HEIGHT}px;background:#1a1d23;border-bottom:1px solid #2e323b;z-index:100;}}
+    .mobile-nav {{position:fixed;bottom:0;left:0;right:0;width:{FIXED}px;margin:0 auto;background:#1a1d23;border-top:1px solid #2e323b;display:flex;justify-content:space-around;padding:.5rem 0;z-index:999;}}
+    .mobile-nav a {{color:#888;text-decoration:none;font-size:.9rem;display:flex;flex-direction:column;align-items:center;}}
+    .mobile-nav a[selected]{{color:#fff;}}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
-st.markdown(f"<h1 style='text-align:center'>€ {st.session_state.balance:,.2f}</h1>", unsafe_allow_html=True)
+# ---------- TOP BLACK BAR ---------- #
+st.markdown("<div class='mobile-top'></div>", unsafe_allow_html=True)
 
-# ---------- RECENT ACTIVITY ---------- #
-st.markdown("#### Recent activity")
-rows_html = ""
-for _, row in (
-    st.session_state.transactions.assign(
-        date_fmt=lambda d: pd.to_datetime(d.date).dt.strftime("%d %b %Y")
-    )
-).iterrows():
-    color = "#0f0" if row["amount"] > 0 else "#ff5b5b"
-    query = (
-        f"vendor_name={quote_plus(row['name'])}"
-        f"&amount={row['amount']}"
-        f"&date={row['date']}"
-    )
-    href = f"/Vendor?{query}"
-    rows_html += (
-        f"<a href='{href}' target='_self' style='text-decoration:none;color:inherit;'>"
-        f"  <div style='display:flex;justify-content:space-between;padding:4px 0;'>"
-        f"    <div><strong>{row['name']}</strong><br>"
-        f"      <span style='font-size:0.8rem;color:#888'>{row['date_fmt']}</span>"
-        f"    </div>"
-        f"    <div style='text-align:right;color:{color};'>€ {row['amount']:,.2f}</div>"
-        f"  </div>"
-        f"</a>"
-    )
+# ---------- HEADER ---------- #
+header_l, header_mid, header_r = st.columns([1, 6, 1])
+with header_l:
+    st.markdown(img_tag(REVOLUT_LOGO, 28), unsafe_allow_html=True)
+with header_mid:
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align:center'>Starbucks Dashboard</h1>", unsafe_allow_html=True)
+with header_r:
+    st.markdown(img_tag(PROFILE_PIC, 30), unsafe_allow_html=True)
 
+# ---------- Load and (optionally) simulate sales data ---------- #
 
-st.markdown(f"<div class='recent-activity'>{rows_html}</div>", unsafe_allow_html=True)
+def load_data() -> pd.DataFrame:
+    if SALES_FILE.exists():
+        df = pd.read_csv(SALES_FILE, parse_dates=["date"])
+    else:
+        rng = pd.date_range(end=datetime.now(), periods=365*4, freq="6H")
+        n  = len(rng)
+        df = pd.DataFrame({
+            "date": rng,
+            "amount": np.random.gamma(shape=3, scale=4, size=n).round(2),
+            "vendor_name": "Starbucks",
+            "product_category": np.random.choice(["Drink", "Food", "Merch"], size=n, p=[.7,.25,.05]),
+            "payment_method": np.random.choice(["Card", "Cash", "App"], size=n, p=[.6,.2,.2]),
+        })
+    return df
 
-# ---------- BOTTOM NAVIGATION ---------- #
-NAV = [
-    ("Home", "🏠", Path(__file__)),
-    ("Explore", "🔍", Path(__file__).parent / "pages/2_Explore.py"),
-    ("Cards", "💳", Path(__file__).parent / "pages/3_Cards.py"),
-    ("Settings", "⚙️", Path(__file__).parent / "pages/4_Settings.py"),
-]
+raw_df = load_data()
 
+# -------- Filter vendor -------- #
+vendor = "Starbucks"
+df = raw_df[raw_df["vendor_name"] == vendor].copy()
+
+if df.empty:
+    st.warning(f"No sales found for vendor '{vendor}'")
+    st.stop()
+
+# Ensure expected columns exist even if missing in real CSV
+for col, default in {"product_category": "Unknown", "payment_method": "Unknown"}.items():
+    if col not in df.columns:
+        df[col] = default
+
+# ---------- SUMMARY METRICS ---------- #
+
+total_sales = df["amount"].sum()
+order_count = len(df)
+avg_order   = df["amount"].mean()
+
+c1, c2, c3 = st.columns(3)
+c1.metric("Total Sales",      f"€ {total_sales:,.2f}")
+c2.metric("Number of Orders", f"{order_count}")
+c3.metric("Avg. Order Value", f"€ {avg_order:,.2f}")
+
+st.divider()
+
+# ---------- SALES OVER TIME ---------- #
+st.subheader("📈 Sales Over Time")
+daily = df.groupby(df["date"].dt.date)["amount"].sum().reset_index()
+line_fig = px.line(daily, x="date", y="amount", title="Daily Total Sales", markers=True)
+st.plotly_chart(line_fig, use_container_width=True)
+
+# ---------- DEEPER INSIGHTS ---------- #
+st.subheader("✨ Deeper Insights")
+
+# ---- 1. Sales by Weekday ---- #
+wday_totals = df.groupby(df["date"].dt.day_name())["amount"].sum().reindex(
+    ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+).reset_index(name="total")
+col1, col2 = st.columns(2)
+with col1:
+    bar_fig = px.bar(wday_totals, x="date", y="total", title="Sales by Weekday")
+    st.plotly_chart(bar_fig, use_container_width=True)
+
+# ---- 2. Sales by Hour Heatmap ---- #
+df["hour"] = df["date"].dt.hour
+df["weekday"] = df["date"].dt.day_name()
+heat = df.pivot_table(index="weekday", columns="hour", values="amount", aggfunc="sum").fillna(0)
+heat = heat.reindex(index=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"])
+heat_df = heat.reset_index().melt(id_vars="weekday", var_name="hour", value_name="amount")
+with col2:
+    heat_chart = alt.Chart(heat_df).mark_rect().encode(
+        x=alt.X('hour:O', title='Hour of Day'),
+        y=alt.Y('weekday:O', sort=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]),
+        color=alt.Color('amount:Q', scale=alt.Scale(scheme='greens'), legend=None),
+        tooltip=['weekday','hour','amount']
+    ).properties(title="Heatmap: Sales Intensity")
+    st.altair_chart(heat_chart, use_container_width=True)
+
+# ---- 3. Product Category Split ---- #
+st.subheader("🛍️ Product Mix")
+cat_totals = df.groupby("product_category")["amount"].sum().reset_index(name="total")
+cat_pie = px.pie(cat_totals, names="product_category", values="total", hole=.4, title="Sales by Product Category")
+st.plotly_chart(cat_pie, use_container_width=True)
+
+# ---- 4. Cumulative Sales ---- #
+st.subheader("🔮 Cumulative Performance")
+cum_df = df.sort_values("date").assign(cum=lambda d: d["amount"].cumsum())
+cum_fig = px.area(cum_df, x="date", y="cum", title="Cumulative Sales to Date")
+st.plotly_chart(cum_fig, use_container_width=True)
+
+# ---------- RECENT TRANSACTIONS ---------- #
+st.subheader("🧾 Recent Transactions")
+
+st.table(
+    df.sort_values("date", ascending=False).head(10).reset_index(drop=True)
+)
+
+# ---------- CSV DOWNLOAD LINK ---------- #
+csv_data = df.to_csv(index=False)
+b64 = base64.b64encode(csv_data.encode()).decode()
+href = (
+    f'<a href="data:file/csv;base64,{b64}" download="{vendor}_sales.csv">Download Starbucks Sales CSV</a>'
+)
+st.markdown(href, unsafe_allow_html=True)
+
+# ---------- Bottom Navigation ---------- #
 st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
 cols = st.columns(len(NAV))
 for (label, icon, target), col in zip(NAV, cols):
     with col:
-        if target:
-            st.page_link(page=target, label=label, icon=icon, use_container_width=True)
-        else:
-            st.markdown(f"<a selected>{icon}<br>{label}</a>", unsafe_allow_html=True)
-
-st.markdown("</div>", unsafe_allow_html=True)
+        st.page_link(page=target, label=label, icon=icon, use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)
