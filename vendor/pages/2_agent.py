@@ -4,6 +4,7 @@ import json
 import tempfile
 import datetime
 from pathlib import Path
+import base64
 
 import streamlit as st
 from PIL import Image
@@ -20,11 +21,12 @@ if not APPROVED_FILE.exists():
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 # --- Import campaign generation components ---
-try:
+try: 
     from campaign_agent import CampaignGenerationAgent, CampaignFormat, logger
     from human_in_loop import HumanInLoopManager, MAX_REVISIONS
     AGENT_AVAILABLE = True
 except ImportError as e:
+    
     st.error(f"Failed to import campaign modules: {e}", icon="🚨")
     AGENT_AVAILABLE = False
     class CampaignGenerationAgent: pass
@@ -41,26 +43,109 @@ st.set_page_config(
 )
 st.markdown('<meta name="viewport" content="width=device-width, initial-scale=1">', unsafe_allow_html=True)
 
-# ─── MOBILE-FIRST + ANIMATION CSS ───
-st.markdown("""
-<style>
-body, .main { margin:0; padding:0; width:100%; max-width:100vw; font-family:Arial,sans-serif; }
-.main { display:flex; flex-direction:column; align-items:center; padding:0.5rem; }
-.top-section, .campaign-section, .revision-section, .confirmation { width:100%; padding:1rem 0.5rem; box-sizing:border-box; }
-.agent-card { border-left:4px solid #00aeff; background:#262730; color:#fff; border-radius:12px; padding:1rem; margin:1rem 0; }
-.agent-card h3 { margin-top:0; color:#00aeff; }
-textarea, input, button { width:100% !important; box-sizing:border-box; margin-top:0.5rem; font-size:1rem; }
-button { padding:0.75rem; border:none; border-radius:8px; background:#00aeff; color:#fff; }
-button:disabled { background:#555; }
-.banner { width:100%; background:#0a342a; color:#fff; text-align:center; padding:0.75rem; border-radius:8px; animation:slideFade 3s ease-out forwards; margin-bottom:1rem; }
-@keyframes slideFade { 0%{opacity:0;transform:translateY(-20px);}10%{opacity:1;transform:translateY(0);}90%{opacity:1;}100%{opacity:0;transform:translateY(-20px);} }
-.footer { margin-top:2rem; padding:1rem; width:100%; text-align:center; background-color:#1a1d23; color:#aaa; font-size:0.9rem; }
-.footer a { color:#00aeff; text-decoration:none; margin:0 0.5rem; }
-</style>
-""", unsafe_allow_html=True)
+# ---------- Paths to local assets ---------- #
+BASE_DIR     = Path(__file__).parent.parent
+ASSETS_PATH  = BASE_DIR / "assets"
+REVOLUT_LOGO = ASSETS_PATH / "revolut_logo.png"
+PROFILE_PIC  = ASSETS_PATH / "user.png"
 
-st.markdown("<div class='main'>", unsafe_allow_html=True)
-st.markdown("<h1 style='text-align:center; font-size:1.6rem;'>Campaign Assistant</h1>", unsafe_allow_html=True)
+# ---------- Bottom navigation definition ---------- #
+NAV = [
+    ("Home",     "🏠",  "home.py"),
+    ("Create",    "🔍",  "pages/2_agent.py"),
+]
+
+# ---------- Helper to inline images ---------- #
+def img_tag(path: Path, height: int) -> str:
+    if not path.exists():
+        return ""
+    mime = "image/png" if path.suffix.lower() == ".png" else "image/jpeg"
+    data = base64.b64encode(path.read_bytes()).decode()
+    return f'<img src="data:{mime};base64,{data}" height="{height}">'
+
+# ---------- CSS: hide sidebar, center content & UI shell ---------- #
+FIXED      = 600  # px
+BAR_HEIGHT = 20   # px for the faux status bar
+
+st.markdown(
+    f"""
+    <style>
+    #MainMenu, footer {{visibility:hidden;}}
+    [data-testid="stSidebar"] {{display:none !important;}}
+    html, body, [data-testid="stAppViewContainer"] {{
+        max-width:{FIXED}px;
+        width:{FIXED}px !important;
+        margin:0 auto;
+        overflow-x:hidden;
+    }}
+    .main .block-container {{
+        padding-left:1rem;
+        padding-right:1rem;
+        max-width:{FIXED}px;
+    }}
+    [data-testid="stAppViewContainer"] > .main {{
+        padding-top:{BAR_HEIGHT}px;
+        padding-bottom:4rem;
+    }}
+    .mobile-top {{
+        position:fixed;
+        top:0; left:0; right:0;
+        height:{BAR_HEIGHT}px;
+        background:#1a1d23;
+        border-bottom:1px solid #2e323b;
+        z-index:100;
+    }}
+    .mobile-nav {{
+        position:fixed;
+        bottom:0; left:0; right:0;
+        width:{FIXED}px;
+        margin:0 auto;
+        background:#1a1d23;
+        border-top:1px solid #2e323b;
+        display:flex;
+        justify-content:space-around;
+        padding:.5rem 0;
+        z-index:999;
+    }}
+    .mobile-nav a {{
+        color:#888;
+        text-decoration:none;
+        font-size:.9rem;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }}
+    .mobile-nav a[selected] {{color:#fff;}}
+    button, .stButton > button {{
+        text-align: center !important;
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }}
+    .stButton > button > div, .stButton > button > span {{
+        text-align: center !important;
+        width: 100% !important;
+        justify-content: center !important;
+        display: flex !important;
+        align-items: center !important;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# ---------- TOP BLACK BAR ---------- #
+st.markdown("<div class='mobile-top'></div>", unsafe_allow_html=True)
+
+# ---------- HEADER ---------- #
+header_l, header_mid, header_r = st.columns([1, 6, 1])
+with header_l:
+    st.markdown(img_tag(REVOLUT_LOGO, 28), unsafe_allow_html=True)
+with header_mid:
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align:center'>Make Your Own Campaign ✨</h1>", unsafe_allow_html=True)
+with header_r:
+    st.markdown(img_tag(PROFILE_PIC, 30), unsafe_allow_html=True)
 
 # ─── Load tools & session defaults ───
 @st.cache_resource
@@ -173,14 +258,10 @@ if st.session_state.state == "done":
     vendor = getattr(st.session_state.current, "vendor_name", "Your campaign")
     st.markdown(f"<div class='confirmation'>🎉 <strong>{vendor} is now live on Revolut Explore! 🚀</strong></div>", unsafe_allow_html=True)
 
-# ─── Footer ───
-st.markdown("""
-<div class="footer">
-  <a href="home.py">Home</a>
-  <a href="2_agent.py">Campaign</a>
-  <a href="pages/3_Cards.py">Cards</a>
-  <a href="pages/4_Settings.py">Settings</a>
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("</div>", unsafe_allow_html=True)
+# ---------- Bottom Navigation ---------- #
+st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
+cols = st.columns(len(NAV))
+for (label, icon, target), col in zip(NAV, cols):
+    with col:
+        st.page_link(page=target, label=label, icon=icon, use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)

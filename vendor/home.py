@@ -28,12 +28,11 @@ VENDOR_LOGO  = ASSETS_PATH / "vendor_logo.png"
 REVOLUT_LOGO = ASSETS_PATH / "revolut_logo.png"
 PROFILE_PIC  = ASSETS_PATH / "user.png"
 
+
 # ---------- Bottom navigation definition ---------- #
 NAV = [
     ("Home",     "🏠",  "home.py"),
-    ("Agent",    "🔍",  "pages/2_agent.py"),
-    ("Cards",    "💳",  "pages/3_Cards.py"),
-    ("Settings", "⚙️",  "pages/4_Settings.py"),
+    ("Create",    "🔍",  "pages/2_agent.py"),
 ]
 
 # ---------- Helper to inline images ---------- #
