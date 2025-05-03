@@ -18,56 +18,79 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# ─── CSS (fixed width, status bar, top nav, chat layout) ───
+# ─── CSS (fixed width, status bar, top nav, chat layout; hide sidebar) ───
 FIXED, BAR_HEIGHT, NAV_HEIGHT, GAP = 600, 20, 64, 8
 st.markdown(f"""
 <style>
   /* Hide Streamlit chrome */
-  #MainMenu, footer {{visibility:hidden;}}
+  #MainMenu, footer {{ visibility: hidden; }}
+
+  /* Hide the default Streamlit sidebar */
+  [data-testid="stSidebar"] {{ display: none !important; }}
 
   /* App body: fixed width & padding */
   html, body, [data-testid="stAppViewContainer"] {{
-    max-width:{FIXED}px; width:{FIXED}px!important;
-    margin:0 auto; overflow-x:hidden;
+    max-width: {FIXED}px;
+    width: {FIXED}px !important;
+    margin: 0 auto;
+    overflow-x: hidden;
   }}
   .main .block-container {{
-    padding:1rem; max-width:{FIXED}px;
+    padding: 1rem;
+    max-width: {FIXED}px;
   }}
-  [data-testid="stAppViewContainer"]>.main {{
-    padding-top:{BAR_HEIGHT}px; padding-bottom:{GAP}px;
+  [data-testid="stAppViewContainer"] > .main {{
+    padding-top: {BAR_HEIGHT}px;
+    padding-bottom: {GAP}px;
   }}
 
   /* Fake status bar */
   .mobile-top {{
-    position:fixed; top:0; left:0; right:0;
-    height:{BAR_HEIGHT}px; background:#1a1d23;
-    border-bottom:1px solid #2e323b; z-index:100;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: {BAR_HEIGHT}px;
+    background: #1a1d23;
+    border-bottom: 1px solid #2e323b;
+    z-index: 100;
   }}
 
   /* Top nav */
   .mobile-nav {{
-    position:fixed; top:{BAR_HEIGHT}px; left:50%; transform:translateX(-50%);
-    width:100%; max-width:{FIXED}px; height:{NAV_HEIGHT}px;
-    background:#1a1d23; border-bottom:1px solid #2e323b;
-    display:flex; justify-content:space-around; padding:.5rem 0; z-index:999;
+    position: fixed;
+    top: {BAR_HEIGHT}px;
+    left: 50%; transform: translateX(-50%);
+    width: 100%; max-width: {FIXED}px; height: {NAV_HEIGHT}px;
+    background: #1a1d23;
+    border-bottom: 1px solid #2e323b;
+    display: flex;
+    justify-content: space-around;
+    padding: .5rem 0;
+    z-index: 999;
   }}
   .mobile-nav a {{
-    color:#888; text-decoration:none; font-size:.9rem;
-    display:flex; flex-direction:column; align-items:center;
+    color: #888;
+    text-decoration: none;
+    font-size: .9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }}
-  .mobile-nav a[selected] {{ color:#fff; }}
+  .mobile-nav a[selected] {{ color: #fff; }}
 
   /* Chat input at bottom */
   div[data-testid="stChatInputContainer"] {{
-    position:fixed; left:50%; transform:translateX(-50%);
-    width:100%; max-width:{FIXED}px; bottom:{GAP}px!important;
+    position: fixed;
+    left: 50%; transform: translateX(-50%);
+    width: 100%; max-width: {FIXED}px;
+    bottom: {GAP}px !important;
   }}
 
   /* Scrollable chat area */
   #chatbox {{
-    margin-top:{BAR_HEIGHT + NAV_HEIGHT + GAP}px;
-    height:calc(100vh - {BAR_HEIGHT + NAV_HEIGHT + GAP}px);
-    overflow-y:auto; padding-bottom:1rem;
+    margin-top: {BAR_HEIGHT + NAV_HEIGHT + GAP}px;
+    height: calc(100vh - {BAR_HEIGHT + NAV_HEIGHT + GAP}px);
+    overflow-y: auto;
+    padding-bottom: 1rem;
   }}
 </style>
 """, unsafe_allow_html=True)
@@ -92,11 +115,11 @@ st.divider()
 
 # ─── Top navigation bar ───
 NAV = [
-    ("Home", "🏠", "home.py"),
+    ("Home",    "🏠",  "home.py"),
     ("Explore", "🔍", Path(__file__).parent / "2_agent.py"),
-    ("Cards", "💳", Path(__file__).parent / "3_Cards.py"),
-    ("Settings", "⚙️", Path(__file__).parent / "4_Settings.py"),
-    ("Campaign", "📣", Path(__file__)),
+    ("Cards",   "💳", Path(__file__).parent / "3_Cards.py"),
+    ("Settings","⚙️", Path(__file__).parent / "4_Settings.py"),
+    ("Campaign","📣", Path(__file__)),
 ]
 st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
 for (label, icon, target), c in zip(NAV, st.columns(len(NAV))):
@@ -108,11 +131,11 @@ st.markdown('</div>', unsafe_allow_html=True)
 def img_tag(path: Path, height: int) -> str:
     if not path.exists():
         return ""
-    mime = "image/png" if path.suffix.lower()==".png" else "image/jpeg"
+    mime = "image/png" if path.suffix.lower() == ".png" else "image/jpeg"
     data = base64.b64encode(path.read_bytes()).decode()
     return f'<img src="data:{mime};base64,{data}" height="{height}">'
 
-# ─── Vision model loader (cached AFTER set_page_config) ───
+# ─── Vision model loader ───
 def _init_vision():
     proc = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
     mdl  = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
@@ -128,9 +151,7 @@ SYSTEM_PROMPT = (
     "When enough context is available, propose a concise campaign plan including: objective, target audience, key channels, budget split, and a short creative concept. "
     "Use bullet points and keep answers under 200 words unless the user asks for more detail."
 )
-client = None
-if st.secrets.get("OPENAI_API_KEY"):
-    client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+client = OpenAI(api_key=st.secrets.get("OPENAI_API_KEY")) if st.secrets.get("OPENAI_API_KEY") else None
 
 if "messages" not in st.session_state:
     st.session_state.messages = [
