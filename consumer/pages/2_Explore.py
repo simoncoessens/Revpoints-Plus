@@ -1,5 +1,7 @@
 import streamlit as st
 from pathlib import Path
+import json
+from recommendation_engine import generate_recs
 
 # ---------- Paths to local assets ----------
 ASSETS_PATH  = Path(__file__).parent.parent / "assets"
@@ -175,47 +177,49 @@ offers = [
     {"vendor":"Bar Marsella", "img":"https://images.pexels.com/photos/261537/pexels-photo-261537.jpeg", "subtitle":"Redeem 120 Pts for 2 absinth shots", "badge":"Offer"},
 ] * 4
 
-recommendations = [
-    {"vendor":"Honest Greens", "img":"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg", "subtitle":"2× points today"},
-    {"vendor":"La Fábrica",    "img":"https://yt3.googleusercontent.com/mNUiPrdKp1qVL2igzXa71f3D1Yn-Z7TaFzpBf1bVFmfDKPE_ssMA8vjG9tn-BIuWqmoSGa7eeQ=s900-c-k-c0x00ffffff-no-rj", "subtitle":"Happy-hour bonus"},
-] * 4
+# ------------------ Dynamic recommendations ------------------ #
 
-# ---------- Redeem offers ----------
-st.markdown("### Redeem your points")
-offers_html = ""
-for o in offers:
-    offers_html += f'''<a class='offer' href='#' style='display:inline-block;vertical-align:top;'>
-        <span class='badge'>{o['badge']}</span>
-        <img src='{o['img']}' alt='offer'>
-        <div class='body'>
-            <div style='font-weight:700;margin:.1rem 0'>{o['vendor']}</div>
-            <div style='font-size:.8rem;color:#ccc'>{o['subtitle']}</div>
-        </div>
-    </a>'''
-st.markdown((
-    f"<div class='h-scroll' style='overflow-x:auto;white-space:nowrap;padding-bottom:0.4rem;'>"
-    f"<div style='display:flex;gap:0.9rem;'>"
-    f"{offers_html}"
-    f"</div></div>"
-).strip(), unsafe_allow_html=True)
+# We need to import the recommendation engine located one level up from
+# this *consumer/pages* directory. Add that directory to sys.path so that
+# `import recommendation_engine` resolves to Revpoints-Plus/recommendation_engine.py
 
-# ---------- Tailored picks ----------
-st.markdown("### Tailored to your taste")
-recs_html = ""
-for r in recommendations:
-    recs_html += f'''<a class='offer' href='#' style='display:inline-block;vertical-align:top;'>
-        <span class='badge'>{r['subtitle']}</span>
-        <img src='{r['img']}' alt='rec'>
-        <div class='body'>
-            <div style='font-weight:700;margin:.1rem 0'>{r['vendor']}</div>
-        </div>
-    </a>'''
-st.markdown((
-    f"<div class='h-scroll' style='overflow-x:auto;white-space:nowrap;padding-bottom:0.4rem;'>"
-    f"<div style='display:flex;gap:0.9rem;'>"
-    f"{recs_html}"
-    f"</div></div>"
-).strip(), unsafe_allow_html=True)
+RECS_PLACEHOLDER_IMG = "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+
+# Load vendor details for lookup by vendor_id
+VENDOR_JSON_PATH = Path(__file__).parent.parent / "partner_vendors.json"
+with open(VENDOR_JSON_PATH, "r", encoding="utf-8") as f:
+    vendor_data = json.load(f)
+vendor_lookup = {v["vendor_id"]: v for v in vendor_data}
+
+
+panels = generate_recs()
+
+
+# ---------- Render recommendations grouped by category ----------
+for panel in panels:
+    st.markdown(f"### {panel['category']}")
+    st.markdown(f"<div style='color:#888;font-size:.95rem;margin-bottom:.5rem'>{panel['reason']}</div>", unsafe_allow_html=True)
+    offers_html = ""
+    for offer in panel["offers"]:
+        v = vendor_lookup.get(offer["vendor_id"])
+        if v:
+            offer_type = v["offer_details"].get("offer_type", "").replace("_", " ").title()
+            offer_desc = v["offer_details"].get("offer_description", "")
+            img = RECS_PLACEHOLDER_IMG
+            offers_html += f'''<a class='offer' href='#' style='display:inline-block;vertical-align:top;'>
+                <span class='badge'>{offer_type}</span>
+                <img src='{img}' alt='offer'>
+                <div class='body'>
+                    <div style='font-weight:700;margin:.1rem 0'>{v['vendor_name']}</div>
+                    <div style='font-size:.8rem;color:#888;white-space:normal;word-break:break-word;'>{offer_desc}</div>
+                </div>
+            </a>'''
+    st.markdown((
+        f"<div class='h-scroll' style='overflow-x:auto;white-space:nowrap;padding-bottom:0.4rem;'>"
+        f"<div style='display:flex;gap:0.9rem;'>"
+        f"{offers_html}"
+        f"</div></div>"
+    ).strip(), unsafe_allow_html=True)
 
 # ---------- Bottom navigation ----------
 NAV = [
