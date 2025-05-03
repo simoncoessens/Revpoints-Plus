@@ -1,0 +1,41 @@
+name: rev
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - openai
+  - pydantic
+  - pydantic-settings
+  - pytest
+  - uvicorn
+  - plotly
+  - matplotlib
+  - seaborn
+  - fastapi
+  - sentence-transformers
+  - chromadb
+  - langchain
+  - langchain-community
+  - langchain-core
+  - langchain-google-genai
+  - langchain-text-splitters
+  - langchain-openai
+  - langgraph
+  - streamlit
+  - python-dotenv
+  - spacy
+  - requests
+  - tqdm
+  - typing-extensions
+  - setuptools
+  - tiktoken
+  - faiss-cpu
+  - rapidfuzz
+  - transformers
+  - scikit-learn
+  - flask
+  - cryptography
+  - pyjwt
