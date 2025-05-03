@@ -1,198 +1,186 @@
+import sys
+import os
+import json
+import tempfile
+import datetime
 from pathlib import Path
-import base64
-import streamlit as st
-from openai import OpenAI
-from PIL import Image
-from transformers import BlipProcessor, BlipForConditionalGeneration
 
-# ─── Page config (MUST be first Streamlit call) ───
+import streamlit as st
+from PIL import Image
+
+# ─── Constants & ensure storage exists ───
+APPROVED_DIR = Path("data")
+APPROVED_FILE = APPROVED_DIR / "campaigns_approved.json"
+APPROVED_DIR.mkdir(parents=True, exist_ok=True)
+if not APPROVED_FILE.exists():
+    # initialize as empty list
+    APPROVED_FILE.write_text("[]")
+
+# Insert parent folder so modules are found
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+# --- Import campaign generation components ---
+try:
+    from campaign_agent import CampaignGenerationAgent, CampaignFormat, logger
+    from human_in_loop import HumanInLoopManager, MAX_REVISIONS
+    AGENT_AVAILABLE = True
+except ImportError as e:
+    st.error(f"Failed to import campaign modules: {e}", icon="🚨")
+    AGENT_AVAILABLE = False
+    class CampaignGenerationAgent: pass
+    class HumanInLoopManager: pass
+    class CampaignFormat: pass
+    MAX_REVISIONS = 5
+    logger = None
+
+# ─── Page config ───
 st.set_page_config(
     page_title="Campaign Assistant",
     page_icon="📣",
-    layout="wide",
+    layout="centered",
 )
+st.markdown('<meta name="viewport" content="width=device-width, initial-scale=1">', unsafe_allow_html=True)
 
-# ─── Responsive viewport on mobile ───
-st.markdown(
-    '<meta name="viewport" content="width=device-width, initial-scale=1">',
-    unsafe_allow_html=True,
-)
-
-# ─── CSS (fixed width, status bar, top nav, chat layout; hide sidebar) ───
-FIXED, BAR_HEIGHT, NAV_HEIGHT, GAP = 600, 20, 64, 8
-st.markdown(f"""
+# ─── MOBILE-FIRST + ANIMATION CSS ───
+st.markdown("""
 <style>
-  /* Hide Streamlit chrome */
-  #MainMenu, footer {{ visibility: hidden; }}
-
-  /* Hide the default Streamlit sidebar */
-  [data-testid="stSidebar"] {{ display: none !important; }}
-
-  /* App body: fixed width & padding */
-  html, body, [data-testid="stAppViewContainer"] {{
-    max-width: {FIXED}px;
-    width: {FIXED}px !important;
-    margin: 0 auto;
-    overflow-x: hidden;
-  }}
-  .main .block-container {{
-    padding: 1rem;
-    max-width: {FIXED}px;
-  }}
-  [data-testid="stAppViewContainer"] > .main {{
-    padding-top: {BAR_HEIGHT}px;
-    padding-bottom: {GAP}px;
-  }}
-
-  /* Fake status bar */
-  .mobile-top {{
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: {BAR_HEIGHT}px;
-    background: #1a1d23;
-    border-bottom: 1px solid #2e323b;
-    z-index: 100;
-  }}
-
-  /* Top nav */
-  .mobile-nav {{
-    position: fixed;
-    top: {BAR_HEIGHT}px;
-    left: 50%; transform: translateX(-50%);
-    width: 100%; max-width: {FIXED}px; height: {NAV_HEIGHT}px;
-    background: #1a1d23;
-    border-bottom: 1px solid #2e323b;
-    display: flex;
-    justify-content: space-around;
-    padding: .5rem 0;
-    z-index: 999;
-  }}
-  .mobile-nav a {{
-    color: #888;
-    text-decoration: none;
-    font-size: .9rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }}
-  .mobile-nav a[selected] {{ color: #fff; }}
-
-  /* Chat input at bottom */
-  div[data-testid="stChatInputContainer"] {{
-    position: fixed;
-    left: 50%; transform: translateX(-50%);
-    width: 100%; max-width: {FIXED}px;
-    bottom: {GAP}px !important;
-  }}
-
-  /* Scrollable chat area */
-  #chatbox {{
-    margin-top: {BAR_HEIGHT + NAV_HEIGHT + GAP}px;
-    height: calc(100vh - {BAR_HEIGHT + NAV_HEIGHT + GAP}px);
-    overflow-y: auto;
-    padding-bottom: 1rem;
-  }}
+body, .main { margin:0; padding:0; width:100%; max-width:100vw; font-family:Arial,sans-serif; }
+.main { display:flex; flex-direction:column; align-items:center; padding:0.5rem; }
+.top-section, .campaign-section, .revision-section, .confirmation { width:100%; padding:1rem 0.5rem; box-sizing:border-box; }
+.agent-card { border-left:4px solid #00aeff; background:#262730; color:#fff; border-radius:12px; padding:1rem; margin:1rem 0; }
+.agent-card h3 { margin-top:0; color:#00aeff; }
+textarea, input, button { width:100% !important; box-sizing:border-box; margin-top:0.5rem; font-size:1rem; }
+button { padding:0.75rem; border:none; border-radius:8px; background:#00aeff; color:#fff; }
+button:disabled { background:#555; }
+.banner { width:100%; background:#0a342a; color:#fff; text-align:center; padding:0.75rem; border-radius:8px; animation:slideFade 3s ease-out forwards; margin-bottom:1rem; }
+@keyframes slideFade { 0%{opacity:0;transform:translateY(-20px);}10%{opacity:1;transform:translateY(0);}90%{opacity:1;}100%{opacity:0;transform:translateY(-20px);} }
+.footer { margin-top:2rem; padding:1rem; width:100%; text-align:center; background-color:#1a1d23; color:#aaa; font-size:0.9rem; }
+.footer a { color:#00aeff; text-decoration:none; margin:0 0.5rem; }
 </style>
 """, unsafe_allow_html=True)
 
-# ─── Top status bar & header ───
-st.markdown("<div class='mobile-top'></div>", unsafe_allow_html=True)
-colL, colM, colR = st.columns([1, 6, 1])
-with colL:
-    logo_path = Path(__file__).parent / "assets" / "revolut_logo.png"
-    if logo_path.exists():
-        img = base64.b64encode(logo_path.read_bytes()).decode()
-        st.markdown(f'<img src="data:image/png;base64,{img}" height="28">', unsafe_allow_html=True)
-with colM:
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align:center'>Campaign Assistant</h1>", unsafe_allow_html=True)
-with colR:
-    pic_path = Path(__file__).parent / "assets" / "user.png"
-    if pic_path.exists():
-        img = base64.b64encode(pic_path.read_bytes()).decode()
-        st.markdown(f'<img src="data:image/png;base64,{img}" height="30">', unsafe_allow_html=True)
-st.divider()
+st.markdown("<div class='main'>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align:center; font-size:1.6rem;'>Campaign Assistant</h1>", unsafe_allow_html=True)
 
-# ─── Top navigation bar ───
-NAV = [
-    ("Home",    "🏠",  "home.py"),
-    ("Explore", "🔍", Path(__file__).parent / "2_agent.py"),
-    ("Cards",   "💳", Path(__file__).parent / "3_Cards.py"),
-    ("Settings","⚙️", Path(__file__).parent / "4_Settings.py"),
-    ("Campaign","📣", Path(__file__)),
-]
-st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
-for (label, icon, target), c in zip(NAV, st.columns(len(NAV))):
-    with c:
-        st.page_link(page=target, label=label, icon=icon, use_container_width=True)
-st.markdown('</div>', unsafe_allow_html=True)
+# ─── Load tools & session defaults ───
+@st.cache_resource
+def load_tools():
+    if not AGENT_AVAILABLE:
+        return None, None
+    api_key = st.secrets.get("GOOGLE_API_KEY")
+    if not api_key:
+        st.error("Missing GOOGLE_API_KEY", icon="🔑")
+        return None, None
+    agent = CampaignGenerationAgent(api_key=api_key)
+    mgr = HumanInLoopManager(agent)
+    return agent, mgr
 
-# ─── Helper to inline logos & avatars ───
-def img_tag(path: Path, height: int) -> str:
-    if not path.exists():
-        return ""
-    mime = "image/png" if path.suffix.lower() == ".png" else "image/jpeg"
-    data = base64.b64encode(path.read_bytes()).decode()
-    return f'<img src="data:{mime};base64,{data}" height="{height}">'
+agent, hitl = load_tools()
+for k, v in {
+    "state": "idle",
+    "catalog": None,
+    "current": None,
+    "just_refined": False
+}.items():
+    if k not in st.session_state:
+        st.session_state[k] = v
 
-# ─── Vision model loader ───
-def _init_vision():
-    proc = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
-    mdl  = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
-    return proc, mdl
-
-load_vision = st.cache_resource(_init_vision)
-processor, vision_model = load_vision()
-
-# ─── Chat setup ───
-SYSTEM_PROMPT = (
-    "You are a seasoned digital marketing strategist helping vendors design data-driven campaigns. "
-    "Start by asking clarifying questions if the goal is unclear. "
-    "When enough context is available, propose a concise campaign plan including: objective, target audience, key channels, budget split, and a short creative concept. "
-    "Use bullet points and keep answers under 200 words unless the user asks for more detail."
-)
-client = OpenAI(api_key=st.secrets.get("OPENAI_API_KEY")) if st.secrets.get("OPENAI_API_KEY") else None
-
-if "messages" not in st.session_state:
-    st.session_state.messages = [
-        {"role": "assistant", "content": "Hi there! 👋 I'm here to help you craft your next marketing campaign. What goal would you like to achieve?"}
-    ]
-
-# ─── Image uploader & caption injection ───
-uploaded = st.file_uploader("📷 Upload an image for context", type=["png","jpg","jpeg"])
+# ─── Upload & Generate ───
+st.markdown("<div class='top-section'>", unsafe_allow_html=True)
+uploaded = st.file_uploader("Upload Catalog (PNG/JPG/PDF)", type=["png","jpg","jpeg","pdf"])
 if uploaded:
-    img = Image.open(uploaded)
-    st.image(img, caption="You uploaded:", use_column_width=True)
-    inputs = processor(images=img, return_tensors="pt")
-    out    = vision_model.generate(**inputs)
-    caption = processor.decode(out[0], skip_special_tokens=True)
-    with st.chat_message("user"):
-        st.markdown(f"![uploaded] Caption: *{caption}*")
-    st.session_state.messages.append({"role":"user","content":f"Here’s an image: {caption}"})
-
-# ─── Chat container ───
-st.markdown("<div id='chatbox'>", unsafe_allow_html=True)
-for msg in st.session_state.messages:
-    with st.chat_message(msg["role"]):
-        st.markdown(msg["content"])
+    tmp = tempfile.NamedTemporaryFile(delete=False, suffix=Path(uploaded.name).suffix)
+    tmp.write(uploaded.getvalue()); tmp.close()
+    st.session_state.catalog = tmp.name
+    st.success(f"Uploaded {uploaded.name}")
+    if uploaded.type.startswith("image/"):
+        st.image(uploaded, use_column_width=True)
+gen_disabled = not (st.session_state.catalog and agent)
+if st.button("✨ Generate Campaign", disabled=gen_disabled):
+    with st.spinner("Generating…"):
+        camp = agent.generate_campaign(st.session_state.catalog)
+    if camp:
+        st.session_state.current = camp
+        st.session_state.state = "feedback"
+        st.session_state.just_refined = False
+    else:
+        st.error("Generation failed.")
 st.markdown("</div>", unsafe_allow_html=True)
 
-# ─── User input & LLM call ───
-if prompt := st.chat_input("Describe your campaign goal…"):
-    with st.chat_message("user"):
-        st.markdown(prompt)
-    st.session_state.messages.append({"role":"user","content":prompt})
+# ─── Show current campaign card ───
+if st.session_state.current:
+    c = st.session_state.current
+    vendor = getattr(c, "vendor_name", "Unknown Vendor")
+    st.markdown("<div class='campaign-section'>", unsafe_allow_html=True)
+    st.markdown(f"""
+      <div class="agent-card">
+        <h3>Campaign for {vendor}</h3>
+        <p><strong>Category:</strong> {getattr(c,'category','N/A')}</p>
+        <p><strong>Slogan:</strong> {getattr(c,'campaign_slogan','N/A')}</p>
+        <p><strong>Notification:</strong> {getattr(c,'notification','N/A')}</p>
+        <p><strong>Message:</strong> {getattr(c,'campaign_message','N/A')}</p>
+        <p><strong>Promotions:</strong></p>
+        <ul>{"".join(f"<li>{p}</li>" for p in getattr(c,'promotions',[]))}</ul>
+        <p><small>ID: {getattr(c,'campaign_id','N/A')} | {datetime.datetime.now():%Y-%m-%d %H:%M:%S}</small></p>
+      </div>
+    """, unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
-    if client:
-        convo = [{"role":"system","content":SYSTEM_PROMPT}] + st.session_state.messages
-        stream = client.chat.completions.create(
-            model="gpt-3.5-turbo", temperature=0.7, messages=convo, stream=True
-        )
-        with st.chat_message("assistant"):
-            response = st.write_stream(stream)
-    else:
-        response = f"Echo: {prompt}"
-        with st.chat_message("assistant"):
-            st.markdown(response)
+# ─── Revision & Animation Banner ───
+if st.session_state.state == "feedback":
+    st.markdown("<div class='revision-section'>", unsafe_allow_html=True)
+    fb = st.text_area("Revision feedback:", height=80)
+    if st.button("🛠️ Refine Campaign", disabled=not fb.strip()):
+        with st.spinner("Refining…"):
+            revised = hitl.revise_campaign(st.session_state.current, fb)
+        if revised:
+            st.session_state.current = revised
+            st.session_state.just_refined = True
+            st.session_state.state = "revised"
+            st.rerun()
+        else:
+            st.error("Refinement failed.")
+    st.markdown("</div>", unsafe_allow_html=True)
 
-    st.session_state.messages.append({"role":"assistant","content":response})
+if st.session_state.just_refined:
+    st.markdown("<div class='banner'>✅ Campaign has been refined!</div>", unsafe_allow_html=True)
+    st.session_state.just_refined = False
+
+# ─── Confirm & Append to single JSON ───
+if st.session_state.state in ["revised","feedback"]:
+    if st.button("✅ Confirm & Save"):
+        c = st.session_state.current
+        # build dict
+        entry = {
+            "campaign_id": getattr(c,"campaign_id",None),
+            "vendor_name": getattr(c,"vendor_name",None),
+            "category": getattr(c,"category",None),
+            "campaign_slogan": getattr(c,"campaign_slogan",None),
+            "notification": getattr(c,"notification",None),
+            "campaign_message": getattr(c,"campaign_message",None),
+            "promotions": getattr(c,"promotions",[]),
+            "timestamp": datetime.datetime.now().isoformat()
+        }
+        # load existing, append, write back
+        data = json.loads(APPROVED_FILE.read_text())
+        data.append(entry)
+        APPROVED_FILE.write_text(json.dumps(data, indent=2))
+        st.balloons()
+        st.session_state.state = "done"
+
+# ─── Final Confirmation ───
+if st.session_state.state == "done":
+    vendor = getattr(st.session_state.current, "vendor_name", "Your campaign")
+    st.markdown(f"<div class='confirmation'>🎉 <strong>{vendor} is now live on Revolut Explore! 🚀</strong></div>", unsafe_allow_html=True)
+
+# ─── Footer ───
+st.markdown("""
+<div class="footer">
+  <a href="home.py">Home</a>
+  <a href="2_agent.py">Campaign</a>
+  <a href="pages/3_Cards.py">Cards</a>
+  <a href="pages/4_Settings.py">Settings</a>
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
