@@ -152,12 +152,12 @@ stores = [
 offers = [
     {"vendor":"Tickets Bar", "img":"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg", "subtitle":"Redeem 250 Pts for 20 € credit", "badge":"Top Offer"},
     {"vendor":"Bar Marsella", "img":"https://images.pexels.com/photos/261537/pexels-photo-261537.jpeg", "subtitle":"Redeem 120 Pts for 2 absinth shots", "badge":"Offer"},
-]
+] * 4
 
 recommendations = [
     {"vendor":"Honest Greens", "img":"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg", "subtitle":"2× points today"},
     {"vendor":"La Fábrica",    "img":"https://yt3.googleusercontent.com/mNUiPrdKp1qVL2igzXa71f3D1Yn-Z7TaFzpBf1bVFmfDKPE_ssMA8vjG9tn-BIuWqmoSGa7eeQ=s900-c-k-c0x00ffffff-no-rj", "subtitle":"Happy-hour bonus"},
-]
+] * 4
 
 # ---------- Redeem offers ----------
 st.markdown("### Redeem your points")
