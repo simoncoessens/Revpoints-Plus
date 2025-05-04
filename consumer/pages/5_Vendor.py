@@ -20,7 +20,7 @@ NAV = [
 ]
 
 # ---------- Fixed width & UI shell constants ---------- #
-FIXED = 600   # px fixed app width
+FIXED = 750   # px fixed app width
 BAR_HEIGHT = 20  # px faux status bar height
 
 
@@ -98,14 +98,6 @@ else:
     visits = 0
     transactions = []
     last_purchase = {"date": pd.Timestamp.now(), "amount": 0}
-
-# ---------- Page config ---------- #
-st.set_page_config(
-    page_title=vendor_name,
-    page_icon="🔔",
-    layout="wide",
-    initial_sidebar_state="collapsed",
-)
 
 # ---------- Inject CSS for fixed-width layout and UI shell ---------- #
 st.markdown(
