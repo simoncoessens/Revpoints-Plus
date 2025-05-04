@@ -4,7 +4,7 @@ from typing import Dict, Any, List, Optional
 import pandas as pd
 
 def generate_user_profile_summary(
-    path="../data/final_data.csv",
+    path="data/final_data.csv",
     analysis_timeframe_days: int = 30,
     top_n_categories: int = 3,
     top_n_merchants: int = 5,
@@ -127,7 +127,7 @@ def generate_user_profile_summary(
         'typical_spending_times': typical_spending_times
     }
 
-def filter_vendors_by_category(categories: list[str], path: str = "../data/partner_vendors.json"):
+def filter_vendors_by_category(categories: list[str], path: str = "data/partner_vendors.json"):
     with open(path) as f:
         vendors = json.load(f)
     return [vendor for vendor in vendors if vendor["category"] in categories]

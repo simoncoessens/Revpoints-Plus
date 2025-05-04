@@ -1,7 +1,9 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 import streamlit as st
 import pandas as pd
 import json
-from pathlib import Path
 import base64
 import plotly.express as px
 import plotly.graph_objects as go # Added for stacked bar
@@ -355,10 +357,10 @@ if not filtered_df.empty:
 # ---------- BOTTOM NAVIGATION (using st.page_link in columns) ---------- #
 HOME_PATH = Path(__file__).parent.parent / "home.py"
 NAV = [
-    ("Home", "🏠", HOME_PATH),
-    ("Explore", "🔍", Path(__file__).parent / "2_Explore.py"),
-    ("Notifications", "🔔", Path(__file__).parent / "3_Notifications.py"),
-    ("Savings", "💰", Path(__file__)), # Current page
+    ("Home", "🏠", "home.py"),
+    ("Explore", "🔍", "pages/2_Explore.py"),
+    ("Notifications", "🔔", "pages/3_Notifications.py"),
+    ("Savings", "💰", "pages/6_savings.py"),
 ]
 
 st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
@@ -366,25 +368,7 @@ st.markdown('<div class="mobile-nav-content">', unsafe_allow_html=True)
 
 # Create columns *inside* the centered container
 cols = st.columns(len(NAV))
-
-# Loop through NAV items and create page links using st.page_link
-for i, ((label, icon, target_path_obj), col) in enumerate(zip(NAV, cols)):
+for (label, icon, page), col in zip(NAV, cols):
     with col:
-        try:
-            relative_page_path = target_path_obj.relative_to(PROJECT_ROOT / "consumer").as_posix()
-            # Use st.page_link for navigation. Streamlit handles active state internally.
-            st.page_link(page=relative_page_path, label=label, icon=icon, use_container_width=True)
-        except ValueError:
-             # Fallback or error handling if relative path fails
-             # Display as non-clickable text within the column
-             st.markdown(f"""
-             <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: #888; font-size: 0.9rem;">
-                 <span>{icon}</span>
-                 <span>{label}</span>
-             </div>
-             """, unsafe_allow_html=True)
-             print(f"Warning: Could not create relative path for navigation link: {label}")
-
-
-st.markdown("</div>", unsafe_allow_html=True) # Close .mobile-nav-content
-st.markdown("</div>", unsafe_allow_html=True) # Close .mobile-nav
+        st.page_link(page=page, label=label, icon=icon, use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)

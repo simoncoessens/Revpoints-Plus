@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 import streamlit as st
 from pathlib import Path
 import json
@@ -170,12 +173,12 @@ FINAL_JSON_PATH = Path(__file__).parent.parent.parent / "data" / "partner_vendor
 with open(FINAL_JSON_PATH, "r", encoding="utf‑8") as f:
     vendors = json.load(f)
 
-# --- Horizontal “stores” chips (logo + points multiplier) -------------
+# --- Horizontal "stores" chips (logo + points multiplier) -------------
 stores = [
     {
         "name": v["vendor_name"],
         "logo": v.get("image_url") or "https://placehold.co/48x48",   # fallback
-        # If the JSON doesn’t carry a multiplier just default to “1×”
+        # If the JSON doesn't carry a multiplier just default to "1×"
         "points": f"Earn {v['offer_details'].get('offer_value', 1)}×",
     }
     for v in vendors
@@ -251,17 +254,14 @@ for panel in panels:
 # ---------- BOTTOM NAVIGATION ---------- #
 NAV = [
     ("Home", "🏠", "home.py"),
-    ("Explore", "🔍", Path(__file__).parent / "2_Explore.py"),
-    ("Notifications", "🔔", Path(__file__).parent / "3_Notifications.py"),
-    ("Savings", "💰", Path(__file__).parent / "6_savings.py"),
+    ("Explore", "🔍", "pages/2_Explore.py"),
+    ("Notifications", "🔔", "pages/3_Notifications.py"),
+    ("Savings", "💰", "pages/6_savings.py"),
 ]
 
 st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
 cols = st.columns(len(NAV))
-for (label, icon, target), col in zip(NAV, cols):
+for (label, icon, page), col in zip(NAV, cols):
     with col:
-        if target:
-            st.page_link(page=target, label=label, icon=icon, use_container_width=True)
-        else:
-            st.markdown(f"<a selected>{icon}<br>{label}</a>", unsafe_allow_html=True)
+        st.page_link(page=page, label=label, icon=icon, use_container_width=True)
 st.markdown('</div>', unsafe_allow_html=True)

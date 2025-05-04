@@ -1,7 +1,9 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 import streamlit as st
 import pandas as pd
 import json
-from pathlib import Path
 import base64
 from urllib.parse import quote_plus
 
@@ -14,11 +16,10 @@ VENDORS_FILE  = Path(__file__).parent.parent.parent / "data" / "partner_vendors.
 # ---------- BOTTOM NAVIGATION ---------- #
 HOME_PATH = Path(__file__).parent.parent / "home.py"
 NAV = [
-    ("Home", "🏠", HOME_PATH),
-    ("Explore", "🔍", Path(__file__).parent / "2_Explore.py"),
-    ("Notifications", "🔔", Path(__file__).parent / "3_Notifications.py"),
-    ("Savings", "💰", Path(__file__)), # Current page
-    # ("Settings", "⚙️", Path(__file__).parent / "4_Settings.py"), # Removed Settings
+    ("Home", "🏠", "home.py"),
+    ("Explore", "🔍", "pages/2_Explore.py"),
+    ("Notifications", "🔔", "pages/3_Notifications.py"),
+    ("Savings", "💰", "pages/6_savings.py"),
 ]
 
 
@@ -259,7 +260,7 @@ st.markdown(f"<div class='recent-activity'>{rows_html}</div>", unsafe_allow_html
 # ---------- Bottom Navigation ---------- #
 st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
 cols = st.columns(len(NAV))
-for (label, icon, target), col in zip(NAV, cols):
+for (label, icon, page), col in zip(NAV, cols):
     with col:
-        st.page_link(page=target, label=label, icon=icon, use_container_width=True)
+        st.page_link(page=page, label=label, icon=icon, use_container_width=True)
 st.markdown('</div>', unsafe_allow_html=True)

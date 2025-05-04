@@ -1,6 +1,8 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 import streamlit as st
 import json
-from pathlib import Path
 from urllib.parse import quote_plus
 import pandas as pd
 
@@ -104,17 +106,17 @@ notifications_fragment()
 
 # ---------- BOTTOM NAVIGATION ---------- #
 NAV = [
-    ("Home", "🏠", Path(__file__)),
-    ("Explore", "🔍", Path(__file__).parent / "2_Explore.py"),
-    ("Notifications", "🔔", Path(__file__).parent / "3_Notifications.py"),
-    ("Savings", "💰", Path(__file__).parent / "6_savings.py"),
+    ("Home", "🏠", "home.py"),
+    ("Explore", "🔍", "pages/2_Explore.py"),
+    ("Notifications", "🔔", "pages/3_Notifications.py"),
+    ("Savings", "💰", "pages/6_savings.py"),
 ]
 
 st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
 cols = st.columns(len(NAV))
-for (label, icon, target), col in zip(NAV, cols):
+for (label, icon, page), col in zip(NAV, cols):
     with col:
-        st.page_link(page=target, label=label, icon=icon, use_container_width=True)
+        st.page_link(page=page, label=label, icon=icon, use_container_width=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------- CARD STYLES ---------- #
