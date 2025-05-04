@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+plotly
+altair
+sentence-transformers
+pydantic
+tqdm
+requests
+python-dotenv
+google-generativeai
+langchain-google-genai 

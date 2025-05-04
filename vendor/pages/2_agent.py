@@ -7,7 +7,6 @@ from pathlib import Path
 import base64
 
 import streamlit as st
-from PIL import Image
 
 # ─── Constants & ensure storage exists ───
 APPROVED_DIR = Path("data")
