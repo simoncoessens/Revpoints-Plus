@@ -250,7 +250,7 @@ for panel in panels:
 
 # ---------- BOTTOM NAVIGATION ---------- #
 NAV = [
-    ("Home", "🏠", Path(__file__)),
+    ("Home", "🏠", "home.py"),
     ("Explore", "🔍", Path(__file__).parent / "2_Explore.py"),
     ("Notifications", "🔔", Path(__file__).parent / "3_Notifications.py"),
     ("Savings", "💰", Path(__file__).parent / "6_savings.py"),
