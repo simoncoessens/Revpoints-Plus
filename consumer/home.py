@@ -198,6 +198,8 @@ NAV = [
     ("Savings", "👛", Path(__file__).parent / "pages/6_savings.py"),
 ]
 
+print(NAV)
+
 st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
 cols = st.columns(len(NAV))
 for (label, icon, target), col in zip(NAV, cols):
