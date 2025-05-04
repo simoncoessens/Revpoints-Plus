@@ -248,12 +248,12 @@ for panel in panels:
         unsafe_allow_html=True,
     )
 
-# ---------- Bottom navigation ----------
+# ---------- BOTTOM NAVIGATION ---------- #
 NAV = [
-    ("Home",    "🏠", Path(__file__).parent.parent / "home.py"),
-    ("Explore", "🔍",  Path(__file__)),
-    ("Notifications",   "🔔", Path(__file__).parent.parent / "pages/3_Notifications.py"),
-    ("Settings","⚙️", Path(__file__).parent.parent / "pages/4_Settings.py"),
+    ("Home", "🏠", Path(__file__)),
+    ("Explore", "🔍", Path(__file__).parent / "2_Explore.py"),
+    ("Notifications", "🔔", Path(__file__).parent / "3_Notifications.py"),
+    ("Savings", "💰", Path(__file__).parent / "6_savings.py"),
 ]
 
 st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)

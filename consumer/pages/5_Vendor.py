@@ -11,13 +11,16 @@ LOGO_FILE     = ASSETS_PATH / "revolut_logo.png"
 PROFILE_FILE  = ASSETS_PATH / "user.png"
 VENDORS_FILE  = Path(__file__).parent.parent.parent / "data" / "partner_vendors.json"
 
-# ---------- Bottom navigation definition ---------- #
+# ---------- BOTTOM NAVIGATION ---------- #
+HOME_PATH = Path(__file__).parent.parent / "home.py"
 NAV = [
-    ("Home",     "🏠", "home.py"),
-    ("Explore",  "🔍", "pages/2_Explore.py"),
-    ("Notifications",    "🔔", "pages/3_Notifications.py"),
-    ("Settings", "⚙️", "pages/4_Settings.py"),
+    ("Home", "🏠", HOME_PATH),
+    ("Explore", "🔍", Path(__file__).parent / "2_Explore.py"),
+    ("Notifications", "🔔", Path(__file__).parent / "3_Notifications.py"),
+    ("Savings", "💰", Path(__file__)), # Current page
+    # ("Settings", "⚙️", Path(__file__).parent / "4_Settings.py"), # Removed Settings
 ]
+
 
 # ---------- Fixed width & UI shell constants ---------- #
 FIXED = 750   # px fixed app width
