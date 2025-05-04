@@ -39,3 +39,6 @@ dependencies:
   - flask
   - cryptography
   - pyjwt
+  - torch
+  - sentence-transformers
+  - plotly-express
