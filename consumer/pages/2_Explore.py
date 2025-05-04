@@ -164,18 +164,34 @@ with header_r:
         st.image(str(PROFILE_FILE), width=36)
 
 # ---------- Data ----------
+# ---------- Dynamic vendor data ----------
+# final.json lives one level up from *consumer/pages*
+FINAL_JSON_PATH = Path(__file__).parent.parent / "final.json"
+
+with open(FINAL_JSON_PATH, "r", encoding="utf‑8") as f:
+    vendors = json.load(f)
+
+# --- Horizontal “stores” chips (logo + points multiplier) -------------
 stores = [
-    {"name":"Mercadona",        "logo":"https://upload.wikimedia.org/wikipedia/commons/5/5c/Mercadona.svg",                                           "points":"Earn 1×"},
-    {"name":"La Boqueria",       "logo":"https://upload.wikimedia.org/wikipedia/commons/9/96/Barcelona_-_Mercat_de_Sant_Josep_%28la_Boqueria%29_-_Entrance.jpg", "points":"Earn 2×"},
-    {"name":"Cervecería Moritz", "logo":"https://upload.wikimedia.org/wikipedia/commons/5/52/Entrada_F%C3%A0brica_Moritz.png",                               "points":"Earn 3×"},
-    {"name":"Casa Batlló Shop",   "logo":"https://upload.wikimedia.org/wikipedia/commons/7/7f/Casa_Batll%C3%B3_%28shop%29.jpg",                              "points":"Earn 1×"},
-    {"name":"El Corte Inglés",    "logo":"https://upload.wikimedia.org/wikipedia/commons/d/d1/Logo_El_Corte_Ingl%C3%A9s.svg",                                 "points":"Earn 1×"},
+    {
+        "name": v["vendor_name"],
+        "logo": v.get("image_url") or "https://placehold.co/48x48",   # fallback
+        # If the JSON doesn’t carry a multiplier just default to “1×”
+        "points": f"Earn {v['offer_details'].get('offer_value', 1)}×",
+    }
+    for v in vendors
 ]
 
+# --- Offer cards -------------------------------------------------------
 offers = [
-    {"vendor":"Tickets Bar", "img":"https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg", "subtitle":"Redeem 250 Pts for 20 € credit", "badge":"Top Offer"},
-    {"vendor":"Bar Marsella", "img":"https://images.pexels.com/photos/261537/pexels-photo-261537.jpeg", "subtitle":"Redeem 120 Pts for 2 absinth shots", "badge":"Offer"},
-] * 4
+    {
+        "vendor":  v["vendor_name"],
+        "img":     v.get("image_url") or "https://placehold.co/250x140",
+        "subtitle": v["offer_details"]["offer_description"],
+        "badge":    v["offer_details"]["offer_type"].replace("_", " ").title(),
+    }
+    for v in vendors
+]
 
 # ------------------ Dynamic recommendations ------------------ #
 
@@ -195,17 +211,28 @@ vendor_lookup = {v["vendor_id"]: v for v in vendor_data}
 panels = generate_recs()
 
 
-# ---------- Render recommendations grouped by category ----------
+with open(FINAL_JSON_PATH, "r", encoding="utf-8") as f:
+    vendors = json.load(f)
+
+vendor_by_name = {v["vendor_name"]: v for v in vendors}   # <-- NEW
+
+# ------------------------------------------------------------------------
 for panel in panels:
     st.markdown(f"### {panel['category']}")
-    st.markdown(f"<div style='color:#888;font-size:.95rem;margin-bottom:.5rem'>{panel['reason']}</div>", unsafe_allow_html=True)
+    st.markdown(
+        f"<div style='color:#888;font-size:.95rem;margin-bottom:.5rem'>{panel['reason']}</div>",
+        unsafe_allow_html=True,
+    )
+
     offers_html = ""
     for offer in panel["offers"]:
-        v = vendor_lookup.get(offer["vendor_id"])
+        # DEBUG: see exactly what names generate_recs() is returning
+
+        v = vendor_by_name.get(offer["vendor_name"])
         if v:
+            img = v.get("image_url") or RECS_PLACEHOLDER_IMG
             offer_type = v["offer_details"].get("offer_type", "").replace("_", " ").title()
             offer_desc = v["offer_details"].get("offer_description", "")
-            img = RECS_PLACEHOLDER_IMG
             offers_html += f'''<a class='offer' href='#' style='display:inline-block;vertical-align:top;'>
                 <span class='badge'>{offer_type}</span>
                 <img src='{img}' alt='offer'>
@@ -214,12 +241,12 @@ for panel in panels:
                     <div style='font-size:.8rem;color:#888;white-space:normal;word-break:break-word;'>{offer_desc}</div>
                 </div>
             </a>'''
-    st.markdown((
+
+    st.markdown(
         f"<div class='h-scroll' style='overflow-x:auto;white-space:nowrap;padding-bottom:0.4rem;'>"
-        f"<div style='display:flex;gap:0.9rem;'>"
-        f"{offers_html}"
-        f"</div></div>"
-    ).strip(), unsafe_allow_html=True)
+        f"<div style='display:flex;gap:0.9rem;'>{offers_html}</div></div>",
+        unsafe_allow_html=True,
+    )
 
 # ---------- Bottom navigation ----------
 NAV = [
