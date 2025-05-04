@@ -46,8 +46,7 @@ def _load_vendors(path: str) -> List[Dict[str, Any]]:
     """Load newline-delimited JSON (JSONL) vendor dump."""
     vendors: List[Dict[str, Any]] = []
     with open(path, "r", encoding="utf-8") as f:
-        for line in f:
-            vendors.append(json.loads(line))
+        vendors = json.load(f)
     return vendors
 
 
@@ -169,7 +168,7 @@ def _recommend_for_anchor(
 # ---------------------------------------------------------------------------
 
 def generate_recs(
-    vendor_path: str = "../data/partner_vendors_with_tags_4o.jsonl",
+    vendor_path: str = "../data/partner_vendors.json",
     transactions_path: str = "../data/final_data.csv",
     analysis_timeframe_days: int = 30,
     k_panels: int = 3,

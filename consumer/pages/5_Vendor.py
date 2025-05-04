@@ -9,19 +9,20 @@ from urllib.parse import quote_plus
 ASSETS_PATH   = Path(__file__).parent.parent / "assets"
 LOGO_FILE     = ASSETS_PATH / "revolut_logo.png"
 PROFILE_FILE  = ASSETS_PATH / "user.png"
-VENDORS_FILE  = "final.json"
+VENDORS_FILE  = Path(__file__).parent.parent.parent / "data" / "partner_vendors.json"
 
 # ---------- Bottom navigation definition ---------- #
 NAV = [
     ("Home",     "🏠", "home.py"),
     ("Explore",  "🔍", "pages/2_Explore.py"),
-    ("Cards",    "💳", "pages/3_Cards.py"),
+    ("Notifications",    "🔔", "pages/3_Notifications.py"),
     ("Settings", "⚙️", "pages/4_Settings.py"),
 ]
 
 # ---------- Fixed width & UI shell constants ---------- #
 FIXED = 600   # px fixed app width
 BAR_HEIGHT = 20  # px faux status bar height
+
 
 # ---------- Helper to inline images as <img> tags ---------- #
 
@@ -97,6 +98,14 @@ else:
     visits = 0
     transactions = []
     last_purchase = {"date": pd.Timestamp.now(), "amount": 0}
+
+# ---------- Page config ---------- #
+st.set_page_config(
+    page_title=vendor_name,
+    page_icon="🔔",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
 
 # ---------- Inject CSS for fixed-width layout and UI shell ---------- #
 st.markdown(

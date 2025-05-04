@@ -3,14 +3,15 @@ import pandas as pd
 from urllib.parse import quote_plus
 from pathlib import Path
 import base64
+import os
 
 # -------- Paths to local assets -------- #
 ASSETS_PATH = Path(__file__).parent / "assets"
 CARD_FILE = ASSETS_PATH / "card.png"
 LOGO_FILE = ASSETS_PATH / "revolut_logo.png"
 PROFILE_FILE = ASSETS_PATH / "user.png"
-CSV_FILE = Path(__file__).parent / "transactions.csv"
 
+CSV_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "final_data.csv")
 # ---------- Helper to inline images as <img> tags ---------- #
 
 def img_tag(path: Path, height: int) -> str:
@@ -24,13 +25,13 @@ def img_tag(path: Path, height: int) -> str:
 
 st.set_page_config(
     page_title="Revolut Lite",
-    page_icon="💳",
+    page_icon="🔔",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
 
 # ---------- CSS: FIXED‑WIDTH APP (600 px) & UI SHELL ---------- #
-FIXED = 600  # px
+FIXED = 750  # px
 BAR_HEIGHT = 20  # px for the faux status bar
 st.markdown(
     f"""
@@ -65,34 +66,25 @@ with header_r:
 # ---------- Session state ---------- #
 if "balance" not in st.session_state:
     st.session_state.balance = 1824.57
-
-if "transactions" not in st.session_state:
-    if CSV_FILE.exists():
-        # Read transactions from CSV
-        df = pd.read_csv(
-            CSV_FILE,
-            parse_dates=["timestamp"]
-        )
-        # Rename and format date
-        df = df.rename(
-            columns={
-                "timestamp": "date",
-                "merchant_name": "name",
-            }
-        )
-        df["date_str"] = df["date"].dt.strftime("%Y-%m-%d")
-        # Select relevant columns
-        st.session_state.transactions = df[["date_str", "name", "amount"]].rename(
-            columns={"date_str": "date"}
-        )
-    else:
-        # Fallback seed data
-        seed = [
-            {"date": "2025-05-02", "name": "Amazon", "amount": -42.35},
-            {"date": "2025-05-01", "name": "Apple Pay", "amount": -7.99},
-            {"date": "2025-04-29", "name": "Salary", "amount": 2400.00},
-        ]
-        st.session_state.transactions = pd.DataFrame(seed * 6)
+    
+if os.path.exists(CSV_FILE):
+    # Read transactions from CSV
+    df = pd.read_csv(
+        CSV_FILE,
+        parse_dates=["timestamp"]
+    )
+    # Rename and format date
+    df = df.rename(
+        columns={
+            "timestamp": "date",
+            "merchant_name": "name",
+        }
+    )
+    df["date_str"] = df["date"].dt.strftime("%Y-%m-%d")
+    # Select relevant columns
+    st.session_state.transactions = df[["date_str", "name", "amount"]].rename(
+        columns={"date_str": "date"}
+    )
 
 # ---------- CSS ---------- #
 
@@ -173,7 +165,7 @@ st.markdown(f"<div class='recent-activity'>{rows_html}</div>", unsafe_allow_html
 NAV = [
     ("Home", "🏠", Path(__file__)),
     ("Explore", "🔍", Path(__file__).parent / "pages/2_Explore.py"),
-    ("Cards", "💳", Path(__file__).parent / "pages/3_Cards.py"),
+    ("Notifications", "🔔", Path(__file__).parent / "pages/3_Notifications.py"),
     ("Settings", "⚙️", Path(__file__).parent / "pages/4_Settings.py"),
 ]
 

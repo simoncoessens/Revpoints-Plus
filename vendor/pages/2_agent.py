@@ -179,7 +179,7 @@ if uploaded:
     st.session_state.catalog = tmp.name
     st.success(f"Uploaded {uploaded.name}")
     if uploaded.type.startswith("image/"):
-        st.image(uploaded, use_column_width=True)
+        st.image(uploaded, use_container_width=True)
 gen_disabled = not (st.session_state.catalog and agent)
 if st.button("✨ Generate Campaign", disabled=gen_disabled):
     with st.spinner("Generating…"):

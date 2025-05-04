@@ -64,12 +64,7 @@ def get_vendor_contact(store_name: str, store_location: str, stream: bool = True
         print(full_response)
 
     # Try to parse JSON out of the model’s output
-    try:
-        data = json.loads(full_response)
-    except json.JSONDecodeError:
-        print("⚠️  Warning: could not parse JSON — here’s the raw output:")
-        print(full_response)
-        return None
+    data = json.loads(full_response)
 
     return data
 

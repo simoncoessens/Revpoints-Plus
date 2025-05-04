@@ -22,7 +22,7 @@ def img_tag(path: Path, height: int) -> str:
 
 st.set_page_config(
     page_title="Revolut Lite",
-    page_icon="💳",
+    page_icon="�",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -75,7 +75,7 @@ st.markdown(
 NAV = [
     ("Home",    "🏠", Path(__file__).parent.parent / "home.py"),
     ("Explore", "🔍",  Path(__file__)),
-    ("Cards",   "💳", Path(__file__).parent.parent / "pages/3_Cards.py"),
+    ("Notifications",   "🔔", Path(__file__).parent.parent / "pages/3_Notifications.py"),
     ("Settings","⚙️", Path(__file__).parent.parent / "pages/4_Settings.py"),
 ]
 
