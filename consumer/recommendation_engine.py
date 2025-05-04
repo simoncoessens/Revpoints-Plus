@@ -134,8 +134,8 @@ def _recommend_for_anchor(
     purchased_merchants = set(txn_df["merchant_name"].unique())
     avg_spend_map = user_summary.get("avg_spend_per_category", {})
 
-    def _collect_scores(category_filter: Optional[str] = None) -> List[tuple[float, str, str]]:
-        collected: List[tuple[float, str, str]] = []
+    def _collect_scores(category_filter: Optional[str] = None) -> List[tuple[float, str, str, str]]:
+        collected: List[tuple[float, str, str, str]] = []
         for idx, vendor in enumerate(vendors):
             if vendor["vendor_name"].lower() == anchor["merchant"].lower():
                 continue
@@ -147,8 +147,9 @@ def _recommend_for_anchor(
             cat_avg = avg_spend_map.get(vendor.get("category", ""), 1.0)
             value_norm = min(est_value / cat_avg, 1.0) if cat_avg else 0.0
             novelty = 0.0 if vendor["vendor_name"] in purchased_merchants else 1.0
-            score = 0.6 * sim + 0.3 * value_norm + 0.1 * novelty
-            collected.append((score, vendor["vendor_id"], vendor["vendor_name"]))
+            # Adjusted weights for better diversity
+            score = 0.6 * sim + 0.25 * value_norm + 0.15 * novelty
+            collected.append((score, vendor["vendor_id"], vendor["vendor_name"], vendor["offer_details"].get("offer_type", "")))
         return collected
 
     # First attempt: only same category as anchor
@@ -157,10 +158,18 @@ def _recommend_for_anchor(
     if len(scores) < top_n:
         scores = _collect_scores(None)
 
+    # Sort and diversify: avoid repeating offer_type if possible
     scores.sort(key=lambda x: x[0], reverse=True)
     results: List[Dict[str, str]] = []
-    for _, vid, vname in scores[:top_n]:
+    seen_types: set[str] = set()
+    for _, vid, vname, otype in scores:
+        if otype in seen_types and len(results) < top_n - 2:
+            # Skip duplicates early on to get variety; relax near the end
+            continue
         results.append({"vendor_id": vid, "vendor_name": vname})
+        seen_types.add(otype)
+        if len(results) == top_n:
+            break
     return results
 
 

@@ -203,7 +203,9 @@ def calculate_potential_savings(
 
     elif otype == 'points_for_cash':
         # e.g. 500 points -> €5 credit
-        return float(value)
+        # Empirically, users value points-for-cash at a discount
+        # because they must spend loyalty points. Down-weight to 40 %.
+        return float(value) * 0.4
 
     elif otype == 'free_item':
         # e.g. free coffee
