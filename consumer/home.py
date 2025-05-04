@@ -192,13 +192,11 @@ st.markdown(f"<div class='recent-activity'>{rows_html}</div>", unsafe_allow_html
 
 # ---------- BOTTOM NAVIGATION ---------- #
 NAV = [
-    ("Home", "🏠", Path(__file__)),
-    ("Explore", "🔍", Path(__file__).parent / "pages/2_Explore.py"),
-    ("Notifications", "🔔", Path(__file__).parent / "pages/3_Notifications.py"),
-    ("Savings", "👛", Path(__file__).parent / "pages/6_savings.py"),
+    ("Home",    "🏠", Path(__file__).parent / "home.py"),
+    ("Explore", "🔍",  Path(__file__).parent / "pages/2_Explore.py"),
+    ("Notifications",   "🔔", Path(__file__).parent / "pages/3_Notifications.py"),
+    ("Settings","⚙️", Path(__file__).parent / "pages/4_Settings.py"),
 ]
-
-print(NAV)
 
 st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
 cols = st.columns(len(NAV))
