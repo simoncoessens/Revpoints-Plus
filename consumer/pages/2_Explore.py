@@ -165,8 +165,7 @@ with header_r:
 
 # ---------- Data ----------
 # ---------- Dynamic vendor data ----------
-# final.json lives one level up from *consumer/pages*
-FINAL_JSON_PATH = Path(__file__).parent.parent / "final.json"
+FINAL_JSON_PATH = Path(__file__).parent.parent.parent / "data" / "final.json"
 
 with open(FINAL_JSON_PATH, "r", encoding="utf‑8") as f:
     vendors = json.load(f)
