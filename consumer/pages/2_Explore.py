@@ -186,7 +186,7 @@ offers = [
 RECS_PLACEHOLDER_IMG = "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
 
 # Load vendor details for lookup by vendor_id
-VENDOR_JSON_PATH = Path(__file__).parent.parent / "partner_vendors.json"
+VENDOR_JSON_PATH = Path(__file__).parent.parent.parent / "data" / "partner_vendors.json"
 with open(VENDOR_JSON_PATH, "r", encoding="utf-8") as f:
     vendor_data = json.load(f)
 vendor_lookup = {v["vendor_id"]: v for v in vendor_data}

@@ -9,7 +9,7 @@ from urllib.parse import quote_plus
 ASSETS_PATH   = Path(__file__).parent.parent / "assets"
 LOGO_FILE     = ASSETS_PATH / "revolut_logo.png"
 PROFILE_FILE  = ASSETS_PATH / "user.png"
-VENDORS_FILE  = "final.json"
+VENDORS_FILE  = Path(__file__).parent.parent.parent / "data" / "partner_vendors.json"
 
 # ---------- Bottom navigation definition ---------- #
 NAV = [
@@ -20,7 +20,7 @@ NAV = [
 ]
 
 # ---------- Fixed width & UI shell constants ---------- #
-FIXED = 600   # px fixed app width
+FIXED = 750   # px fixed app width
 BAR_HEIGHT = 20  # px for the faux status bar at top and bottom
 
 # ---------- Helper to inline images as <img> tags ---------- #

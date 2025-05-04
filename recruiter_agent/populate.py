@@ -116,21 +116,12 @@ def get_vendor_contact(store_name: str, store_location: str, stream_output: bool
         return None
 
     json_str = json_match.group(0)
-    try:
-        data = json.loads(json_str)
-        # Basic validation
-        if not isinstance(data, dict):
-             raise ValueError("Parsed data is not a dictionary.")
-        print("\n✅ Successfully parsed JSON from response.")
-        return data
-    except json.JSONDecodeError as e:
-        print(f"\n⚠️ Warning: could not parse JSON ({e}) — showing extracted block:")
-        print("---\n", json_str, "\n---")
-        return None
-    except ValueError as e:
-        print(f"\n⚠️ Warning: parsed JSON is not valid ({e}) — showing extracted block:")
-        print("---\n", json_str, "\n---")
-        return None
+    data = json.loads(json_str)
+    # Basic validation
+    if not isinstance(data, dict):
+            raise ValueError("Parsed data is not a dictionary.")
+    print("\n✅ Successfully parsed JSON from response.")
+    return data
 
 
 def populate_and_save_email(template_content: str, vendor_email: str, vendor_name: str, predefined: dict):

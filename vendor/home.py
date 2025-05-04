@@ -128,7 +128,7 @@ def load_data() -> pd.DataFrame:
     if SALES_FILE.exists():
         return pd.read_csv(SALES_FILE, parse_dates=["date"])
     else:
-        rng = pd.date_range(end=datetime.now(), periods=365*4, freq="6H")
+        rng = pd.date_range(end=datetime.now(), periods=365*4, freq="6h")
         n   = len(rng)
         return pd.DataFrame({
             "date": rng,

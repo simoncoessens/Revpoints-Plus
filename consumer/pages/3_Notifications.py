@@ -9,7 +9,8 @@ import pandas as pd
 st.set_page_config(
     page_title="Notifications",
     page_icon="🔔",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="collapsed"
 )
 
 # ---------- TOP BLACK BAR ---------- #
