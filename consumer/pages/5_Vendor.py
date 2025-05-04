@@ -15,7 +15,7 @@ VENDORS_FILE  = "final.json"
 NAV = [
     ("Home",     "🏠", "home.py"),
     ("Explore",  "🔍", "pages/2_Explore.py"),
-    ("Cards",    "💳", "pages/3_Cards.py"),
+    ("Notifications",    "🔔", "pages/3_Notifications.py"),
     ("Settings", "⚙️", "pages/4_Settings.py"),
 ]
 
@@ -76,7 +76,7 @@ else:
 # ---------- Page config ---------- #
 st.set_page_config(
     page_title=vendor_name,
-    page_icon="💳",
+    page_icon="🔔",
     layout="wide",
     initial_sidebar_state="collapsed",
 )

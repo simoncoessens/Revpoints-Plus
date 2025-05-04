@@ -13,7 +13,7 @@ BAR_HEIGHT = 20  # px
 st.markdown(f"<div class='mobile-top' style='height:{BAR_HEIGHT}px'></div>", unsafe_allow_html=True)
 
 # ---------- CSS: FIXED‑WIDTH APP (600 px) & UI SHELL ---------- #
-FIXED = 600  # px
+FIXED = 750  # px
 BAR_HEIGHT = 20  # px for the faux status bar
 st.markdown(
     f"""
@@ -225,7 +225,7 @@ for panel in panels:
 NAV = [
     ("Home",    "🏠", Path(__file__).parent.parent / "home.py"),
     ("Explore", "🔍",  Path(__file__)),
-    ("Cards",   "💳", Path(__file__).parent.parent / "pages/3_Cards.py"),
+    ("Notifications",   "🔔", Path(__file__).parent.parent / "pages/3_Notifications.py"),
     ("Settings","⚙️", Path(__file__).parent.parent / "pages/4_Settings.py"),
 ]
 

@@ -24,13 +24,13 @@ def img_tag(path: Path, height: int) -> str:
 
 st.set_page_config(
     page_title="Revolut Lite",
-    page_icon="💳",
+    page_icon="🔔",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
 
 # ---------- CSS: FIXED‑WIDTH APP (600 px) & UI SHELL ---------- #
-FIXED = 600  # px
+FIXED = 750  # px
 BAR_HEIGHT = 20  # px for the faux status bar
 st.markdown(
     f"""
@@ -173,7 +173,7 @@ st.markdown(f"<div class='recent-activity'>{rows_html}</div>", unsafe_allow_html
 NAV = [
     ("Home", "🏠", Path(__file__)),
     ("Explore", "🔍", Path(__file__).parent / "pages/2_Explore.py"),
-    ("Cards", "💳", Path(__file__).parent / "pages/3_Cards.py"),
+    ("Notifications", "🔔", Path(__file__).parent / "pages/3_Notifications.py"),
     ("Settings", "⚙️", Path(__file__).parent / "pages/4_Settings.py"),
 ]
 
