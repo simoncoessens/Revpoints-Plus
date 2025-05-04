@@ -207,9 +207,10 @@ with open(VENDOR_JSON_PATH, "r", encoding="utf-8") as f:
     vendor_data = json.load(f)
 vendor_lookup = {v["vendor_id"]: v for v in vendor_data}
 
+# Determine how many recent transactions to exclude for recommendations
+exclude_last_n = st.session_state.get("lastn", 0)
 
-panels = generate_recs()
-
+panels = generate_recs(exclude_last_n=exclude_last_n)
 
 with open(FINAL_JSON_PATH, "r", encoding="utf-8") as f:
     vendors = json.load(f)

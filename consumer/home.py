@@ -66,7 +66,9 @@ with header_r:
 # ---------- Session state ---------- #
 if "balance" not in st.session_state:
     st.session_state.balance = 1824.57
-    
+
+N_INIT = 50
+
 if os.path.exists(CSV_FILE):
     # Read transactions from CSV
     df = pd.read_csv(
@@ -81,10 +83,27 @@ if os.path.exists(CSV_FILE):
         }
     )
     df["date_str"] = df["date"].dt.strftime("%Y-%m-%d")
-    # Select relevant columns
-    st.session_state.transactions = df[["date_str", "name", "amount"]].rename(
-        columns={"date_str": "date"}
-    )
+    df = df[["date_str", "name", "amount"]].rename(columns={"date_str": "date"})
+    # Sort by date descending
+    df = df.sort_values("date", ascending=False).reset_index(drop=True)
+    # Set up lastn in session state
+    if "lastn" not in st.session_state:
+        st.session_state.lastn = N_INIT
+    n = st.session_state.lastn
+    # Split into hidden (most recent n) and shown (the rest)
+    if n > 0 and len(df) > n:
+        hidden_df = df.iloc[:n].copy()
+        shown_df = df.iloc[n:].copy()
+    else:
+        hidden_df = pd.DataFrame(columns=df.columns)
+        shown_df = df.copy()
+    st.session_state.transactions_hidden = hidden_df
+    st.session_state.transactions_shown = shown_df
+    # Set the transactions to display
+    if n > 0 and len(df) > n:
+        st.session_state.transactions = shown_df.copy()
+    else:
+        st.session_state.transactions = df.copy()
 
 # ---------- CSS ---------- #
 
@@ -134,6 +153,17 @@ st.markdown(f"""
 
 # ---------- RECENT ACTIVITY ---------- #
 st.markdown("#### Recent activity")
+if st.session_state.lastn > 0 and not st.session_state.transactions_hidden.empty:
+    if st.button(f"Show last {st.session_state.lastn} transactions"):
+        st.session_state.lastn = 0
+        # Show all transactions
+        df = pd.concat([
+            st.session_state.transactions_hidden,
+            st.session_state.transactions_shown
+        ], ignore_index=True)
+        st.session_state.transactions = df.copy()
+        st.rerun()
+
 rows_html = ""
 for _, row in (
     st.session_state.transactions.assign(
@@ -157,7 +187,6 @@ for _, row in (
         f"  </div>"
         f"</a>"
     )
-
 
 st.markdown(f"<div class='recent-activity'>{rows_html}</div>", unsafe_allow_html=True)
 

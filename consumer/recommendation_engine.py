@@ -1,5 +1,6 @@
 import json
 from typing import List, Dict, Any, Optional
+import os
 
 import numpy as np
 import pandas as pd
@@ -70,7 +71,7 @@ def _build_vendor_embeddings(vendors: List[Dict[str, Any]]) -> np.ndarray:
 #                           Anchor (panel) selection
 # ---------------------------------------------------------------------------
 
-def _choose_anchor_vendors(txn_df: pd.DataFrame, k: int = 5, tau_days: int = 14) -> List[Dict[str, str]]:
+def _choose_anchor_vendors(txn_df: pd.DataFrame, k: int = 5, tau_days: int = 3) -> List[Dict[str, str]]:
     """Pick *k* distinct-category vendors with an exponential recency bias.
 
     Transactions are weighted by   exp(-Δdays / tau_days)  before computing
@@ -173,8 +174,15 @@ def generate_recs(
     analysis_timeframe_days: int = 30,
     k_panels: int = 3,
     panel_size: int = 6,
+    exclude_last_n: int = 0,
 ) -> List[Dict[str, Any]]:
-    """End-to-end pipeline returning panels consumable by the front-end.
+    """
+    End-to-end pipeline returning panels consumable by the front-end.
+
+    Parameters
+    ----------
+    exclude_last_n : int
+        If > 0, exclude the most recent n transactions (by timestamp) from all analysis and recommendations.
 
     Returns
     -------
@@ -182,16 +190,32 @@ def generate_recs(
         Each dict has keys: reason, anchor_merchant, category, offers (list[str])
     """
     # 1. User summary
-    summary = generate_user_profile_summary(
-        path=transactions_path, analysis_timeframe_days=analysis_timeframe_days
-    )
-
     # 2. Raw user transactions (to pick anchors, novelty, etc.)
     txn_df = pd.read_csv(
         transactions_path,
         usecols=["timestamp", "merchant_name", "category", "amount"],
         parse_dates=["timestamp"],
     )
+    txn_df = txn_df.sort_values("timestamp", ascending=False).reset_index(drop=True)
+    if exclude_last_n > 0 and len(txn_df) > exclude_last_n:
+        txn_df = txn_df.iloc[exclude_last_n:].copy()
+    # For user profile summary, filter the same way
+    temp_path = None
+    if exclude_last_n > 0 and len(txn_df) > 0:
+        # Save filtered df to a temp csv for user_profiler
+        import tempfile
+        temp = tempfile.NamedTemporaryFile(delete=False, suffix=".csv")
+        txn_df.to_csv(temp.name, index=False)
+        temp_path = temp.name
+        temp.close()
+        summary = generate_user_profile_summary(
+            path=temp_path, analysis_timeframe_days=analysis_timeframe_days
+        )
+        os.unlink(temp_path)
+    else:
+        summary = generate_user_profile_summary(
+            path=transactions_path, analysis_timeframe_days=analysis_timeframe_days
+        )
 
     vendors = _load_vendors(vendor_path)
     vendor_vecs = _build_vendor_embeddings(vendors)
