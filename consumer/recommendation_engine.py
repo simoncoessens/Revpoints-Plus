@@ -129,8 +129,8 @@ def _recommend_for_anchor(
     return _diverse_top_vendors(scores, top_n)
 
 def generate_recs(
-    vendor_path: str = "../data/partner_vendors.json",
-    transactions_path: str = "../data/final_data.csv",
+    vendor_path: str = "data/partner_vendors.json",
+    transactions_path: str = "data/final_data.csv",
     analysis_timeframe_days: int = 30,
     k_panels: int = 3,
     panel_size: int = 6,
