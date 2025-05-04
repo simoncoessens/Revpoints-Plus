@@ -18,7 +18,7 @@ ust:100%;-ms-text-size-adjust:100%; }=0A table, td { border-collapse:c=
 ollapse;mso-table-lspace:0pt;mso-table-rspace:0pt; }=0A img { border:0=
 ;height:auto;line-height:100%; outline:none;text-decoration:none;-ms-interp=
 olation-mode:bicubic; }=0A p { display:block;margin:13px 0; }</style><=
-!--[if mso]>=0A <noscript>=0A <xml>=0A <o:OfficeDocumentSettings>=
+<!--[if mso]>=0A <noscript>=0A <xml>=0A <o:OfficeDocumentSettings>=
 =0A <o:AllowPNG/>=0A <o:PixelsPerInch>96</o:PixelsPerInch>=0A =
 </o:OfficeDocumentSettings>=0A </xml>=0A </noscript>=0A <![endif]-=
 -><!--[if lte mso 11]>=0A <style type=3D"text/css">=0A .mj-outlook-=
@@ -256,7 +256,14 @@ style=3D"margin: 16px 0;"><strong>Accept RevPoints:</strong> Allow custome=
 rs to pay using their RevPoints, offering them more flexibility and incenti=
 ves to shop with you.</p><p style=3D"margin: 16px 0;"><strong>Increased Ex=
 posure:</strong> Get featured within the Revolut app, putting unique_vendor_name directly in front of a large, engaged audience looking for places=
-to spend.</p><p style=3D"margin: 16px 0;"><strong>Easy Integration:</stro=
+to spend.</p>
+<!-- === INSERTED TEXT START === -->
+<p style=3D"margin: 16px 0;"><strong>Reduce Transaction Fees:</strong> By=
+ accepting direct payments from Revolut users via RevPoints or their Revo=
+lut account, you can bypass traditional Visa or Mastercard netw=
+ork fees, saving you money on every transaction.</p>
+<!-- === INSERTED TEXT END === -->
+<p style=3D"margin: 16px 0;"><strong>Easy Integration:</stro=
 ng> Our process is straightforward, allowing you to start accepting RevPoin=
 ts quickly.</p></div></td></tr></tbody></table></td></tr></tbody></table><=
 /div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></=
