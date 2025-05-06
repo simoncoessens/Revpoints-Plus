@@ -1,7 +1,9 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 import streamlit as st
 import pandas as pd
 from urllib.parse import quote_plus
-from pathlib import Path
 import base64
 
 # -------- Paths to local assets -------- #
@@ -73,19 +75,15 @@ st.markdown(
 
 # ---------- BOTTOM NAVIGATION ---------- #
 NAV = [
-    ("Home",    "🏠", Path(__file__).parent.parent / "home.py"),
-    ("Explore", "🔍",  Path(__file__)),
-    ("Notifications",   "🔔", Path(__file__).parent.parent / "pages/3_Notifications.py"),
-    ("Settings","⚙️", Path(__file__).parent.parent / "pages/4_Settings.py"),
+    ("Home", "🏠", "home.py"),
+    ("Explore", "🔍", "pages/2_Explore.py"),
+    ("Notifications", "🔔", "pages/3_Notifications.py"),
+    ("Settings", "⚙️", "pages/4_Settings.py"),
 ]
 
 st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
 cols = st.columns(len(NAV))
-for (label, icon, target), col in zip(NAV, cols):
+for (label, icon, page), col in zip(NAV, cols):
     with col:
-        if target:
-            st.page_link(page=target, label=label, icon=icon, use_container_width=True)
-        else:
-            st.markdown(f"<a selected>{icon}<br>{label}</a>", unsafe_allow_html=True)
-
-st.markdown("</div>", unsafe_allow_html=True)
+        st.page_link(page=page, label=label, icon=icon, use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)
