@@ -4,6 +4,9 @@ A compact proof‑of‑concept that shows how Revolut Points could become a da
 
 ---
 
+## Check it out
+https://revpoints-plus-7kuw.vercel.app/
+
 ## What it does
 
 _Looks at what the user already buys and recommends partner vendors where paying with points makes obvious sense._
