@@ -1,0 +1,504 @@
+timestamp,merchant_name,category,amount,currency
+2024-02-18 18:20:42+00:00,FlixBus,Travel & Transportation,-29.99,EUR
+2024-02-19 12:25:34+00:00,Carrer de Sor Eulàlia d'Anzizu,Restaurants,-4.2,EUR
+2024-02-19 16:57:43+00:00,Mercadona,Groceries,-4.02,EUR
+2024-02-20 13:20:39+00:00,Del Molino Roa,Restaurants,-6.1,EUR
+2024-02-20 16:38:56+00:00,Pasteleria Ayub,Restaurants,-3.6,EUR
+2024-02-20 20:52:04+00:00,FlixBus,Travel & Transportation,-19.99,EUR
+2024-02-21 09:13:42+00:00,Jotas Bread,Restaurants,-5.45,EUR
+2024-02-21 11:58:54+00:00,AltaglioBcn,Restaurants,-8.3,EUR
+2024-02-21 12:31:53+00:00,Del Molino Roa Sl,Restaurants,-5.6,EUR
+2024-02-22 14:09:16+00:00,Del Molino Roa,Restaurants,-7.1,EUR
+2024-02-22 21:53:27+00:00,Uber Eats,Restaurants,-12.79,EUR
+2024-02-23 11:45:58+00:00,Bar Vidal,Restaurants,-4.75,EUR
+2024-02-24 14:04:04+00:00,Bar El Tomàs de Sarrià,Restaurants,-8.05,EUR
+2024-02-24 18:50:30+00:00,FREE NOW,Travel & Transportation,-8.6,EUR
+2024-02-24 19:27:33+00:00,Mercadona,Groceries,-2.89,EUR
+2024-02-24 20:03:47+00:00,Mercadona,Groceries,-3.81,EUR
+2024-02-25 12:40:28+00:00,smou,Travel & Transportation,-0.02,EUR
+2024-02-25 12:40:49+00:00,Bicing,Travel & Transportation,-50.0,EUR
+2024-02-26 10:31:42+00:00,TMB,Travel & Transportation,-1.0,EUR
+2024-02-26 19:25:51+00:00,Mercadona,Groceries,-7.83,EUR
+2024-02-27 15:48:17+00:00,Mercadona,Groceries,-2.0,EUR
+2024-02-28 12:17:13+00:00,Del Molino Roa,Restaurants,-5.6,EUR
+2024-02-28 12:47:45+00:00,Bar Triton,Restaurants,-7.4,EUR
+2024-02-28 21:19:06+00:00,Dogra Food 1,Restaurants,-4.99,EUR
+2024-02-29 14:02:33+00:00,MacxiPA,Restaurants,-5.06,EUR
+2024-02-29 18:33:49+00:00,Mercadona,Groceries,-10.49,EUR
+2024-03-01 10:28:10+00:00,Uber,Travel & Transportation,-11.0,EUR
+2024-03-01 10:32:57+00:00,Uber,Travel & Transportation,-11.25,EUR
+2024-03-01 10:37:12+00:00,FREE NOW,Travel & Transportation,-9.85,EUR
+2024-03-01 19:10:29+00:00,Virsa Supermercado,Groceries,-5.88,EUR
+2024-03-01 23:06:46+00:00,Belushis Bars,Entertainment,-3.0,EUR
+2024-03-02 01:18:17+00:00,OCEAN'S,Entertainment,-6.0,EUR
+2024-03-02 12:01:20+00:00,Barcelona Supermercat,Groceries,-0.6,EUR
+2024-03-02 13:29:02+00:00,Bar Mossegada,Restaurants,-9.5,EUR
+2024-03-03 14:41:10+00:00,Too Good To Go,Groceries,-2.99,EUR
+2024-03-03 17:55:04+00:00,Levaduramadre,Restaurants,-5.65,EUR
+2024-03-04 13:52:58+00:00,Del Molino Roa Sl,Restaurants,-5.0,EUR
+2024-03-04 16:53:44+00:00,Mercadona,Groceries,-4.65,EUR
+2024-03-04 20:10:27+00:00,Decathlon,Shopping,-9.78,EUR
+2024-03-05 12:14:23+00:00,Mercadona,Groceries,-7.49,EUR
+2024-03-05 13:43:29+00:00,Del Molino Roa,Restaurants,-5.6,EUR
+2024-03-06 09:47:52+00:00,MacxiPA,Restaurants,-3.96,EUR
+2024-03-08 19:04:03+00:00,Streamz,Entertainment,-7.95,EUR
+2024-03-08 20:40:15+00:00,Mercadona,Groceries,-3.75,EUR
+2024-03-09 15:28:53+00:00,Cabify,Travel & Transportation,-12.5,EUR
+2024-03-09 16:51:09+00:00,FREE NOW,Travel & Transportation,-17.5,EUR
+2024-03-10 01:37:29+00:00,Too Good To Go,Groceries,-2.99,EUR
+2024-03-11 11:47:20+00:00,Mercadona,Groceries,-14.83,EUR
+2024-03-11 17:07:08+00:00,Tu Dulce Pasion 2,Restaurants,-1.5,EUR
+2024-03-12 11:40:39+00:00,MacxiPA,Restaurants,-3.55,EUR
+2024-03-13 15:33:09+00:00,Mercadona,Groceries,-4.8,EUR
+2024-03-13 19:19:01+00:00,La Plata,Restaurants,-7.0,EUR
+2024-03-14 11:24:53+00:00,McDonald's,Restaurants,-4.51,EUR
+2024-03-16 01:21:17+00:00,OCEAN'S,Entertainment,-2.0,EUR
+2024-03-16 04:57:05+00:00,Bicing,Travel & Transportation,-0.35,EUR
+2024-03-16 05:34:44+00:00,McDonald's,Restaurants,-6.16,EUR
+2024-03-16 14:39:27+00:00,Mercadona,Groceries,-12.7,EUR
+2024-03-16 18:22:10+00:00,Badiani Mandri,Restaurants,-4.5,EUR
+2024-03-16 18:32:19+00:00,Too Good To Go,Groceries,-2.99,EUR
+2024-03-16 23:52:07+00:00,Bar Manchester,Entertainment,-3.5,EUR
+2024-03-17 01:12:57+00:00,McDonald's,Restaurants,-11.02,EUR
+2024-03-18 20:14:41+00:00,Omio,Travel & Transportation,-66.91,EUR
+2024-03-19 10:42:13+00:00,MacxiPA,Restaurants,-3.55,EUR
+2024-03-19 21:21:49+00:00,honest greens,Restaurants,-17.69,EUR
+2024-03-20 14:43:58+00:00,Amazon,Shopping,-18.68,EUR
+2024-03-21 13:54:04+00:00,Del Molino Roa,Restaurants,-5.0,EUR
+2024-03-21 13:55:54+00:00,MacxiPA,Restaurants,-3.15,EUR
+2024-03-21 19:56:11+00:00,Mercadona,Groceries,-2.05,EUR
+2024-03-21 22:03:25+00:00,Casa Sagnier,Entertainment,-11.0,EUR
+2024-03-22 02:44:46+00:00,Cabify,Travel & Transportation,-5.99,EUR
+2024-03-22 03:09:51+00:00,Pimp My Trip,Travel & Transportation,-40.0,EUR
+2024-03-23 14:14:02+00:00,Spar,Groceries,-3.0,EUR
+2024-03-23 14:15:17+00:00,Spar,Groceries,-3.65,EUR
+2024-03-23 17:00:43+00:00,Gelateria Della Palma,Restaurants,-3.5,EUR
+2024-03-23 21:36:42+00:00,KFC,Restaurants,-5.02,EUR
+2024-03-24 01:40:09+00:00,FREE NOW,Travel & Transportation,-8.0,EUR
+2024-03-24 13:52:25+00:00,Too Good To Go,Groceries,-2.99,EUR
+2024-03-24 23:50:56+00:00,Cabify,Travel & Transportation,-29.84,EUR
+2024-03-25 12:01:34+00:00,Mercadona,Groceries,-14.0,EUR
+2024-03-25 16:50:17+00:00,Abaceria Lio,Groceries,-5.1,EUR
+2024-03-25 23:06:01+00:00,FREE NOW,Travel & Transportation,-14.6,EUR
+2024-03-27 11:41:59+00:00,Humana,Shopping,-5.15,EUR
+2024-03-27 13:01:28+00:00,Primark,Shopping,-26.5,EUR
+2024-03-27 19:25:42+00:00,Mercadona,Groceries,-4.31,EUR
+2024-03-29 07:13:36+00:00,Metro de Madrid,Travel & Transportation,-8.6,EUR
+2024-03-29 08:33:43+00:00,McDonald's,Restaurants,-6.51,EUR
+2024-03-29 16:18:16+00:00,Paseo del Prado,Entertainment,-18.0,EUR
+2024-03-29 22:44:01+00:00,Rangoli,Restaurants,-31.25,EUR
+2024-03-30 11:48:32+00:00,Vueling,Travel & Transportation,-145.98,EUR
+2024-03-30 16:14:42+00:00,Metro de Madrid,Travel & Transportation,-6.1,EUR
+2024-03-30 19:21:53+00:00,El Nacional Barcelona,Restaurants,-10.0,EUR
+2024-03-31 13:01:34+00:00,Park Güell,Entertainment,-10.0,EUR
+2024-03-31 14:01:19+00:00,Plenti (location in 2018),Restaurants,-27.0,EUR
+2024-03-31 14:13:21+00:00,Ideasorigen Balmes,Groceries,-2.44,EUR
+2024-03-31 19:47:08+00:00,Antonia Pizza,Restaurants,-5.3,EUR
+2024-03-31 20:54:18+00:00,Antonias Burger,Restaurants,-21.0,EUR
+2024-03-31 22:14:31+00:00,Chatelet,Restaurants,-5.6,EUR
+2024-03-31 23:29:22+00:00,Cafè Salambó,Restaurants,-5.8,EUR
+2024-04-01 01:28:48+00:00,Bar El OtrO,Restaurants,-6.4,EUR
+2024-04-01 02:53:41+00:00,Uber Eats,Restaurants,-15.79,EUR
+2024-04-01 12:30:21+00:00,el Fornet,Restaurants,-10.45,EUR
+2024-04-01 12:58:10+00:00,Kachafruit Barna S.L.,Groceries,-3.1,EUR
+2024-04-01 22:59:40+00:00,Cervecería Catalana,Restaurants,-51.2,EUR
+2024-04-02 11:46:54+00:00,Mercadona,Groceries,-7.92,EUR
+2024-04-02 13:48:18+00:00,Baby Jalebi,Restaurants,-12.0,EUR
+2024-04-02 14:37:29+00:00,Mercadona,Groceries,-26.16,EUR
+2024-04-03 18:40:24+00:00,La Central del Raval,Shopping,-2.2,EUR
+2024-04-03 21:53:19+00:00,heladeria Dino,Restaurants,-3.5,EUR
+2024-04-03 22:26:48+00:00,Estanco,Shopping,-5.6,EUR
+2024-04-04 12:32:42+00:00,Mercadona,Groceries,-18.01,EUR
+2024-04-04 18:18:25+00:00,AliExpress,Shopping,-11.03,EUR
+2024-04-04 18:32:41+00:00,Decathlon,Shopping,-27.97,EUR
+2024-04-04 20:20:14+00:00,Mercadona,Groceries,-16.61,EUR
+2024-04-04 20:21:48+00:00,Frutas Diaz,Groceries,-3.5,EUR
+2024-04-05 18:30:42+00:00,Mercadona,Groceries,-11.9,EUR
+2024-04-06 00:08:11+00:00,Cabify,Travel & Transportation,-9.83,EUR
+2024-04-06 02:37:01+00:00,Cabify,Travel & Transportation,-12.2,EUR
+2024-04-06 12:28:10+00:00,La Forneria,Restaurants,-5.7,EUR
+2024-04-06 12:58:41+00:00,Mercadona,Groceries,-12.12,EUR
+2024-04-06 13:00:13+00:00,Shawarmax,Restaurants,-4.9,EUR
+2024-04-06 20:00:31+00:00,Mercadona,Groceries,-18.74,EUR
+2024-04-07 22:21:24+00:00,Dhaba,Restaurants,-22.53,EUR
+2024-04-08 12:00:52+00:00,Mercadona,Groceries,-2.05,EUR
+2024-04-08 18:15:46+00:00,UNIQLO,Shopping,-44.8,EUR
+2024-04-08 19:17:24+00:00,Mercadona,Groceries,-33.4,EUR
+2024-04-08 20:04:16+00:00,Streamz,Entertainment,-7.95,EUR
+2024-04-09 16:44:06+00:00,Anita Gelato,Restaurants,-5.8,EUR
+2024-04-09 21:59:11+00:00,La Brillantina,Restaurants,-59.4,EUR
+2024-04-10 13:45:44+00:00,DIAGONAL,Restaurants,-16.4,EUR
+2024-04-10 16:25:43+00:00,Mercadona,Groceries,-4.7,EUR
+2024-04-10 17:27:50+00:00,Amovens,Travel & Transportation,-50.42,EUR
+2024-04-10 18:07:38+00:00,el Fornet,Restaurants,-2.5,EUR
+2024-04-11 14:12:13+00:00,MacxiPA,Restaurants,-3.25,EUR
+2024-04-11 14:52:09+00:00,Pimp My Trip,Travel & Transportation,-25.0,EUR
+2024-04-11 16:27:23+00:00,Mercadona,Groceries,-12.56,EUR
+2024-04-11 20:21:45+00:00,Samosa Indian Tandoori,Restaurants,-16.29,EUR
+2024-04-12 10:58:48+00:00,Resident Advisor,Entertainment,-11.3,EUR
+2024-04-12 12:07:14+00:00,Bar Estacion Central,Restaurants,-1.7,EUR
+2024-04-12 12:49:59+00:00,Ferrocarrils de la Generalitat Catalunya,Travel & Transportation,-56.0,EUR
+2024-04-12 13:47:52+00:00,Restaurante Noru,Restaurants,-14.0,EUR
+2024-04-12 13:59:09+00:00,Montserrat Visita,Entertainment,-6.2,EUR
+2024-04-12 17:51:56+00:00,Montserrat Visita,Entertainment,-5.1,EUR
+2024-04-12 20:13:47+00:00,honest greens,Restaurants,-12.4,EUR
+2024-04-13 03:10:30+00:00,The Garage Club,Entertainment,-25.0,EUR
+2024-04-13 03:12:16+00:00,The Garage Club,Entertainment,-2.0,EUR
+2024-04-13 03:14:42+00:00,The Garage Club,Entertainment,-10.0,EUR
+2024-04-13 03:33:03+00:00,The Garage Club,Entertainment,-3.0,EUR
+2024-04-13 04:52:10+00:00,The Garage Club,Entertainment,-6.0,EUR
+2024-04-13 05:14:28+00:00,The Garage Club,Entertainment,-6.0,EUR
+2024-04-13 05:54:55+00:00,The Garage Club,Entertainment,-6.0,EUR
+2024-04-13 06:18:52+00:00,The Garage Club,Entertainment,-6.0,EUR
+2024-04-13 15:14:46+00:00,Las Ramblas,Restaurants,-16.55,EUR
+2024-04-13 17:26:30+00:00,Premmia Mercat,Groceries,-2.05,EUR
+2024-04-13 18:49:46+00:00,YEGO,Travel & Transportation,-10.23,EUR
+2024-04-13 20:34:18+00:00,YEGO,Travel & Transportation,-6.27,EUR
+2024-04-13 20:39:18+00:00,Lestupenda,Restaurants,-11.5,EUR
+2024-04-13 20:55:45+00:00,McDonald's,Restaurants,-4.51,EUR
+2024-04-13 21:14:51+00:00,YEGO,Travel & Transportation,-3.96,EUR
+2024-04-14 10:06:30+00:00,Restaurant Can Jane,Restaurants,-17.3,EUR
+2024-04-14 13:02:42+00:00,Suma Supermercados,Groceries,-2.94,EUR
+2024-04-14 14:30:54+00:00,Tabacos,Shopping,-12.6,EUR
+2024-04-14 15:16:29+00:00,Bar Josep,Restaurants,-16.9,EUR
+2024-04-14 15:40:31+00:00,Productes Artesans Cal,Restaurants,-2.1,EUR
+2024-04-14 18:29:35+00:00,Vidreres C 35 Dir. Granol,Travel & Transportation,-19.63,EUR
+2024-04-14 19:26:55+00:00,Madonna Gelateria,Restaurants,-3.8,EUR
+2024-04-14 20:44:22+00:00,SumUp,Shopping,-3.0,EUR
+2024-04-14 21:59:06+00:00,Cred Area De Montcada Sur,Travel & Transportation,-16.85,EUR
+2024-04-14 23:52:02+00:00,Musta Shawarma,Restaurants,-17.9,EUR
+2024-04-15 00:12:07+00:00,YEGO,Travel & Transportation,-5.61,EUR
+2024-04-15 16:26:31+00:00,Mercadona,Groceries,-8.07,EUR
+2024-04-15 18:20:20+00:00,YEGO,Travel & Transportation,-2.97,EUR
+2024-04-15 18:53:36+00:00,YEGO,Travel & Transportation,-4.29,EUR
+2024-04-15 20:27:25+00:00,Mercadona,Groceries,-11.49,EUR
+2024-04-15 22:46:33+00:00,Antonias Burger,Restaurants,-30.5,EUR
+2024-04-16 06:10:22+00:00,Bicing,Travel & Transportation,-1.05,EUR
+2024-04-16 09:39:37+00:00,YEGO,Travel & Transportation,-2.97,EUR
+2024-04-16 14:00:33+00:00,Too Good To Go,Groceries,-2.99,EUR
+2024-04-16 17:34:11+00:00,Taperia El Born,Restaurants,-8.2,EUR
+2024-04-16 20:41:03+00:00,Restaurante ISABELLA'S,Restaurants,-63.5,EUR
+2024-04-16 21:05:14+00:00,Unibet,Entertainment,-50.0,EUR
+2024-04-16 22:15:13+00:00,Tabacs,Shopping,-39.0,EUR
+2024-04-17 19:04:13+00:00,Mercadona,Groceries,-13.76,EUR
+2024-04-17 19:38:50+00:00,Mercadona,Groceries,-7.02,EUR
+2024-04-17 22:07:44+00:00,FlixBus,Travel & Transportation,-75.98,EUR
+2024-04-18 09:52:27+00:00,YEGO,Travel & Transportation,-2.64,EUR
+2024-04-18 14:07:09+00:00,MacxiPA,Restaurants,-3.35,EUR
+2024-04-18 18:59:52+00:00,BCM Mallorca,Entertainment,-11.8,EUR
+2024-04-19 16:12:43+00:00,Mercadona,Groceries,-18.57,EUR
+2024-04-19 22:14:57+00:00,SUPERMARKET,Groceries,-7.99,EUR
+2024-04-20 02:06:01+00:00,Bikinis Ltd,Entertainment,-4.0,EUR
+2024-04-20 03:20:05+00:00,Uber,Travel & Transportation,-12.2,EUR
+2024-04-20 04:19:52+00:00,FREE NOW,Travel & Transportation,-17.3,EUR
+2024-04-20 17:34:25+00:00,Mercadona,Groceries,-6.58,EUR
+2024-04-20 18:20:53+00:00,Mercadona,Groceries,-12.43,EUR
+2024-04-20 20:57:39+00:00,Estanco,Shopping,-4.35,EUR
+2024-04-20 21:11:00+00:00,Supermercat,Groceries,-3.0,EUR
+2024-04-20 22:52:35+00:00,Hungry Eyes,Restaurants,-37.11,EUR
+2024-04-21 01:46:55+00:00,The George,Entertainment,-6.0,EUR
+2024-04-21 02:16:50+00:00,The George,Entertainment,-6.0,EUR
+2024-04-21 14:24:34+00:00,Kachafruit Barna S.L.,Groceries,-5.63,EUR
+2024-04-22 12:28:04+00:00,Mercadona,Groceries,-13.91,EUR
+2024-04-22 16:04:44+00:00,Del Molino Roa Sl,Restaurants,-2.85,EUR
+2024-04-22 16:26:34+00:00,MacxiPA,Restaurants,-1.55,EUR
+2024-04-23 14:28:43+00:00,Fleca Del Metro Slu,Restaurants,-10.0,EUR
+2024-04-23 16:04:03+00:00,La Balmesina,Restaurants,-46.9,EUR
+2024-04-23 16:39:50+00:00,Good News Glories,Restaurants,-3.0,EUR
+2024-04-23 18:20:22+00:00,Crispy Chicken,Restaurants,-7.5,EUR
+2024-04-23 18:53:10+00:00,Tabacs Estanc Exp n° 446,Shopping,-4.35,EUR
+2024-04-23 20:39:57+00:00,YEGO,Travel & Transportation,-3.3,EUR
+2024-04-23 20:43:56+00:00,Lidl,Groceries,-13.29,EUR
+2024-04-23 20:58:42+00:00,YEGO,Travel & Transportation,-4.29,EUR
+2024-04-24 10:05:57+00:00,Del Molino Roa,Restaurants,-1.2,EUR
+2024-04-24 12:36:42+00:00,Mercadona,Groceries,-12.97,EUR
+2024-04-25 09:52:42+00:00,YEGO,Travel & Transportation,-3.3,EUR
+2024-04-25 11:31:11+00:00,Del Molino Roa,Restaurants,-2.4,EUR
+2024-04-25 14:05:10+00:00,MacxiPA,Restaurants,-4.0,EUR
+2024-04-25 14:05:58+00:00,Del Molino Roa,Restaurants,-5.6,EUR
+2024-04-25 16:34:39+00:00,YEGO,Travel & Transportation,-6.27,EUR
+2024-04-25 18:56:44+00:00,Santamasa Sarrià,Restaurants,-16.0,EUR
+2024-04-26 03:39:15+00:00,Aerobús Barcelona,Travel & Transportation,-7.25,EUR
+2024-04-26 04:46:46+00:00,Barcelona Airport,Travel & Transportation,-6.2,EUR
+2024-04-26 08:57:47+00:00,Lagkagehuset,Restaurants,-10.35,EUR
+2024-04-26 09:39:38+00:00,DSB,Travel & Transportation,-4.04,EUR
+2024-04-26 14:33:03+00:00,Palmehuset,Entertainment,-5.38,EUR
+2024-04-26 15:24:41+00:00,DSB,Travel & Transportation,-3.23,EUR
+2024-04-26 18:20:47+00:00,Steel House Copenhagen,Travel & Transportation,-7.4,EUR
+2024-04-26 19:38:41+00:00,Mercadona,Groceries,-10.63,EUR
+2024-04-27 01:32:55+00:00,Ps Bar & Grill A/s,Entertainment,-59.86,EUR
+2024-04-27 02:00:00+00:00,Tivoli,Entertainment,-21.5,EUR
+2024-04-27 03:55:03+00:00,Lsland Aps,Entertainment,-13.46,EUR
+2024-04-27 04:08:10+00:00,Cff Investment Est 2016 A,Entertainment,-13.46,EUR
+2024-04-27 11:44:54+00:00,Steel House Copenhagen,Travel & Transportation,-2.7,EUR
+2024-04-27 14:32:20+00:00,Christiania Is Ap,Restaurants,-7.81,EUR
+2024-04-27 15:33:59+00:00,TIER,Travel & Transportation,-8.68,EUR
+2024-04-27 16:09:02+00:00,Havfruekiosken,Restaurants,-6.06,EUR
+2024-04-27 16:44:40+00:00,DSB,Travel & Transportation,-6.46,EUR
+2024-04-27 16:52:28+00:00,Lagkagehuset,Restaurants,-8.75,EUR
+2024-04-27 19:45:12+00:00,Tecnotron,Shopping,-5.0,EUR
+2024-04-27 21:42:46+00:00,7-Eleven,Groceries,-5.39,EUR
+2024-04-27 22:09:22+00:00,Street Kitchen,Restaurants,-7.94,EUR
+2024-04-27 22:21:50+00:00,Tivoli,Entertainment,-21.53,EUR
+2024-04-27 22:41:45+00:00,Tivoli,Entertainment,-24.22,EUR
+2024-04-27 22:57:47+00:00,Ben&jerrys Isbod,Restaurants,-5.25,EUR
+2024-04-28 12:05:51+00:00,DOT - Din Offentlige Transport,Travel & Transportation,-3.23,EUR
+2024-04-28 14:22:39+00:00,Too Good To Go,Groceries,-2.99,EUR
+2024-04-28 14:52:55+00:00,Landbageriet,Restaurants,-5.65,EUR
+2024-04-28 17:15:40+00:00,Coop 365discount,Groceries,-1.0,EUR
+2024-04-28 19:44:14+00:00,DOT - Din Offentlige Transport,Travel & Transportation,-4.04,EUR
+2024-04-28 20:34:38+00:00,7-Eleven,Groceries,-6.06,EUR
+2024-04-28 20:35:22+00:00,7-Eleven,Groceries,-3.84,EUR
+2024-04-29 12:04:08+00:00,Lidl,Groceries,-4.17,EUR
+2024-04-29 20:25:32+00:00,Mercadona,Groceries,-4.33,EUR
+2024-04-30 13:42:53+00:00,Crep Nova Sarria,Restaurants,-19.35,EUR
+2024-04-30 18:44:21+00:00,Mercadona,Groceries,-4.25,EUR
+2024-04-30 19:59:28+00:00,Too Good To Go,Groceries,-2.99,EUR
+2024-05-01 04:08:27+00:00,Uber,Travel & Transportation,-13.51,EUR
+2024-05-01 15:53:28+00:00,el Fornet,Restaurants,-2.65,EUR
+2024-05-01 16:31:23+00:00,superCOR,Groceries,-7.34,EUR
+2024-05-02 18:33:10+00:00,Mercadona,Groceries,-8.79,EUR
+2024-05-02 19:46:05+00:00,Headquarters,Restaurants,-33.0,EUR
+2024-05-03 12:00:40+00:00,Mercadona,Groceries,-31.54,EUR
+2024-05-03 14:28:53+00:00,Del Molino Roa Sl,Restaurants,-2.6,EUR
+2024-05-03 17:31:58+00:00,DICE,Entertainment,-49.5,EUR
+2024-05-03 19:05:47+00:00,Jorge Alberto Campos,Shopping,-4.35,EUR
+2024-05-03 20:37:17+00:00,Restaurant,Restaurants,-13.0,EUR
+2024-05-03 21:02:46+00:00,Restaurant,Restaurants,-11.0,EUR
+2024-05-03 21:49:40+00:00,Restaurant,Restaurants,-6.0,EUR
+2024-05-03 22:36:23+00:00,Restaurant,Restaurants,-6.0,EUR
+2024-05-03 23:41:00+00:00,Cabify,Travel & Transportation,-9.42,EUR
+2024-05-04 00:22:08+00:00,45/33 Bar,Entertainment,-5.8,EUR
+2024-05-04 16:13:03+00:00,Mercadona,Groceries,-9.37,EUR
+2024-05-04 17:52:32+00:00,Bar Prieto,Restaurants,-8.1,EUR
+2024-05-04 18:13:32+00:00,Bar Pietro,Restaurants,-2.5,EUR
+2024-05-04 19:23:21+00:00,Tio Bigotes,Restaurants,-2.6,EUR
+2024-05-04 20:32:25+00:00,Mint Bar,Entertainment,-6.0,EUR
+2024-05-04 21:49:02+00:00,Mint Bar,Entertainment,-3.0,EUR
+2024-05-05 00:35:14+00:00,Uber Eats,Restaurants,-18.77,EUR
+2024-05-05 18:41:35+00:00,el Fornet,Restaurants,-2.45,EUR
+2024-05-05 22:51:20+00:00,Antonias Burger,Restaurants,-21.75,EUR
+2024-05-06 12:11:44+00:00,el Fornet,Restaurants,-2.65,EUR
+2024-05-06 12:36:54+00:00,Mercadona,Groceries,-6.48,EUR
+2024-05-06 19:41:24+00:00,Mercadona,Groceries,-8.38,EUR
+2024-05-07 12:45:39+00:00,DIAGONAL,Restaurants,-9.45,EUR
+2024-05-07 13:53:21+00:00,Massimo Dutti,Shopping,-40.05,EUR
+2024-05-07 18:08:05+00:00,Mercadona,Groceries,-10.14,EUR
+2024-05-07 22:00:56+00:00,Vueling,Travel & Transportation,-189.98,EUR
+2024-05-08 01:59:45+00:00,TMB,Travel & Transportation,-42.7,EUR
+2024-05-08 11:55:55+00:00,Del Molino Roa,Restaurants,-5.6,EUR
+2024-05-08 12:15:04+00:00,Del Molino Roa,Restaurants,-1.2,EUR
+2024-05-08 12:29:05+00:00,Del Molino Roa,Restaurants,-2.5,EUR
+2024-05-08 14:51:06+00:00,Heymei,Restaurants,-5.45,EUR
+2024-05-08 20:08:05+00:00,T Mobilitat App,Travel & Transportation,-42.7,EUR
+2024-05-08 21:31:22+00:00,Ferrocarrils de la Generalitat Catalunya,Travel & Transportation,-42.7,EUR
+2024-05-09 09:50:52+00:00,YEGO,Travel & Transportation,-2.64,EUR
+2024-05-09 11:56:59+00:00,Del Molino Roa Sl,Restaurants,-5.6,EUR
+2024-05-09 13:19:29+00:00,Del Molino Roa Sl,Restaurants,-1.2,EUR
+2024-05-09 14:08:08+00:00,MacxiPA,Restaurants,-1.8,EUR
+2024-05-09 16:09:52+00:00,L'Empanaderia de Gràcia,Restaurants,-5.4,EUR
+2024-05-09 21:13:15+00:00,Five Guys,Restaurants,-14.65,EUR
+2024-05-10 04:31:07+00:00,Cabify,Travel & Transportation,-27.09,EUR
+2024-05-10 05:13:24+00:00,Pans & Company,Restaurants,-1.95,EUR
+2024-05-10 18:05:13+00:00,Mercadona,Groceries,-11.07,EUR
+2024-05-10 20:32:09+00:00,Festafib Comit,Entertainment,-3.0,EUR
+2024-05-10 21:04:43+00:00,Festafib Comit,Entertainment,-2.0,EUR
+2024-05-12 16:57:07+00:00,Carrefour,Groceries,-1.85,EUR
+2024-05-13 16:33:50+00:00,Carrefour,Groceries,-2.25,EUR
+2024-05-13 19:39:09+00:00,Pnvt Prs Brothers,Restaurants,-6.9,EUR
+2024-05-13 20:23:14+00:00,Bvba Posse,Restaurants,-5.4,EUR
+2024-05-13 23:28:36+00:00,Amazon,Shopping,-8.99,EUR
+2024-05-14 01:03:45+00:00,In Den Boule,Restaurants,-5.4,EUR
+2024-05-14 12:46:20+00:00,'t Smullerke,Restaurants,-6.5,EUR
+2024-05-14 13:26:57+00:00,Pizza Virona,Restaurants,-3.5,EUR
+2024-05-14 14:01:17+00:00,Pnvt Prs Brothers,Restaurants,-2.5,EUR
+2024-05-15 13:32:05+00:00,Mercadona,Groceries,-18.86,EUR
+2024-05-16 07:42:06+00:00,Bicing,Travel & Transportation,-0.35,EUR
+2024-05-16 18:01:03+00:00,Mercadona,Groceries,-8.76,EUR
+2024-05-16 21:01:00+00:00,Antonias Burger,Restaurants,-27.5,EUR
+2024-05-16 22:13:00+00:00,Airbnb,Travel & Transportation,-53.4,EUR
+2024-05-17 15:17:36+00:00,Tabacos,Shopping,-4.35,EUR
+2024-05-17 15:35:26+00:00,Sm Barca,Shopping,-5.0,EUR
+2024-05-17 16:33:16+00:00,Ali Restaurant,Restaurants,-9.0,EUR
+2024-05-17 19:17:01+00:00,Panino Silvestre,Restaurants,-1.8,EUR
+2024-05-17 19:25:46+00:00,Evento Enso Coliving,Entertainment,-15.0,EUR
+2024-05-17 20:12:24+00:00,Mercadona,Groceries,-15.55,EUR
+2024-05-18 13:04:41+00:00,el Fornet,Restaurants,-4.2,EUR
+2024-05-18 16:45:58+00:00,Gelateria Firenze Palamos,Restaurants,-8.0,EUR
+2024-05-18 20:49:15+00:00,Bar Yeti,Entertainment,-5.7,EUR
+2024-05-19 01:07:52+00:00,45/33 Bar,Entertainment,-6.0,EUR
+2024-05-19 04:16:20+00:00,YEGO,Travel & Transportation,-2.64,EUR
+2024-05-19 21:19:01+00:00,Condis,Groceries,-2.8,EUR
+2024-05-20 12:18:31+00:00,Kachafruit Barna S.L.,Groceries,-5.11,EUR
+2024-05-20 12:26:33+00:00,Mi Alcampo,Groceries,-5.68,EUR
+2024-05-20 15:23:10+00:00,Carrefour,Groceries,-4.09,EUR
+2024-05-20 20:10:04+00:00,Tabacs,Shopping,-4.35,EUR
+2024-05-20 21:18:54+00:00,Bar Robardors 49,Entertainment,-7.5,EUR
+2024-05-20 22:03:53+00:00,Ali Restaurant,Restaurants,-16.0,EUR
+2024-05-20 23:17:05+00:00,The Old Irish Pub,Entertainment,-31.8,EUR
+2024-05-21 00:15:05+00:00,Mr Robinson,Entertainment,-3.5,EUR
+2024-05-21 01:02:47+00:00,Mr Robinson,Entertainment,-7.0,EUR
+2024-05-21 01:38:37+00:00,Mr Robinson,Entertainment,-12.0,EUR
+2024-05-21 11:19:58+00:00,Del Molino Roa,Restaurants,-5.6,EUR
+2024-05-21 13:26:31+00:00,MacxiPA,Restaurants,-1.8,EUR
+2024-05-21 16:45:04+00:00,Mercadona,Groceries,-7.05,EUR
+2024-05-21 18:44:22+00:00,Mercadona,Groceries,-25.0,EUR
+2024-05-22 00:41:47+00:00,AliExpress,Shopping,-17.32,EUR
+2024-05-22 11:52:41+00:00,Del Molino Roa Sl,Restaurants,-6.7,EUR
+2024-05-22 21:55:08+00:00,Un Bocado,Restaurants,-22.3,EUR
+2024-05-22 22:35:27+00:00,SUPERMARKET,Groceries,-3.0,EUR
+2024-05-23 10:57:04+00:00,Del Molino Roa,Restaurants,-3.0,EUR
+2024-05-23 12:46:30+00:00,Vueling,Travel & Transportation,-76.99,EUR
+2024-05-23 15:20:04+00:00,Chandigarh Cafe,Restaurants,-6.0,EUR
+2024-05-23 18:24:10+00:00,Levaduramadre,Restaurants,-2.75,EUR
+2024-05-23 19:21:39+00:00,Mercadona,Groceries,-8.3,EUR
+2024-05-23 23:06:22+00:00,Sabor Tropical,Restaurants,-18.0,EUR
+2024-05-24 12:59:38+00:00,Barcelona Suc 23,Shopping,-3.8,EUR
+2024-05-24 13:16:22+00:00,MacxiPA,Restaurants,-2.0,EUR
+2024-05-24 17:59:17+00:00,Mercadona,Groceries,-7.85,EUR
+2024-05-24 18:00:43+00:00,Levaduramadre,Restaurants,-1.8,EUR
+2024-05-25 13:21:05+00:00,Mercadona,Groceries,-9.37,EUR
+2024-05-25 15:27:31+00:00,Domino's pizza,Restaurants,-4.99,EUR
+2024-05-25 15:35:55+00:00,Joan Miró Foundation,Entertainment,-9.0,EUR
+2024-05-25 20:30:40+00:00,Tabacs,Shopping,-4.35,EUR
+2024-05-25 21:00:55+00:00,Ali Restaurant,Restaurants,-7.0,EUR
+2024-05-25 23:52:30+00:00,McDonald's,Restaurants,-4.51,EUR
+2024-05-27 10:22:51+00:00,Cines Verdi Barcelona,Entertainment,-24.5,EUR
+2024-05-27 13:38:09+00:00,Del Molino Roa Sl,Restaurants,-5.6,EUR
+2024-05-27 16:19:03+00:00,Jotas Bread,Restaurants,-1.4,EUR
+2024-05-27 17:28:11+00:00,Flashh Barcelona,Entertainment,-11.0,EUR
+2024-05-27 18:01:18+00:00,Flashh Barcelona,Entertainment,-1.5,EUR
+2024-05-27 21:03:49+00:00,Mercadona,Groceries,-3.3,EUR
+2024-05-27 22:25:32+00:00,Cines Verdi Barcelona,Entertainment,-1.5,EUR
+2024-05-28 10:09:06+00:00,Del Molino Roa Sl,Restaurants,-1.2,EUR
+2024-05-28 12:38:43+00:00,Mercadona,Groceries,-12.5,EUR
+2024-05-28 16:54:55+00:00,Mercadona,Groceries,-4.75,EUR
+2024-05-29 13:32:48+00:00,Del Molino Roa,Restaurants,-1.15,EUR
+2024-05-29 20:31:45+00:00,Mercadona,Groceries,-5.39,EUR
+2024-05-29 21:51:22+00:00,Amovens,Travel & Transportation,-129.22,EUR
+2024-05-30 10:13:02+00:00,Tabacos,Shopping,-5.05,EUR
+2024-05-30 10:58:14+00:00,Don Fresc,Groceries,-2.7,EUR
+2024-05-30 12:16:23+00:00,Raco De La Mora,Restaurants,-5.2,EUR
+2024-05-30 14:34:24+00:00,MacxiPA,Restaurants,-2.33,EUR
+2024-05-30 19:27:35+00:00,AUCAT,Travel & Transportation,-4.81,EUR
+2024-05-30 19:42:30+00:00,Zona Blava,Travel & Transportation,-0.6,EUR
+2024-05-30 21:32:00+00:00,La Punta La Guineu,Restaurants,-32.6,EUR
+2024-05-30 21:58:34+00:00,AUCAT,Travel & Transportation,-8.05,EUR
+2024-05-30 23:27:38+00:00,YEGO,Travel & Transportation,-4.29,EUR
+2024-05-31 17:18:42+00:00,Tabacos,Shopping,-4.35,EUR
+2024-05-31 18:19:25+00:00,Supermercat,Groceries,-3.7,EUR
+2024-05-31 20:45:42+00:00,Antonias Burger,Restaurants,-33.0,EUR
+2024-05-31 23:48:18+00:00,Cerveseria Universitat,Restaurants,-30.5,EUR
+2024-06-01 02:04:55+00:00,Míramelindo,Entertainment,-20.0,EUR
+2024-06-01 05:38:21+00:00,Bicing,Travel & Transportation,-1.4,EUR
+2024-06-01 13:04:17+00:00,Too Good To Go,Groceries,-2.99,EUR
+2024-06-01 15:03:39+00:00,Raza Gulraiz,Groceries,-1.0,EUR
+2024-06-01 19:43:45+00:00,Farmàcia Bonanova,Shopping,-7.63,EUR
+2024-06-01 20:33:28+00:00,Mercadona,Groceries,-11.01,EUR
+2024-06-02 01:01:23+00:00,Be One Gran Teatro,Entertainment,-10.0,EUR
+2024-06-02 17:01:09+00:00,Bar Nino,Restaurants,-3.6,EUR
+2024-06-02 18:15:33+00:00,Primavera Sound,Entertainment,-15.0,EUR
+2024-06-02 19:23:13+00:00,Primavera Sound,Entertainment,-13.0,EUR
+2024-06-02 20:04:30+00:00,Primavera Sound,Entertainment,-10.0,EUR
+2024-06-02 21:43:49+00:00,honest greens,Restaurants,-26.44,EUR
+2024-06-03 14:03:01+00:00,Mercadona,Groceries,-12.25,EUR
+2024-06-03 16:34:11+00:00,Bar Urquinaona,Restaurants,-21.3,EUR
+2024-06-03 20:55:53+00:00,Mercadona,Groceries,-9.13,EUR
+2024-06-04 15:51:53+00:00,Panino Silvestre,Restaurants,-1.8,EUR
+2024-06-04 21:28:50+00:00,Putxet Sport,Entertainment,-70.31,EUR
+2024-06-05 14:47:54+00:00,Mercadona,Groceries,-15.72,EUR
+2024-06-05 15:11:40+00:00,Mercadona,Groceries,-1.61,EUR
+2024-06-06 12:34:13+00:00,Mercadona,Groceries,-36.32,EUR
+2024-06-06 15:30:17+00:00,Mercadona,Groceries,-3.0,EUR
+2024-06-06 17:08:15+00:00,Granier,Restaurants,-1.4,EUR
+2024-06-07 16:33:50+00:00,Mercadona,Groceries,-13.07,EUR
+2024-06-08 00:52:51+00:00,Bar Centro,Restaurants,-12.48,EUR
+2024-06-08 14:56:30+00:00,Bar Triton,Restaurants,-8.15,EUR
+2024-06-08 21:21:19+00:00,Restaurant Asiatic Han,Restaurants,-17.3,EUR
+2024-06-09 11:21:01+00:00,MacxiPA,Restaurants,-1.1,EUR
+2024-06-09 16:27:59+00:00,Carrefour,Groceries,-4.72,EUR
+2024-06-10 12:15:45+00:00,Mercadona,Groceries,-14.93,EUR
+2024-06-10 12:17:31+00:00,Levaduramadre,Restaurants,-1.8,EUR
+2024-06-10 17:19:33+00:00,Del Molino Roa,Restaurants,-1.25,EUR
+2024-06-10 20:07:59+00:00,Carrefour,Groceries,-2.79,EUR
+2024-06-11 09:33:24+00:00,MacxiPA,Restaurants,-1.8,EUR
+2024-06-11 12:36:53+00:00,Del Molino Roa,Restaurants,-5.6,EUR
+2024-06-11 18:45:20+00:00,Mercadona,Groceries,-11.98,EUR
+2024-06-11 20:56:31+00:00,Mercadona,Groceries,-16.19,EUR
+2024-06-13 12:03:43+00:00,Jotas Bread,Restaurants,-2.6,EUR
+2024-06-13 13:53:49+00:00,Del Molino Roa Sl,Restaurants,-5.6,EUR
+2024-06-13 18:20:39+00:00,Mercadona,Groceries,-6.7,EUR
+2024-06-13 20:27:33+00:00,Panino Silvestre,Restaurants,-20.2,EUR
+2024-06-13 21:46:36+00:00,Alcampo,Groceries,-2.98,EUR
+2024-06-14 10:32:38+00:00,Omio,Travel & Transportation,-8.31,EUR
+2024-06-14 11:04:07+00:00,Omio,Travel & Transportation,-5.24,EUR
+2024-06-14 12:51:14+00:00,Farmacia Bassegoda,Shopping,-16.95,EUR
+2024-06-14 16:53:57+00:00,Mercadona,Groceries,-13.48,EUR
+2024-06-15 01:27:22+00:00,YEGO,Travel & Transportation,-1.98,EUR
+2024-06-15 15:41:31+00:00,Tabacos,Shopping,-4.35,EUR
+2024-06-15 20:54:19+00:00,Uber,Travel & Transportation,-31.33,EUR
+2024-06-15 22:45:02+00:00,FREE NOW,Travel & Transportation,-21.55,EUR
+2024-06-16 00:14:56+00:00,Elements 4 Dance,Entertainment,-19.0,EUR
+2024-06-16 07:26:16+00:00,Bicing,Travel & Transportation,-0.35,EUR
+2024-06-17 10:28:06+00:00,Mercadona,Groceries,-21.85,EUR
+2024-06-17 12:48:03+00:00,Mercadona,Groceries,-11.92,EUR
+2024-06-17 16:06:37+00:00,Jotas Bread,Restaurants,-1.4,EUR
+2024-06-17 19:32:36+00:00,Mustafa's Gemüse Kebap,Restaurants,-6.5,EUR
+2024-06-18 13:52:40+00:00,Del Molino Roa Sl,Restaurants,-6.75,EUR
+2024-06-18 18:30:16+00:00,Bar Triton,Restaurants,-3.1,EUR
+2024-06-19 12:29:59+00:00,Bar Can Tornemi,Restaurants,-1.4,EUR
+2024-06-19 15:22:08+00:00,Jotas Bread,Restaurants,-2.6,EUR
+2024-06-19 18:25:20+00:00,Amazon,Shopping,-18.73,EUR
+2024-06-19 20:11:56+00:00,La Salumeria,Groceries,-30.16,EUR
+2024-06-19 20:24:54+00:00,Alcampo,Groceries,-5.0,EUR
+2024-06-20 12:27:01+00:00,Airbnb,Travel & Transportation,-213.6,EUR
+2024-06-20 13:42:19+00:00,Del Molino Roa,Restaurants,-5.6,EUR
+2024-06-20 14:19:14+00:00,Jotas Bread,Restaurants,-1.4,EUR
+2024-06-20 21:24:22+00:00,Mercadona,Groceries,-21.58,EUR
+2024-06-21 13:06:11+00:00,Del Molino Roa Sl,Restaurants,-5.6,EUR
+2024-06-21 18:22:57+00:00,La Sagrada Familia,Entertainment,-18.54,EUR
+2024-06-21 18:39:00+00:00,Ali Restaurant,Restaurants,-9.0,EUR
+2024-06-21 19:18:19+00:00,Mercadona,Groceries,-7.21,EUR
+2024-06-21 23:31:44+00:00,My Baggage,Travel & Transportation,-88.8,EUR
+2024-06-22 01:41:38+00:00,Mendrugo,Restaurants,-14.0,EUR
+2024-06-22 14:27:22+00:00,hostelworld.com,Travel & Transportation,-18.82,EUR
+2024-06-22 14:29:00+00:00,Mercadona,Groceries,-18.34,EUR
+2024-06-22 16:49:32+00:00,Antonias Burger,Restaurants,-25.0,EUR
+2024-06-22 22:10:21+00:00,Carrefour,Groceries,-3.35,EUR
+2024-06-23 13:16:11+00:00,Amovens,Travel & Transportation,-120.64,EUR
+2024-06-23 13:19:51+00:00,Fundacio Gala - Salvador Dali,Entertainment,-31.0,EUR
+2024-06-23 19:13:58+00:00,Ryanair,Travel & Transportation,-55.49,EUR
+2024-06-24 15:30:26+00:00,Fazal Chak 3,Groceries,-1.0,EUR
+2024-06-24 23:52:07+00:00,Mr Robinson,Entertainment,-2.97,EUR
+2024-06-25 11:30:14+00:00,Catafal Forners,Restaurants,-3.1,EUR
+2024-06-25 12:36:18+00:00,YEGO,Travel & Transportation,-2.97,EUR
+2024-06-25 12:46:35+00:00,Primark,Shopping,-3.0,EUR
+2024-06-25 17:06:20+00:00,Taquería Los Güeros,Restaurants,-5.0,EUR
+2024-06-25 17:19:43+00:00,Taquería Los Güeros,Restaurants,-3.0,EUR
+2024-06-25 21:16:26+00:00,YEGO,Travel & Transportation,-10.23,EUR
+2024-06-25 22:42:59+00:00,hostelworld.com,Travel & Transportation,-21.11,EUR
+2024-06-25 23:44:04+00:00,Omio,Travel & Transportation,-16.9,EUR
+2024-06-26 00:05:18+00:00,YellowSquare,Travel & Transportation,-183.73,EUR
+2024-06-26 04:20:20+00:00,FREE NOW,Travel & Transportation,-17.5,EUR
+2024-06-26 13:37:43+00:00,Fundacio Gala - Salvador Dali,Entertainment,-14.1,EUR
+2024-06-26 13:54:18+00:00,365,Restaurants,-10.2,EUR
+2024-06-26 14:31:34+00:00,Mercadona,Groceries,-5.45,EUR
+2024-06-27 11:56:10+00:00,el Fornet,Restaurants,-1.6,EUR
+2024-06-27 15:17:49+00:00,Kachafruit Barna S.L.,Groceries,-3.38,EUR
+2024-06-27 17:03:08+00:00,YEGO,Travel & Transportation,-6.93,EUR
+2024-06-27 17:13:15+00:00,Mercadona,Groceries,-4.8,EUR
+2024-06-27 19:20:32+00:00,YEGO,Travel & Transportation,-22.99,EUR
+2024-06-28 08:42:32+00:00,Kiosko Ayala,Restaurants,-1.0,EUR
+2024-06-28 13:54:22+00:00,honest greens,Restaurants,-30.25,EUR
+2024-06-28 14:56:43+00:00,Estanco,Shopping,-4.35,EUR
+2024-06-28 17:31:10+00:00,Kachafruit Barna S.L.,Groceries,-2.43,EUR
+2024-06-28 18:22:19+00:00,Mercadona,Groceries,-6.24,EUR
+2024-06-28 20:47:58+00:00,YEGO,Travel & Transportation,-3.96,EUR
+2024-06-29 11:47:33+00:00,Cabify,Travel & Transportation,-34.45,EUR
+2024-06-29 14:53:40+00:00,Condis,Groceries,-2.57,EUR
+2024-06-29 15:20:12+00:00,Primark,Shopping,-18.5,EUR
+2024-06-29 19:07:15+00:00,Mercadona,Groceries,-2.95,EUR
+2024-06-29 19:52:56+00:00,McDonald's,Restaurants,-7.22,EUR
+2024-06-29 21:26:15+00:00,Cabify,Travel & Transportation,-36.19,EUR
+2024-06-29 21:58:18+00:00,Ali Restaurant,Restaurants,-13.5,EUR
+2024-06-29 22:15:47+00:00,Anita Gelato,Restaurants,-5.8,EUR
